@@ -1,0 +1,67 @@
+<?php
+
+//A Segment Actual
+//================
+
+$arrDomainSegmentRates		= array();
+$arrDomainSegmentDisRates	= array();
+
+$arrTagDiscount = array('U'=>0, 'A'=>0, 'B'=>0, 'C'=>0, 'D'=>0, 'A1'=>0, 'B1'=>0, 'C1'=>0, 'D1'=>0);
+
+//===============================================================================================================
+// Segment or Category : A //
+
+$arrSegmentActualA = array(
+			98=>array(1=>'2500',2=>'4250',3=>'5600',4=>'3200',5=>'5500',6=>'7200',7=>'3500',8=>'6000',9=>'8000',48=>'19000',100=>'1250',110=>'500',111=>'750',112=>'1000',120=>'1200',121=>'0',122=>'0'),
+
+			162=>array(1=>'3500',2=>'5940',3=>'7840',4=>'4540',5=>'7690',6=>'10140',7=>'5040',8=>'8390',9=>'11190',48=>'19000',100=>'1250',110=>'500',111=>'750',112=>'1000',120=>'2280',121=>'0',122=>'0'),
+
+			220=>array(1=>'260',2=>'440',3=>'585',4=>'340',5=>'570',6=>'755',7=>'365',8=>'625',9=>'830',48=>'1950',100=>'130',110=>'55',111=>'84',112=>'95',120=>'125',121=>'0',122=>'0'),
+
+			222=>array(1=>'82',2=>'140',3=>'185',4=>'107',5=>'180',6=>'238',7=>'115',8=>'197',9=>'262',48=>'800',100=>'42',110=>'15',111=>'23',112=>'30',120=>'40',121=>'200',122=>'500'),
+
+			21=>array(1=>'79',2=>'134',3=>'178',4=>'103',5=>'173',6=>'229',7=>'111',8=>'190',9=>'253',48=>'393',100=>'31',110=>'12',111=>'19',112=>'25',120=>'38',121=>'0',122=>'0'),
+
+			221=>array(1=>'54',2=>'92',3=>'121',4=>'70',5=>'119',6=>'157',7=>'76',8=>'130',9=>'173',48=>'338',100=>'28',110=>'10',111=>'16',112=>'22',120=>'26',121=>'0',122=>'0'));
+
+$arrSegmentDiscountA = $arrSegmentActualA;
+
+//===============================================================================================================
+// Segment or Category : B //
+$arrSegmentActualB = $arrSegmentActualA;
+$arrSegmentDiscountB = $arrSegmentActualA;
+
+//===============================================================================================================
+// Segment or Category : C //
+$arrSegmentActualC = $arrSegmentActualA;
+$arrSegmentDiscountC = $arrSegmentActualA;
+
+//===============================================================================================================
+// Segment or Category : D //
+$arrSegmentActualD	= $arrSegmentActualA;
+$arrSegmentDiscountD = $arrSegmentActualA;
+
+//===============================================================================================================
+
+if (($casteTag=='D') || ($casteTag=='D1')) {
+	$arrDomainSegmentRates	 = $arrSegmentActualD;
+	$arrDomainSegmentDisRates	 = $arrSegmentDiscountD;
+} else if (($casteTag=='C') || ($casteTag=='C1')) {
+	$arrDomainSegmentRates	 = $arrSegmentActualC;
+	$arrDomainSegmentDisRates	 = $arrSegmentDiscountC;
+} else if (($casteTag=='B') || ($casteTag=='B1')) {
+	$arrDomainSegmentRates	 = $arrSegmentActualB;
+	$arrDomainSegmentDisRates	 = $arrSegmentDiscountB;
+} else {
+	$arrDomainSegmentRates	 = $arrSegmentActualA;
+	$arrDomainSegmentDisRates	 = $arrSegmentDiscountA;
+}
+
+if ($confValues["DOMAINCASTEID"]!='2503') {
+	if ($_REQUEST['upgradeCountry']!='162') {
+		UNSET($arrDomainSegmentRates['162']);
+		UNSET($arrDomainSegmentDisRates['162']);
+	}
+}
+
+?>

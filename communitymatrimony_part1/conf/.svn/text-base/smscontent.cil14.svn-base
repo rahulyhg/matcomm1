@@ -1,0 +1,19 @@
+<?php
+#================================================================================================================
+# Author 		: Srinivasan
+# Date	                : 2010-08-25
+# Project		: MatrimonyProduct
+# Filename		: smscontent.cil14
+#================================================================================================================
+# Description   : SMS contents
+#================================================================================================================
+
+
+// SMS CONTENT
+$varSMSContent['AcceptInterest']	= 'Congrats! #MATRIID has accepted your Interest on #DOMAINNAME. Pay now to contact member directly. Call 1800-3000-2222 for payment help';
+$varSMSContent['NewInterest']	    = 'Congrats! You have received an Express Interest from #MATRIID. Login to #DOMAINNAME to respond. Hurry, a good prospect will not wait forever.';
+$varSMSContent['NewMessage']	    = 'Congrats! You have received a Personalised Message from #MATRIID.Login to #DOMAINNAME to read and reply to the message.';
+$varSMSContent['InterestReplied']	= 'You have received a message from #NAME #MATRIID View NOW!';
+$varSMSContent['MessageReplied']	= 'You have received a message from #NAME #MATRIID View NOW!';
+
+?>

@@ -1,0 +1,371 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/communitymatrimony/!svn/ver/8775/lib
+END
+clsUpgrade.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/communitymatrimony/!svn/ver/8775/lib/clsUpgrade.php
+END
+clsCommon.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/communitymatrimony/!svn/ver/4633/lib/clsCommon.php
+END
+clsRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/communitymatrimony/!svn/ver/1/lib/clsRequest.php
+END
+clsDB_PaymentAss.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/communitymatrimony/!svn/ver/8158/lib/clsDB_PaymentAss.php
+END
+clsPhoto.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/communitymatrimony/!svn/ver/1/lib/clsPhoto.php
+END
+clsCronMailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/communitymatrimony/!svn/ver/138/lib/clsCronMailer.php
+END
+clsInterest.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/communitymatrimony/!svn/ver/1/lib/clsInterest.php
+END
+clsViews.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/communitymatrimony/!svn/ver/1/lib/clsViews.php
+END
+clsPrivilegeCommon.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/communitymatrimony/!svn/ver/2861/lib/clsPrivilegeCommon.php
+END
+clsHoroscope.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/communitymatrimony/!svn/ver/8219/lib/clsHoroscope.php
+END
+clsBasicviewHTML.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/communitymatrimony/!svn/ver/8158/lib/clsBasicviewHTML.php
+END
+clsMailerBasicView_Test.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/communitymatrimony/!svn/ver/8158/lib/clsMailerBasicView_Test.php
+END
+clsMailerBasicView.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/communitymatrimony/!svn/ver/8158/lib/clsMailerBasicView.php
+END
+clsPhoneSupport.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/communitymatrimony/!svn/ver/5536/lib/clsPhoneSupport.php
+END
+clsRSS.php
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/communitymatrimony/!svn/ver/1/lib/clsRSS.php
+END
+clsDomain.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/communitymatrimony/!svn/ver/8158/lib/clsDomain.php
+END
+clsInboxMailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/communitymatrimony/!svn/ver/8669/lib/clsInboxMailer.php
+END
+clsWSMemcacheClient.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/communitymatrimony/!svn/ver/8158/lib/clsWSMemcacheClient.php
+END
+clsMailerMatchWatch_Test.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/communitymatrimony/!svn/ver/8158/lib/clsMailerMatchWatch_Test.php
+END
+clsPayment.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/communitymatrimony/!svn/ver/8541/lib/clsPayment.php
+END
+clsProfileMatch.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/communitymatrimony/!svn/ver/4778/lib/clsProfileMatch.php
+END
+clsUser.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/communitymatrimony/!svn/ver/8158/lib/clsUser.php
+END
+clsDataConversion.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/communitymatrimony/!svn/ver/8158/lib/clsDataConversion.php
+END
+clsNewMailerBasicView.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/communitymatrimony/!svn/ver/8158/lib/clsNewMailerBasicView.php
+END
+clsMemcacheService.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/communitymatrimony/!svn/ver/4711/lib/clsMemcacheService.php
+END
+clsDB_ver2.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/communitymatrimony/!svn/ver/8158/lib/clsDB_ver2.php
+END
+clsXMLReader.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/communitymatrimony/!svn/ver/7732/lib/clsXMLReader.php
+END
+clsMessage.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/communitymatrimony/!svn/ver/8768/lib/clsMessage.php
+END
+clsRMDB.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/communitymatrimony/!svn/ver/8262/lib/clsRMDB.php
+END
+clsRegister.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/communitymatrimony/!svn/ver/4643/lib/clsRegister.php
+END
+clsDBtest.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/communitymatrimony/!svn/ver/8158/lib/clsDBtest.php
+END
+clsAdminValMailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/communitymatrimony/!svn/ver/8446/lib/clsAdminValMailer.php
+END
+clsSvrValidation.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/communitymatrimony/!svn/ver/2252/lib/clsSvrValidation.php
+END
+clsNewMailerMatchwatch.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/communitymatrimony/!svn/ver/8657/lib/clsNewMailerMatchwatch.php
+END
+clsGetCount.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/communitymatrimony/!svn/ver/8210/lib/clsGetCount.php
+END
+clsError.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/communitymatrimony/!svn/ver/8158/lib/clsError.php
+END
+clsCCAvenue.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/communitymatrimony/!svn/ver/8158/lib/clsCCAvenue.php
+END
+clsValidate.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/communitymatrimony/!svn/ver/8455/lib/clsValidate.php
+END
+clsSrchBasicView.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/communitymatrimony/!svn/ver/8210/lib/clsSrchBasicView.php
+END
+clsReferMailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/communitymatrimony/!svn/ver/6953/lib/clsReferMailer.php
+END
+clsLists.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/communitymatrimony/!svn/ver/8210/lib/clsLists.php
+END
+sphinxapi.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/communitymatrimony/!svn/ver/5851/lib/sphinxapi.php
+END
+clsInactive.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/communitymatrimony/!svn/ver/8210/lib/clsInactive.php
+END
+clsSuccessMailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/communitymatrimony/!svn/ver/138/lib/clsSuccessMailer.php
+END
+clsCache.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/communitymatrimony/!svn/ver/8158/lib/clsCache.php
+END
+clsSearch.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/communitymatrimony/!svn/ver/8210/lib/clsSearch.php
+END
+clsMemcacheDB.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/communitymatrimony/!svn/ver/8158/lib/clsMemcacheDB.php
+END
+clsLogin.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/communitymatrimony/!svn/ver/1/lib/clsLogin.php
+END
+clsPhone.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/communitymatrimony/!svn/ver/8580/lib/clsPhone.php
+END
+clsReport.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/communitymatrimony/!svn/ver/1432/lib/clsReport.php
+END
+clsBasicview.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/communitymatrimony/!svn/ver/8210/lib/clsBasicview.php
+END
+clsMailerMatchWatch.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/communitymatrimony/!svn/ver/8210/lib/clsMailerMatchWatch.php
+END
+clsMailManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/communitymatrimony/!svn/ver/8765/lib/clsMailManager.php
+END
+clsCropping.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/communitymatrimony/!svn/ver/14/lib/clsCropping.php
+END
+clsReqMailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/communitymatrimony/!svn/ver/8083/lib/clsReqMailer.php
+END
+clsProfileDetail.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/communitymatrimony/!svn/ver/8584/lib/clsProfileDetail.php
+END
+clsCryptDetail.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/communitymatrimony/!svn/ver/8158/lib/clsCryptDetail.php
+END
+clsBasicviewCommon.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/communitymatrimony/!svn/ver/6491/lib/clsBasicviewCommon.php
+END
+clsDB.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/communitymatrimony/!svn/ver/8262/lib/clsDB.php
+END
+clsAutoRenewal.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/communitymatrimony/!svn/ver/8735/lib/clsAutoRenewal.php
+END
+clsPrivilege.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/communitymatrimony/!svn/ver/8210/lib/clsPrivilege.php
+END

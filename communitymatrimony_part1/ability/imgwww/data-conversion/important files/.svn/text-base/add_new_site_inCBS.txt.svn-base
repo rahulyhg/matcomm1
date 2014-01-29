@@ -1,0 +1,51 @@
+New domain add related info:
+----------------------------
+new domain caste ids - 315=>jandra , 122=>mapila
+
+1. Check With BM Caste list
+
+2. add caste ids in matriidinfo tale
+
+ALTER TABLE communitymatrimony.matriidinfo CHANGE COLUMN CasteId CasteId enum('3','294','281','9','10','12','13','14','15','296','17','22','33','34','36','301','37','43','302','49','307','313','27','28','26','67','71','77','81','320','82','83','85','87','89','90','97','99','106','109','38','132','133','135','329','138','142','331','146','149','156','160','161','170','171','173','178','198','343','202','210','212','218','225','226','229','236','237','239','357','315','122') NOT NULL
+
+3. INSERT INTO communitymatrimony.matriidinfo VALUES('315', 10000), ('122', 10000)
+
+4. Add folder related info in domainlist.inc
+
+5. Add MatriId prefix related info in domainlist.inc
+
+6. (72.32.74.87) Create folders in /home/product/community/www/membersphoto/CBS Folder/0-9/0-9/
+
+7. (72.32.74.87) Create folders in /home/product/community/www/membershoroscope/CBS Folder/0-9/0-9/
+
+8. (72.32.74.87) Create folders in /home/product/community/www/pending-horoscope/CBS Folder/
+
+9. Create home page folder and logo with folder name prefix
+
+10. check the following arrays in domainlist.inc
+
+//CASTE DOMAIN INFO [ Key, Folder, MatriId Prefix ]
+$arrDomainInfo = array( 'agarwal'=> array(3,'AGR','agarwal'),'arekatica'=> array(294,'ARK','arekatica'),'arora'=> array(281,'ARO','arora')..........);
+
+//Community based folder names
+$arrFolderNames	= array('AGR'=>'agarwal', 'ARE'=>'arekatica', 'ARO'=>'arora'......);
+
+//Community MatriId Prefix
+$arrMatriIdPre	= array(3=>'AGR',294=>'ARK',281=>'ARO'.......);
+
+//Community Doamin relatedinfo
+$arrPrefixDomainList = array('AGR'=>'agarwalmatrimony.com','ARK'=>'arekaticamatrimony.com','ARO'=>'aroramatrimony.com'......);
+
+
+11. Copy domainlist.inc in 72.32.189.88 & 72.32.74.87
+
+
+12. Do the migration relaed steps after the conformation of previous steps.
+
+      Run - logoavailcheck.php
+      Run - memberlogininfo.php
+      Run - memberphotoinfo.php
+      Run - memberphotoinfoupdate.php
+      Run - protect-password.php
+      Run - horoscope-details.php
+      Run - update-insert-profiles.php

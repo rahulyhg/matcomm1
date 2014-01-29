@@ -1,0 +1,113 @@
+body { background: #72D2FF; margin:0px; font-family: Arial, Helvetica, Tahoma; font-size: 12px; color:#000000; line-height:15px; text-decoration:none;text-align:left;align:center;}
+#maincontainer {padding-left:4px;padding-right:4px;}
+#container {width:772px;margin:0px 0px 0px 0px; background:#FFFFFF;}
+form{margin:0px;padding:0px;}
+
+/* heading color */
+.button{ background: #1C81CA;padding:0px 4px 0px 4px !important;padding:1px 5px 0px 5px;border:1px solid #1C81CA;color: #FFFFFF; font: bold 12px arial, helvetica, sans-serif; overflow: visible; vertical-align: middle;cursor:pointer;}
+
+.brdr {overflow:auto;}
+.brdr {border:1px solid #DBDBDB;}
+
+/* div styles */
+.fleft{float:left;}
+.fright{float:right;}
+.cleard{clear:both;}
+.footdiv, .footdiv2{width: 770px;}
+.footdiv1{padding-top: 7px; padding-bottom: 5px;}
+.hpdescdiv{width:380px;}
+.hpsuccdiv{width:350px;}
+.hpsepdiv{width:40px;}
+.hpimgdiv{width:70px;}
+.hpsuccdiv1{width:280px;}
+
+.footdiv, .footdiv1, .footdiv2{text-align: center;}
+.linesep {height:1px;background-color:#cbcbcb;}
+.dotsep {background:url(http://img.communitymatrimony.com/images/dotbg.gif) repeat-x;}
+
+.disblk{display:block;}
+.disnon{display:none;}
+
+/* padding styles */
+.padt5{padding-top:5px;}
+.padt10{padding-top:10px;}
+.padl10{padding-left:10px;}
+.padl5{padding-left:5px;}
+.padb7{padding-bottom:7px;}
+.padt5{padding-top:5px;}
+.padtbl15{padding:15px 0px 10px 15px;}
+.padtb10{padding:10px 0px 10px 0px;}
+.padr20{padding-right:20px;}
+.padlr5{padding:0px 5px;}
+.padlr20{padding:0px 20px;}
+
+/* color styles */ 
+.clr{color:#000000;} /* text color */
+.clr1{color:#0A72B8;} /* link color */
+.clr2{color:#ababab;} 
+.clr3{color:#FF6000;}
+.clr4{color:#5D5D5D;}
+
+/* line height styles */
+.lh13 {line-height:13px;}
+.lh16 {line-height:16px;}
+.lh20 {line-height:20px;}
+
+/* text styles */
+.smalltxt { font-size:11px;}
+.normtxt { font-size:12px;}
+.normtxt1 { font-size:13px;}
+.opttxt { font-size:10px;color:#ababab;}
+.qstxt{font-size:22px;color:#005395;font-family: 'Arial Black';}
+a.disptxt1, a.disptxt2, a.disptxt3, a.disptxt4{font-family: Times new roman;}
+a.disptxt3, a.disptxt4{color:#858585;}
+a.disptxt1{font-size:15px;color:#a1a1a1;}
+a.disptxt2{font-size:18px;color:#909090;}
+a.disptxt3{font-size:20px;}
+a.disptxt4{font-size:23px;}
+
+a.disptxt1:hover, a.disptxt2:hover, a.disptxt3:hover, a.disptxt4:hover {color:#D11014;}
+.bld{font-weight:bold;}
+
+a{text-decoration:none;outline:none;}
+a{cursor:pointer;}
+
+img { border: 0px;}
+.pntr{cursor:pointer;}
+
+.tlright{text-align:right;}
+.tlleft{text-align:left;}
+.tljust{text-align:justify;}
+
+.inputtext {font-size:11px;font-weight:normal;}
+.select {width:180px;height:20px;font-size:12px;}
+
+.inputtext, .select{padding-left:2px;border:1px solid #B3B3B3;font-family:arial, tahoma, verdana;color:#333;}
+
+.hpmid{padding:20px 8px 10px 2px;}
+.hpmid1{padding:18px 8px 10px 8px !important; padding:16px 8px 10px 8px;}
+
+.hpsitesdiv {width:246px;line-height:18px;}
+.hpsitesdiv1 {width:16px;background:url('http://img.communitymatrimony.com/images/home-versep.gif') repeat-y;}
+a.rclr {color:#000000;}
+a.rclr:hover{color:#D11014;}
+
+.hplink1{width:168px;}
+.hplink2{width:178px;}
+.hplink3{width:208px;}
+
+.hplink1, .hplink2, .hplink3 {background-color:#f2f2f2;height:22px;padding-top:3px;}
+
+.relposition { position:relative;}
+.abspositionmid { margin-left:465px !important;margin-left:80px;top:-415px; }
+.hpmidmaindiv { width:278px;height:145px;}
+.hpmidmatridiv {width:260px;font-size:18px;}
+.hpmidmatrifrmdiv {width:276px;height:140px;}
+.hpmidmatrifrmw { width:260px; }
+.hpmidmatrifrmwpad { padding:20px 20px 0px 25px; }
+.hpqs { font-family: Arial, Georgia, Verdana, Tahoma, Helvetica;font-size:16px;font-weight:bold;color:#333;line-height:20px; }
+
+.form-field * { vertical-align: middle; }
+.hpqspad { padding:0px 0px 7px 4px; }
+.margt1 { margin-top:1px; }
+.margt5 { margin-top:5px; }

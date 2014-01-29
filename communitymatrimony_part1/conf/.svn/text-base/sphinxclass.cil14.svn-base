@@ -1,0 +1,25 @@
+<?
+class sphinxdb extends SphinxClient {
+	private $ip;
+	private	$port;
+	private $SphinxAttribute;
+	private $MaxQueryTime;
+
+	public function SphinxConnect($ip,$port, $SphinxAttribute,$MaxQueryTime)
+	{
+		$this->setServer($ip,$port); 
+		$sphinx_connection= $this->_Connect();
+
+		if($sphinx_connection){
+			$this->SetArrayResult(true);
+			$this->SetMatchMode($SphinxAttribute);
+			$this->setMaxQueryTime($MaxQueryTime);
+			return $this;
+		}else{
+			return "-1";
+		}
+	}	
+
+} // Class Closed
+
+?>

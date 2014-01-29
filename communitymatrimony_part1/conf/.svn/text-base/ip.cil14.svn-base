@@ -1,0 +1,59 @@
+<?php
+#================================================================================================================
+# Author 		: Ashok kumar, Dhanapal
+# Date	        : 2008-07-15
+# Project		: MatrimonyProduct
+# Filename		: ip.cil14
+#================================================================================================================
+# Description   : IP Configuration file
+#================================================================================================================
+
+// VARIABLE DECLARATION
+$varAppServer			= array();
+$varVideoServer			= array();
+$varDbIP				= array();
+
+// DB CONNECTION IP'S
+$varDbIP['M']				= '172.29.23.95';
+$varDbIP['S']				= '172.29.23.96'; //'172.28.100.83';
+$varDbIP['S2']                          = '172.29.1.40'; //BackUp Slave Running On SDB6-2nd
+$varDbIP['ODB4']			= '172.29.23.72'; //Telemarketing - Doorstep
+$varDbIP['ODB4_offlinecbs']	= '172.29.22.101';
+$varDbIP['PRIVILEGE']		= '172.29.22.101';
+
+//SPHINX LB DETAILS
+$varSphinx['IP']	= '172.22.0.191';
+$varSphinx['PORT']	= '9312';
+
+//SPHINX SERVER DETAILS
+$varSphinxIP	= array('172.29.23.85'=>'9312','172.29.23.86'=>'9312');
+
+// DB USERNAME & PASSWORD
+$varDBUserName				= 'User4Cbs';
+$varDBPassword				= '3rmMWua4';
+
+//TWITTER USERNAME & PASSWORD
+$varTwitterUserName			= 'cbs_tweet';
+$varTwitterPassword			= 't8e3e3w9t8_1s7b2c2';
+
+// APPLICATION SERVER DETAILS
+$varAppServer['WEB']		= '173.203.191.100	';
+$varAppServer['IMG']		= '173.203.191.108';
+
+// VIDEO SERVER USER NAME & PASSWORD FOR APP SERVER
+$varVideoServer['HOST']		= '72.32.59.238';
+$varVideoServer['USERNAME'] = 'jainvideo';
+$varVideoServer['PASSWORD'] = 'Uv%J5GPu2';
+
+$varAudioServer['HOST']		= '72.32.59.238';
+$varAudioServer['USERNAME']	= 'jainvoice';
+$varAudioServer['PASSWORD']	= '?4;=,>fKj';
+
+$varChat['OPENFIRE']		= '172.29.22.102';
+
+//cbssupport paymentassitance 
+$arrDBInfo	= array();
+$arrDBInfo["OfflineCbsUsername"] = 'User4Cbs';
+$arrDBInfo["OfflineCbsPassword"] =  '3rmMWua4';
+
+?>

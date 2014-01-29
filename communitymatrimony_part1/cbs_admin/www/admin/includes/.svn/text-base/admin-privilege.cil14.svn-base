@@ -1,0 +1,24 @@
+<?php
+// List of users for whom to show manage users link in the left panel
+$arrManageUsers=array('nazir'=>array(2=>'Admin executive'),'admin'=>array(2=>'Admin executive'),'dhanapal'=>array(2=>'Admin executive'),'naresh'=>array(2=>'Admin executive'),'vijay.anand'=>array(3=>'Admin view access'),'prathi'=>array(3=>'Admin view access'),'rakesh'=>array(4=>'Admin view access'),'Pooja.Kaura'=>array(3=>'Admin executive'),'chandra'=>array(3=>'Admin executive'),'chenna.k'=>array(3=>'Admin view access'),'arun.p'=>array(3=>'Admin view access'),'Babu'=>array(3=>'Admin view access'),'prabhur'=>array(6=>'Payment Assistance'));
+
+
+// List of user types 
+$arrUserTypes=array(2=>'Admin executive',3=>'Admin View Access',4=>'Admin View Access',6=>'Payment Assistance');
+
+$arrPaymentUsers=array('prabhur@bharatmatrimony.com','rajeswari@bharatmatrimony.com','debrajchowdhury@bharatmatrimony.com','ramesh.j@bharatmatrimony.com','parthasarathy.e@bharatmatrimony.com','syed.moosa@bharatmatrimony.com');
+
+// view counter array
+$arrViewCounter=array(5=>5,10=>10,15=>15,20=>20,50=>50,100=>100,150=>150,200=>200);
+
+// array of branches
+$arrBranchId=array(4=>'USA',5=>'Chennai',6=>'Hyderabad',7=>'Mumbai',8=>'Bangalore',9=>'Delhi',10=>'Cochin',11=>'Kolkata',12=>'Mangalore',13=>'Pune',14=>'Coimbatore',15=>'Mysore',16=>'Chandigarh',17=>'Madurai',18=>'Ahmedabad',19=>'Vizag',20=>'Indore',21=>'TVM',22=>'Trichy',23=>'TNJ',24=>'Lucknow',26=>'Calicut',27=>'Guruvayur',28=>'Dubai',29=>'Pondichery',34=>'Jaipur',36=>'Nagpur',37=>'Ludhiana',41=>'Dehradun',42=>'Goa',43=>'Surat', 84=>'Palakkadu',85=>'Kannur',88=>'Tirunelveli',89=>'Royapuram',90=>'Vadapalani',91=>'Annanagar',92=>'Tnagar',93=>'Salem',55=>'Karnal',51=>'HYD Greenlands',52=>'KOL Kankurgachi', 53=>'Rourkela', 54=>'Udaipur', 56=>'Rajkot', 57=>'Thane',58=>'Vadodara',59=>'NGR Gandhiputla',95=>'Kanpur',61=>'Belgaum',62=>'Thrissur',63=>'Kottayam',64=>'Allapuzha',65=>'Kollam',66=>'Malapuram',67=>'Calicut',68=>'Nagercovil',74=>'Bhimavaram',69=>'Vadakara',31=>'Purasaivakkam',47=>'Vijayawada',73=>'Malakpet',106=>'Kadapa',107=>'Kakinada',109=>'Thiruvidanthai',110=>'Thuraipakkam',111=>'Punjagutta',112=>'Guntur',114=>'Rajahmundry',115=>'Warangal',116=>'Chembur',117=>'Garia',122=>'Malleshwaram',123=>'Vijayanagar',127=>'Mangalore',128=>'Devangere',129=>'Jayanagar',130=>'HSRlayout',124=>'sanjaynagar',132=>'himayatnagar',130=>'hsrlayout',129=>'jayanagar',76=>'jamnagar',67=>'Calicut',98=>'Bhavnagar',133=>'Gajuwaka',120=>'Karimnagar',134=>'BTM Layout', 135=>'Bigbazaromr', 71=>'Kalighat', 128=>'Devangere', 136=>'SahidNagar', 103=>'Borivali', 46=>'Tirupathi', 131=>'ManiNagar', 96=>'Gandhidham', 119=>'Satellite', 118=>'Mehesana', 125=>'Tanjore', 75=>'Nizamabad', 104=>'AS Rao Nagar', 108=>'Kurnool', 113=>'Jagadamba', 72=>'Cochin MG Road', 70=>'Pathanamthitta', 137=>'Muvattupuzha', 30=>'Erode', 126=>'Tirupur', 97=>'Bhubaneswar',44=>'Vellore',38=>'Kancheepuram',99=>'Satara',48=>'Royapettah',45=>'Porur',32=>'Velachery',102=>'Perambur',101=>'Madipakkam',105=>'KK Nagar',72=>'Cochin MG Road',121=>'Karur',10=>'Cochin',33=>'Adyar');
+
+function date_mysql($date, $format) {
+  $d = explode("-", $date);
+  $time = explode(" ", $d[2]);
+  $t = explode(":", $time[1]);
+  $datetime_converted = date($format, mktime ($t[0],$t[1],$t[2],$d[1],$d[2],$d[0]));
+  return $datetime_converted;
+}
+?>

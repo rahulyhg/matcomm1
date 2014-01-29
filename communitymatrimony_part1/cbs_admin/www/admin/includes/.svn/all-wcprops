@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/8849/cbs_admin/www/admin/includes
+END
+clsCommon.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/8414/cbs_admin/www/admin/includes/clsCommon.php
+END
+admin.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/8414/cbs_admin/www/admin/includes/admin.js
+END
+common.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/communitymatrimony/!svn/ver/8414/cbs_admin/www/admin/includes/common.js
+END
+changeajax.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/8414/cbs_admin/www/admin/includes/changeajax.js
+END
+pasthistory.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/communitymatrimony/!svn/ver/8414/cbs_admin/www/admin/includes/pasthistory.js
+END
+autosuggest.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/communitymatrimony/!svn/ver/8414/cbs_admin/www/admin/includes/autosuggest.js
+END
+calenderJS.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/8414/cbs_admin/www/admin/includes/calenderJS.js
+END
+admin-privilege.cil14
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/communitymatrimony/!svn/ver/8849/cbs_admin/www/admin/includes/admin-privilege.cil14
+END
+calender.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/communitymatrimony/!svn/ver/8414/cbs_admin/www/admin/includes/calender.js
+END
+supportcheckstatus.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/communitymatrimony/!svn/ver/8810/cbs_admin/www/admin/includes/supportcheckstatus.js
+END
+config.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/communitymatrimony/!svn/ver/8414/cbs_admin/www/admin/includes/config.php
+END
+date_functions.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/8414/cbs_admin/www/admin/includes/date_functions.php
+END
+userLoginCheck.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/8512/cbs_admin/www/admin/includes/userLoginCheck.php
+END

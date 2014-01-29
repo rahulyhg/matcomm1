@@ -1,0 +1,37 @@
+<?php
+function festivalOffers(){
+global $varCheckRenewalOffer;
+global $varSpecialNewYearOffer,$varSpecialNewYearpayment1,$varSpecialNewYearpayment2,$varSpecialNewYearpayment3,$varSpecialNewYearRP1,$varSpecialNewYearRP2,$varSpecialNewYearRP3,$varSpecialNewYearRP4,$varSpecialNewYearPop1,$varSpecialNewYearPop2,$varSpecialNewYearPop3,$varSpecialNewYearPop4,$confValues,$varGetCookieInfo,$arrBengaliNewYear,$arrAssameseNewYear,$arrMalayalamNewYear;
+
+$arrMalayalamNewYear	= array('7','44','49','50','311','91','122','142','331','258','152','175','212','351','353','233','234');
+
+$arrBengaliNewYear	= array('10','11','12','14','254','16','57','78','82','255','95','325','114','131','143','144','256','257','171','172','204','206','213');
+
+$arrAssameseNewYear	        = array('6','71','164');
+$varSpecialNewYearOffer		= 0;
+$varSpecialNewYearBanner	= '';
+
+if (date('Ymd')=='20110415'){
+
+	if (in_array($confValues["DOMAINCASTEID"], $arrMalayalamNewYear)) {
+		## NEXTLEVEL IMAGES PART FOR BENGALI
+		$varSpecialNewYearOffer		= 1;
+		
+	} else if (in_array($confValues["DOMAINCASTEID"], $arrBengaliNewYear)) {
+		## NEXTLEVEL IMAGES PART FOR BENGALI
+		$varSpecialNewYearOffer		= 1;
+		
+	} else if (in_array($confValues["DOMAINCASTEID"], $arrAssameseNewYear)) {
+		## NEXTLEVEL IMAGES PART FOR ASSAMESE
+		$varSpecialNewYearOffer		= 1;
+	}
+
+} else if (date('Ymd')=='20110416'){
+
+	if ($confValues["DOMAINCASTEID"]=='2501'){
+		$varSpecialNewYearOffer		= 1;
+	}
+
+}
+}
+?>

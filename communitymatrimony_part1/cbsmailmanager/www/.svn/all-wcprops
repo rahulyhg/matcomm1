@@ -1,0 +1,305 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/communitymatrimony/!svn/ver/8733/cbsmailmanager/www
+END
+editdetails.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/editdetails.php
+END
+reconfig.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/reconfig.php
+END
+testsendmail.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/communitymatrimony/!svn/ver/8596/cbsmailmanager/www/testsendmail.php
+END
+page1.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/page1.php
+END
+page2.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/page2.php
+END
+chkloop.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/chkloop.php
+END
+sendmail_smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/sendmail_smtp.php
+END
+assurecheck.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/assurecheck.php
+END
+unsubscribe.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/unsubscribe.html
+END
+beforetest.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/beforetest.php
+END
+callcreatemail.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/callcreatemail.php
+END
+verifycheck.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/verifycheck.php
+END
+otherstest.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/otherstest.php
+END
+paging.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/paging.php
+END
+cbslogo.gif
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/cbslogo.gif
+END
+login.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/login.php
+END
+mailconfig.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/communitymatrimony/!svn/ver/7206/cbsmailmanager/www/mailconfig.php
+END
+mailer_file.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/mailer_file.php
+END
+testfilegen.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/8564/cbsmailmanager/www/testfilegen.php
+END
+logout.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/logout.php
+END
+gettemplate.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/5595/cbsmailmanager/www/gettemplate.php
+END
+viewlog.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/viewlog.php
+END
+test.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/test.php
+END
+check_mail.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/check_mail.php
+END
+viewdetails.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/8607/cbsmailmanager/www/viewdetails.php
+END
+sys_smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/sys_smtp.php
+END
+email_template.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/8608/cbsmailmanager/www/email_template.php
+END
+chksendmail.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/chksendmail.php
+END
+smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/smtp.php
+END
+unsubscribe.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/unsubscribe.php
+END
+finalreport.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/finalreport.php
+END
+mailer.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/mailer.html
+END
+getemailids.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/getemailids.php
+END
+adminuser.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/adminuser.php
+END
+sendmail.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/communitymatrimony/!svn/ver/8733/cbsmailmanager/www/sendmail.php
+END
+checkfiles.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/communitymatrimony/!svn/ver/5833/cbsmailmanager/www/checkfiles.php
+END
+demo.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/demo.html
+END
+syscreatemaillist.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/communitymatrimony/!svn/ver/5593/cbsmailmanager/www/syscreatemaillist.php
+END
+createmaillist.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/createmaillist.php
+END
+supportconfig.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/supportconfig.php
+END
+beforetestmail.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/beforetestmail.php
+END
+unsubscribe1.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/unsubscribe1.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/index.php
+END
+template.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/template.php
+END
+testfilewriter.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/testfilewriter.php
+END
+sys.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/sys.php
+END
+mbox
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/mbox
+END
+upgrademailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/upgrademailer.php
+END
+count.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/5472/cbsmailmanager/www/count.php
+END
+view_templates.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/5561/cbsmailmanager/www/view_templates.php
+END

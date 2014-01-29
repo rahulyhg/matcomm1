@@ -1,0 +1,183 @@
+
+INSERT INTO jnmatrimony.adminlogininfo (SELECT * FROM jnmatrimonyold.adminlogininfo)
+
+INSERT INTO jnmatrimony.blockinfo (SELECT * FROM jnmatrimonyold.blockinfo)
+
+INSERT INTO jnmatrimony.bookmarkinfo (SELECT * FROM jnmatrimonyold.bookmarkinfo)
+
+INSERT INTO jnmatrimony.chat_initiated_log (SELECT * FROM jnmatrimonyold.chat_initiated_log)
+
+INSERT INTO jnmatrimony.icblocked (SELECT * FROM jnmatrimonyold.icblocked)
+
+INSERT INTO jnmatrimony.icbuddy (SELECT * FROM jnmatrimonyold.icbuddy)
+
+INSERT INTO jnmatrimony.icpending (SELECT * FROM jnmatrimonyold.icpending)
+
+INSERT INTO jnmatrimony.icstatus (SELECT * FROM jnmatrimonyold.icstatus)
+
+INSERT INTO jnmatrimony.ignoreinfo (SELECT * FROM jnmatrimonyold.ignoreinfo)
+
+INSERT INTO jnmatrimony.interestpendinginfo (SELECT * FROM jnmatrimonyold.interestpendinginfo)
+
+INSERT INTO jnmatrimony.interestreceivedinfo (Interest_Id, MatriId,Opposite_MatriId,Interest_Option,Declined_Option,Status,Delete_Status,Date_Received,Date_Acted,Date_Deleted) (SELECT Interest_Id,MatriId,Opposite_MatriId,Interest_Option,Declined_Option,Status,Delete_Status,Date_Received,Date_Accepted,Date_Deleted FROM jnmatrimonyold.interestreceivedinfo)
+
+INSERT INTO jnmatrimony.interestsentinfo (SELECT * FROM jnmatrimonyold.interestsentinfo) 
+
+INSERT INTO jnmatrimony.interestsenttrackinfo (SELECT * FROM jnmatrimonyold.interestsenttrackinfo)
+
+INSERT INTO jnmatrimony.maildraftinfo (SELECT * FROM jnmatrimonyold.maildraftinfo)
+
+INSERT INTO jnmatrimony.mailfolderinfo (SELECT * FROM jnmatrimonyold.mailfolderinfo)
+
+INSERT INTO jnmatrimony.mailmanagerinfo (SELECT * FROM jnmatrimonyold.mailmanagerinfo)
+
+INSERT INTO jnmatrimony.mailpendinginfo (SELECT * FROM jnmatrimonyold.mailpendinginfo)
+
+INSERT INTO jnmatrimony.mailreceivedinfo (Mail_Id,MatriId,Opposite_MatriId,Mail_Message,Mail_Folder,Mail_Follow_Up,Status,Notes,Forwarded,Date_Forwarded,Date_Read,Date_Replied,Date_Declined,Date_Received,Date_Deleted,Message_Read,Delete_Status) (SELECT Mail_Id,MatriId,Opposite_MatriId,Mail_Message,Mail_Folder,Mail_Follow_Up,Status,Notes,Forwarded,Date_Forwarded,Date_Read,Date_Replied,Date_Declined,Date_Received,Date_Deleted,Message_Read,Sender_Deleted FROM jnmatrimonyold.mailreceivedinfo)
+
+INSERT INTO jnmatrimony.mailsentinfo (Mail_Id,MatriId,Opposite_MatriId,Mail_Message,Status,Notes,Forwarded,Date_Forwarded,Date_Read,Date_Replied,Date_Declined,Date_Sent,Date_Deleted) (SELECT Mail_Id,MatriId,Opposite_MatriId,Mail_Message,Status,Notes,Forwarded,Date_Forwarded,Date_Read,Date_Replied,Date_Declined,Date_Sent,Date_Deleted FROM jnmatrimonyold.mailsentinfo)
+
+INSERT INTO jnmatrimony.mailsenttrackinfo (SELECT * FROM jnmatrimonyold.mailsenttrackinfo)
+
+
+INSERT INTO jnmatrimony.matriidinfo (SELECT * FROM jnmatrimonyold.matriidinfo)
+
+INSERT INTO jnmatrimony.memberactioninfo (SELECT * FROM jnmatrimonyold.memberactioninfo)
+
+INSERT INTO jnmatrimony.memberdeletedinfo (SELECT * FROM jnmatrimonyold.memberdeletedinfo)
+
+
+INSERT INTO jnmatrimony.memberfamilyinfo (MatriId,Family_Value,Family_Type,Family_Status,Father_Occupation,Mother_Occupation,Family_Origin,Brothers,Brothers_Married,Sisters,Sisters_Married,About_Family,Date_Updated) (SELECT MatriId,Family_Value,Family_Type,Family_Status,Father_Occupation,Mother_Occupation,Family_Origin,Brothers,Brothers_Married,Sisters,Sisters_Married,About_Family,Date_Updated FROM jnmatrimonyold.memberfamilyinfo)
+
+INSERT INTO jnmatrimony.memberfilterinfo (MatriId,Privacy_Status,Mother_Tongue,Marital_Status,Age_Above,Age_Below,Country,Date_Updated) (SELECT MatriId,Privacy_Status,Mother_Tongue,Marital_Status,Age_Above,Age_Below,Country,Date_Updated FROM jnmatrimonyold.memberfilterinfo)
+
+
+INSERT INTO jnmatrimony.memberinfo (MatriId,User_Name,BM_MatriId,Name,Age,Dob,Gender,Height,Height_Unit,Weight,Weight_Unit,Body_Type,Complexion,Eye_Color,Hair_Color,Physical_Status,Blood_Group,Marital_Status,No_Of_Children,Children_Living_Status,Education_Category,Education_Detail,Employed_In,Occupation,Occupation_Detail,Income_Currency,Annual_Income,Religion,Caste_Or_Division,Caste_Nobar,Subcaste,Mother_Tongue,Gothram,Star,Raasi,Horoscope_Match,Chevvai_Dosham,Religious_Values,Ethnicity,Resident_Status,Country,Citizenship,Contact_Address,Contact_Phone,Contact_Mobile,About_Myself,Eating_Habits,Smoke,Drink,Profile_Viewed,IPAddress,Profile_Created_By,Profile_Referred_By,Publish,Last_Login,Photo_Set_Status,Protect_Photo_Set_Status,Filter_Set_Status,Reference_Set_Status,Video_Set_Status,Partner_Set_Status,Family_Set_Status,Interest_Set_Status,Date_Created,Date_Updated,Support_Comments,Horoscope_Available,Horoscope_Protected)  (SELECT MatriId,User_Name,BM_MatriId,Name,Age,Dob,Gender,Height,Height_Unit,Weight,Weight_Unit,Body_Type,Complexion,Eye_Color,Hair_Color,Physical_Status,Blood_Group,Marital_Status,No_Of_Children,Children_Living_Status,Education_Category,Education_Detail,Employed_In,Occupation,Occupation_Detail,Income_Currency,Annual_Income,Religion,Caste_Or_Division,Caste_Nobar,Subcaste,Mother_Tongue,Gothram,Star,Raasi,Horoscope_Match,Chevvai_Dosham,Religious_Values,Ethnicity,Resident_Status,Country,Citizenship,Contact_Address,Contact_Phone,Contact_Mobile,About_Myself,Eating_Habits,Smoke,Drink,Profile_Viewed,IPAddress,Profile_Created_By,Profile_Referred_By,Publish,Last_Login,Photo_Set_Status,Protect_Photo_Set_Status,Filter_Set_Status,Reference_Set_Status,Video_Set_Status,Partner_Set_Status,Family_Set_Status,Interest_Set_Status,Date_Created,Date_Updated,Support_Comments,Horoscope_Set_Status,Protect_Horoscope_Set_Status FROM jnmatrimonyold.memberinfo)
+
+
+INSERT INTO jnmatrimony.memberlogininfo (MatriId,Email,Password,User_Name,Date_Updated) (SELECT MatriId,Email,Password,User_Name,Date_Updated FROM jnmatrimonyold.memberlogininfo)
+
+
+INSERT INTO jnmatrimony.memberpartlyinfo (Member_Id,Name,Age,Dob,Gender,Marital_Status,No_Of_Children,Children_Living_Status,Religion,Country,Resident_Status,Citizenship,Employed_In,Email,Password,Member_Session,Date_Created,User_Name,Subcaste,Profile_Created_By,Profile_Referred_By,About_Myself) (SELECT Member_Id,Name,Age,Dob,Gender,Marital_Status,No_Of_Children,Children_Living_Status,Religion,Country,Resident_Status,Citizenship,Employed_In,Email,Password,Member_Session,Date_Updated,User_Name,Subcaste,Profile_Created_By,Profile_Referred_By,About_Myself FROM jnmatrimonyold.memberpartlyinfo)
+
+INSERT INTO jnmatrimony.memberpartnerinfo (MatriId,Age_From,Age_To,Looking_Status,Have_Children,Height_From,Height_To,Height_Unit,Weight_From,Weight_To,Physical_Status,Education,Religion,Caste_Or_Division,Chevvai_Dosham,Citizenship,Country,Resident_India_State,Resident_USA_State,Resident_Status,Mother_Tongue,Partner_Description,Eating_Habits,Drinking_Habits,Smoking_Habits,Date_Updated) (SELECT MatriId,Age_From,Age_To,Looking_Status,Have_Children,Height_From,Height_To,Height_Unit,Weight_From,Weight_To,Physical_Status,Education,Religion,Caste_Or_Division,Chevvai_Dosham,Citizenship,Country,Resident_India_State,Resident_USA_State,Resident_Status,Mother_Tongue,Partner_Description,Eating_Habits,Drinking_Habits,Smoking_Habits,Date_Updated FROM jnmatrimonyold.memberpartnerinfo)
+
+INSERT INTO jnmatrimony.memberphotoinfo (Photo_Id,MatriId,Normal_Photo1,Description1,Thumb_Small_Photo1,Thumb_Big_Photo1,Photo_Status1,Normal_Photo2,Description2,Thumb_Small_Photo2,Thumb_Big_Photo2,Photo_Status2,Normal_Photo3,Description3,Thumb_Small_Photo3,Thumb_Big_Photo3,Photo_Status3,Photo_Protected,Photo_Protect_Password,Photo_Date_Updated,Video_URL,Video_Description,Video_Status,Video_Protect,Video_Protect_Password,Video_Date_Updated,HoroscopeURL,HoroscopeDescription,HoroscopeStatus,Horoscope_Protected,Horoscope_Protected_Password,Horoscope_Date_Updated) (SELECT Photo_Id,MatriId,Normal_Photo1,Description1,Thumb_Small_Photo1,Thumb_Big_Photo1,Photo_Status1,Normal_Photo2,Description2,Thumb_Small_Photo2,Thumb_Big_Photo2,Photo_Status2,Normal_Photo3,Description3,Thumb_Small_Photo3,Thumb_Big_Photo3,Photo_Status3,Photo_Protected,Photo_Protect_Password,Photo_Date_Updated,Video_URL,Video_Description,Video_Status,Video_Protect,Video_Protect_Password,Video_Date_Updated,Horoscope_URL,Horoscope_Description,Horoscope_Status,Horoscope_Protect,Horoscope_Protect_Password,Horoscope_Date_Updated FROM jnmatrimonyold.memberphotoinfo)
+
+INSERT INTO jnmatrimony.memberprofileviewedinfo (SELECT * FROM jnmatrimonyold.memberprofileviewedinfo)
+
+INSERT INTO jnmatrimony.memberstatistics (SELECT * FROM jnmatrimonyold.memberstatistics)
+
+INSERT INTO jnmatrimony.membertrackinginfo (SELECT * FROM jnmatrimonyold.membertrackinginfo)
+
+INSERT INTO jnmatrimony.memberupdatedinfo (MatriId,User_Name,Name,Age,Subcaste,About_Myself,Residing_State,Residing_City,Email,Contact_Address,Contact_Phone,Contact_Mobile,Education_Detail,Occupation_Detail,Annual_Income,Father_Occupation,Mother_Occupation,Family_Origin,About_Family,Other_Hobbies,Other_Interest,Other_Music,Other_Reads,Other_Movies,Other_Fitness,Other_Cuisine,Other_Dress,Other_Languages,Partner_Description,Date_Updated) (SELECT MatriId,User_Name,Name,Age,Subcaste,About_Myself,Residing_State,Residing_City,Email,Contact_Address,Contact_Phone,Contact_Mobile,Education_Detail,Occupation_Detail,Annual_Income,Father_Occupation,Mother_Occupation,Family_Origin,About_Family,Other_Hobbies,Other_Interest,Other_Music,Other_Reads,Other_Movies,Other_Fitness,Other_Cuisine,Other_Dress,Other_Languages,Partner_Description,Date_Updated FROM jnmatrimonyold.memberupdatedinfo)
+
+INSERT INTO jnmatrimony.memberviewedloginfo (SELECT * FROM jnmatrimonyold.memberprofileviewedinfo)
+
+INSERT INTO jnmatrimony.paymenthistoryinfo (OrderId,MatriId,Franchisee_Id,Amount_Paid,Discount,Currency,Payment_Type,Payment_Mode,Voucher_Code,Comments,Date_Paid) (SELECT OrderId,MatriId,Franchisee_Id,Amount_Paid,Discount,Currency,Payment_Type,Payment_Mode,Voucher_Code,Comments,Date_Paid FROM jnmatrimonyold.paymenthistoryinfo)
+
+INSERT INTO jnmatrimony.searchsavedinfo (Search_Id,MatriId,Search_Name,Gender,Marital_Status,Children,Age_From,Age_To,Height_From,Height_To,Height_Unit,Physical_Status,Mother_Tongue,Religion,Caste_Or_Division,Subcaste,Chevvai_Dosham,Eating_Habits,Education,Occupation_Category,Occupation,Citizenship,Country,Residing_State_India,Residing_State_USA,Resident_Status,Keywords,Posted_Date,Search_By,Show_Photo_Horoscope,Show_Ignore_AlreadyContact,Display_Format,Search_Type,Date_Updated) (SELECT Search_Id,MatriId,Search_Name,Gender,Marital_Status,Children,Age_From,Age_To,Height_From,Height_To,Height_Unit,Physical_Status,Mother_Tongue,Religion,Caste_Or_Division,Subcaste,Chevvai_Dosham,Eating_Habits,Education,Occupation_Category,Occupation,Citizenship,Country,Residing_State_India,Residing_State_USA,Resident_Status,Keywords,Posted_Date,Search_By,Show_Photo_Horoscope,Show_Ignore_AlreadyContact,Display_Format,Search_Type,Date_Updated FROM jnmatrimonyold.searchsavedinfo)
+
+INSERT INTO jnmatrimony.successstoryinfo (MatriId,Email,Bride_Name,Groom_Name,Marriage_Date,Success_Message,Photo,Telephone,Contact_Address) (SELECT MatriId,Email,Bride_Name,Groom_Name,Marriage_Date,Success_Message,Photo,Telephone,Contact_Address FROM jnmatrimonyold.successstoryinfo)
+
+//REQUEST RELATED
+
+INSERT INTO jnmatrimony.requestinfosent(SenderId, ReceiverId, RequestFor, RequestDate, RequestMetOn, RequestMet) (SELECT MatriId, Opposite_MatriId, 1, Date_Updated, Date_Updated, Status FROM jnmatrimonyold.memberphotorequestinfo ORDER BY Date_Updated ASC)
+
+INSERT INTO jnmatrimony.requestinforeceived(SenderId, ReceiverId, RequestFor, RequestDate , RequestMetOn, RequestMet) (SELECT MatriId, Opposite_MatriId, 1, Date_Updated, Date_Updated, Status FROM jnmatrimonyold.memberphotorequestinfo ORDER BY Date_Updated ASC)
+
+---------------------------------------------------------------------------------------------------
+//RESIDING STATE , CITY, DISTRICT
+
+update jnmatrimony.memberinfo as a, jnmatrimonyold.memberinfo as b set a.Residing_State=b.Residing_State where a.MatriId=b.MatriID and b.Country=98 
+update jnmatrimony.memberinfo as a, jnmatrimonyold.memberinfo as b set a.Residing_State=b.Residing_State where a.MatriId=b.MatriID and b.Country=222 
+update jnmatrimony.memberinfo as a, jnmatrimonyold.memberinfo as b set a.Residing_Area=b.Residing_State where a.MatriId=b.MatriID and (b.Country!=98 and b.Country!=222) 
+update jnmatrimony.memberinfo as a, jnmatrimonyold.memberinfo as b set a.Residing_District=b.Residing_City where a.MatriId=b.MatriID and b.Country=98 
+update jnmatrimony.memberinfo as a, jnmatrimonyold.memberinfo as b set a.Residing_City=b.Residing_City where a.MatriId=b.MatriID and b.Country!=98
+
+update jnmatrimony.memberinfo as a, jnmatrimonyold.memberlogininfo as b set a.Paid_Status=b.Paid_Status, a.Last_Payment=b.Date_Paid, a.Valid_Days=b.Valid_Days, a.Expiry_Date = DATE_ADD(b.Date_Paid, INTERVAL b.Valid_Days DAY) where a.MatriId=b.MatriID
+
+
+//UPDATE HEIGHT
+
+UPDATE jnmatrimony.memberinfo SET Height=167.64 WHERE Height=167.74;
+UPDATE jnmatrimony.memberpartnerinfo SET Height_From=167.64 WHERE Height_From=167.74;
+UPDATE jnmatrimony.memberpartnerinfo SET Height_To=167.64 WHERE Height_To=167.74;
+
+//MAIL REPLIED DATE
+
+UPDATE jnmatrimony.memberactioninfo SET Receiver_Replied=1, Receiver_Replied_Date=Mail_Received_Date WHERE Mail_Received_Status=2;
+UPDATE jnmatrimony.memberactioninfo SET Sender_Replied=1, Sender_Replied_Date=Mail_Sent_Date WHERE Mail_Sent_Status=2;
+UPDATE jnmatrimony.memberactioninfo SET Receiver_Declined=1, Receiver_Declined_Date=Mail_Received_Date WHERE Mail_Received_Status=3;
+UPDATE jnmatrimony.memberactioninfo SET Sender_Declined=1, Sender_Declined_Date=Mail_Sent_Date WHERE Mail_Sent_Status=3;
+
+//MAIL REPLIED MSG
+
+UPDATE jnmatrimony.mailreceivedinfo SET Replied_Message=Mail_Message WHERE Status=2;
+UPDATE jnmatrimony.mailsentinfo SET Replied_Message=Mail_Message WHERE Status=2;
+
+
+//RELIGION, CASTE OR DIVISION, SUBCASTE
+UPDATE jnmatrimony.memberpartnerinfo SET Religion='' WHERE Religion=3;
+UPDATE jnmatrimony.memberpartnerinfo SET Caste_Or_Division='' WHERE Caste_Or_Division=9;
+UPDATE jnmatrimony.memberpartnerinfo SET Subcaste='' WHERE Subcaste=6;
+
+//MISSED MEMBER STATISTICS
+
+INSERT IGNORE INTO jnmatrimony.memberstatistics(MatriId) (SELECT MatriId FROM jnmatrimony.memberlogininfo);
+
+//PAYMENT
+UPDATE jnmatrimony.memberinfo SET Paid_Status=0, Valid_Days=0, Expiry_Date='0000-00-00 00:00:00' WHERE NOW()>DATE_ADD(Last_Payment, INTERVAL Valid_Days DAY);
+
+
+//MEMBERINFO
+UPDATE jnmatrimony.memberinfo SET Phone_Verified=1 WHERE Contact_Phone<>'' OR Contact_Mobile<>'';
+
+//profilematchinfo
+INSERT INTO jnmatrimony.profilematchinfo(MatriId,User_Name,Age,Gender,Height,Marital_Status,SpecialCase,Mother_Tongue,Religion,Caste_Or_Division,Subcaste,Eating_Habits,Smoking_Habits,Drinking_Habits,Education_Category,Country,Residing_State,Looking_Status,Age_From,Age_To,Height_From,Height_To,MatchPhysical_Status,MatchMotherTongue,MatchReligion,MatchCaste,Eating_HabitsPref,Smoking_HabitsPref,Drinking_HabitsPref,MatchEducation,MatchCountry,MatchResidentStatus,MatchCitizenship,MatchIndianStates,MatchUSStates,Date_Created,Photo_Set_Status,Date_Updated) SELECT mi.MatriId,mi.User_Name,mi.Age,mi.Gender,mi.Height,mi.Marital_Status,mi.Physical_Status,mi.Mother_Tongue,mi.Religion,mi.Caste_Or_Division,mi.Subcaste,mi.Eating_Habits,mi.Smoke,mi.Drink,mi.Education_Category,mi.Country,mi.Residing_State, mpi.Looking_Status,mpi.Age_From,mpi.Age_To,mpi.Height_From,mpi.Height_To,mpi.Physical_Status,mpi.Mother_Tongue,mpi.Religion,mpi.Caste_Or_Division,mpi.Eating_Habits,mpi.Smoking_Habits,mpi.Drinking_Habits,mpi.Education,mpi.Country,mpi.Resident_Status,mpi.Citizenship,mpi.Resident_India_State,mpi.Resident_USA_State, mi.Date_Created,mi.Photo_Set_Status,mpi.Date_Updated FROM jnmatrimonyold.memberinfo mi,jnmatrimonyold.memberpartnerinfo mpi WHERE mi.Partner_Set_Staus=1 AND mi.publish=1 AND mi.MatriId=mpi.MatriId
+
+
+//Partnerinfo detail missed ids
+
+INSERT IGNORE INTO jnmatrimony.memberpartnerinfo(MatriId,Age_From,Age_To,Height_From,Height_To,Status,Date_Updated)(SELECT MatriId,(Age-7),Age,(Height-15.24),Height,1,NOW() FROM jnmatrimony.memberinfo WHERE Gender=1);
+
+INSERT IGNORE INTO jnmatrimony.memberpartnerinfo(MatriId,Age_From,Age_To,Height_From,Height_To,Status,Date_Updated)(SELECT MatriId,Age,(Age+7),Height,(Height+30.48),1,NOW() FROM jnmatrimony.memberinfo WHERE Gender=2);
+
+UPDATE jnmatrimony.memberpartnerinfo SET Age_From=18 WHERE Age_From<18;
+
+
+
+//Phone Worngly updated
+select count(1) from jnmatrimony.memberinfo where BM_MatriId<>'';
+update jnmatrimony.memberinfo set Phone_Verified=0 where BM_MatriId<>'';
+
+select count(1) from jnmatrimony.memberinfo a, dba.assuredcontact b where a.BM_MatriId=b.MatriId and a.BM_MatriId<>'' and b.MobileNo<>'';
+update jnmatrimony.memberinfo a, dba.assuredcontact b set a.Contact_Mobile=b.MobileNo,a.Phone_Verified=1 where a.BM_MatriId=b.MatriId and a.BM_MatriId<>'' and b.MobileNo<>'';
+
+select count(1) from jnmatrimony.memberinfo a, dba.assuredcontact b where a.BM_MatriId=b.MatriId and a.BM_MatriId<>'' and b.PhoneNo1<>'';
+update jnmatrimony.memberinfo a, dba.assuredcontact b set a.Contact_Phone=b.PhoneNo1,a.Phone_Verified=1 where a.BM_MatriId=b.MatriId and a.BM_MatriId<>'' and b.PhoneNo1<>'';
+
+select count(1) from jnmatrimony.memberinfo where Contact_Mobile<>'' and BM_MatriId<>'';
+update jnmatrimony.memberinfo set Contact_Phone='' where Contact_Mobile<>'' and BM_MatriId<>'';
+
+select count(1) from jnmatrimony.memberinfo where Contact_Mobile='' and Contact_Phone='' and BM_MatriId<>'' and Phone_Verified=1;
+update jnmatrimony.memberinfo set Phone_Verified=0 where Contact_Mobile='' and Contact_Phone='' and BM_MatriId<>'' and Phone_Verified=1;
+
+update jnmatrimony.memberinfo set Contact_Phone='', Contact_Mobile='' where BM_MatriId<>'' and Phone_Verified=0 and (Contact_PHone<>'' or Contact_MObile<>'');
+
+//Phone Count
+INSERT IGNORE INTO jnmatrimony.phonepackagedet(SELECT MatriId,40,40 FROM jnmatrimony.memberinfo WHERE Paid_Status=1 AND Valid_Days>0 AND Valid_Days<=90 AND NOW()<DATE_ADD(Last_Payment, INTERVAL Valid_Days DAY));
+
+INSERT IGNORE INTO jnmatrimony.phonepackagedet(SELECT MatriId,55,55 FROM jnmatrimony.memberinfo WHERE Paid_Status=1 AND Valid_Days>90 AND Valid_Days<=180 AND NOW()<DATE_ADD(Last_Payment, INTERVAL Valid_Days DAY));
+
+INSERT IGNORE INTO jnmatrimony.phonepackagedet(SELECT MatriId,70,70 FROM jnmatrimony.memberinfo WHERE Paid_Status=1 AND Valid_Days>180 AND NOW()<DATE_ADD(Last_Payment, INTERVAL Valid_Days DAY));
+
+
+//IMPORTANT
+add Horoscope_Date_Updated field in memberphotoinfo, dba.new_memberphotoinfo table (dba, cmatirmony, mmatrimony, skmatrimony)
+remove auto_increment field in requestinforeceived table in all domains
+
+//OTHERS:
+Mail(eg : horoscope@jainmatrimony.com) list for jnmatrimony
+run wholecountupdate.php
+admin part htacess security

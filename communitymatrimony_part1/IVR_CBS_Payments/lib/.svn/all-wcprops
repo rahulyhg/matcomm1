@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/communitymatrimony/!svn/ver/8635/IVR_CBS_Payments/lib
+END
+clsUpgrade.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/communitymatrimony/!svn/ver/8635/IVR_CBS_Payments/lib/clsUpgrade.php
+END
+clsMemcacheDB.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/communitymatrimony/!svn/ver/8494/IVR_CBS_Payments/lib/clsMemcacheDB.php
+END
+clsMailManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/communitymatrimony/!svn/ver/8494/IVR_CBS_Payments/lib/clsMailManager.php
+END
+clsPayment.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/communitymatrimony/!svn/ver/8544/IVR_CBS_Payments/lib/clsPayment.php
+END
+clsCache.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/communitymatrimony/!svn/ver/8494/IVR_CBS_Payments/lib/clsCache.php
+END
+clsDB.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/communitymatrimony/!svn/ver/8494/IVR_CBS_Payments/lib/clsDB.php
+END

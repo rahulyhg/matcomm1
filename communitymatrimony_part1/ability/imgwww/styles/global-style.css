@@ -1,0 +1,211 @@
+body { margin:0px; font-family: Arial, Helvetica, Tahoma; font-size: 12px; color:#000000; line-height:15px; text-decoration:none;text-align:left;align:center;}
+#maincontainer {padding-left:4px;padding-right:4px;background-color: #008fd1;}
+#container {width:772px;margin:0px 0px 0px 0px;text-align:left;background-color:#FFFFFF;}
+.main {width:772px;margin:0px 0px 0px 0px;text-align:left;}
+
+form{margin:0px;padding:0px;}
+h1, h2, h3, h4, h5{margin: 0px;padding:0px;font-size:13px;color:#FE7313;font-weight:normal;display:inline;}
+h1{font-size:11px;margin: 2px;padding:2px;}
+h4, h5{font-size:11px;margin: 0px;padding:0px;}
+ul.inline, ul.inline li { list-style: none; display: inline; margin:0px; padding: 0px; }
+ol.inline, ol.inline li { list-style: none; margin:2px 0px 0px 0px; padding: 0px; }
+
+.button{ background: #1C81CA;padding:0px 4px 0px 4px !important;padding:1px 5px 0px 5px;border:1px solid #1C81CA;color: #FFFFFF; font: bold 12px arial, helvetica, sans-serif; overflow: visible; vertical-align: middle;cursor:pointer;}
+
+.prevact, .nextact, .pagingact{ color: #000000; float:left;}
+.previnact, .nextinact, .nopaging{ color: #dbdbdb;}
+.paginginact{ color: #E01D01;}
+.prevact, .nextact, .pagingact, .previnact, .nextinact, .nopaging, .paginginact{background: #FFFFFF;padding:0px 3px 0px 3px;border:1px solid #dbdbdb;font: bold 12px arial, helvetica, sans-serif; overflow: visible; vertical-align: middle;}
+#paging .prevact, .previnact, .nextact, .nextinact, .paginginact, .pagingact, .nopaging {float:left;}
+#paging .prevact, .nextact, .paginginact {cursor:pointer;}
+
+.spacing{width:5px;float:left;}
+
+#mesgdiv1 {width:460px;}
+#mesgdiv2, #smphdiv {width:35px;}
+#msgdiv {width:350px;}
+#msgdiv1 {width:400px;}
+#infdiv {width:110px;}
+#smphdiv, .hoverdiv, #smphdiv1 {cursor:pointer;}
+.normdiv{background-color:#ffffff;}
+.hoverdiv{background-color:#dbdbdb;}
+.normdiv, .hoverdiv, .viewdivouter, .rpanel {width:560px;}
+#mesgdiv, #mesgdiv1, #mesgdiv2, #msgdiv, #msgdiv1, .viewdiv1, .viewdivouter, #vpdiv1, #vpdiv3, #vpdiv4, #fvpdiv1, #nfpdiv1, #fvpdiv3, #fvpdiv4, .fvpdiv5a, .vpdiv5a, .vpdiv6a, .vpphdiv, .innerdiv, .innerdiv1, .lpanel, .rpanel, .rpanelinner, .lpanelinner1, .lpanelinner2, .lpanelinner2c, .frmeldiv, .frmeldiv1, .frmeldiv1a, .layer {text-align:left;}
+#mesgdiv2, #smphdiv, #vpdiv2, #vpdiv2a, #fvpdiv2, #fvpdiv2a, .vpphdiv1, #smphdiv1, #checkdiv, .footdiv, .footdiv1, .footdiv2, .photodiv, .photodiv1, .lpanelinner, .lpanelinner2a, .lpanelinner2aa, .lpanelinner2b, .lpanelinner2d, .logdivrt {text-align:center;}
+.viewdiv1, #fvpdiv3, #mesgdiv {width:500px;}
+#nfvpdiv3 {width:238px;}
+.viewbg {background:url(http://image.abilitymatrimony.com/images/vpbg1.gif) repeat-x;}
+#vpdiv1, #vpdiv4 {width:400px;}
+#vpdiv2, #vpdiv2a, #smphdiv1, #fvpdiv2, #fvpdiv2a {width:95px;}
+#nfvpdiv2 {width:156px;}
+#vpdiv3 {width:258px;}
+#fvpdiv1 {width:675px;}
+#nfvpdiv1 {width:394px;}
+#fvpdiv4 {width:600px;}
+#nfvpdiv4 {width:394px;}
+.fvpdiv5 {width:160px;}
+.fvpdiv5a {width:590px;}
+.nfvpdiv5 {width:160px;}
+.nfvpdiv5a {width:380px !important;width:400px;}
+.vpdiv5 {width:120px;}
+.vpdiv5a {width:365px;}
+.vpdiv6 {width:155px;}
+.fvpdiv5, .vpdiv5, .vpdiv6, #infdiv1, .topdiv, .regdivlt, .logdivlta, #infdiv {text-align:right;}
+.vpdiv6a {width:330px;}
+.vpphdiv {width:300px;}
+.vpphdiv1 {width:190px;}
+#infdiv1 {width:142px;}
+#ninfdiv1 {width:142px !important;width:146px;}
+.pfdivlt{width:170px;padding:5px 5px 5px 0px;}
+.pfdivrt{width:370px;padding:5px 0px 5px 5px;}
+
+.disblk{display:block;}
+.disnon{display:none;}
+
+.srchdivlt{width:130px;padding:5px 5px 5px 0px;}
+.srchdivrt{width:420px;padding:5px 0px 5px 5px;}
+
+.logodiv {width: 350px;padding-top: 17px;}
+#checkdiv {width:25px;}
+.fleft, .regdiv, .regdivlt, .regdivrt, .imagepad, .logdivlt, .logdivlta, .logdivltb, .logdivrt {float:left;}
+.fright{float:right;}
+.cleard{clear:both;}
+.footdiv, .footdiv2{width: 770px;}
+.footdiv1{padding-top: 7px; padding-bottom: 5px;}
+.topdiv{padding-top:10px;}
+.linesep {height:1px;background-color:#cbcbcb;}
+.blinesep {height:1px;background-color:#53B3E0;}
+.dotsep {background:url(http://image.abilitymatrimony.com/images/dotbg.gif) repeat-x;}
+.dotsep1 {background:url(http://image.abilitymatrimony.com/images/dotbg1.gif) repeat-x;}
+.dotsep2 {background:url(http://image.abilitymatrimony.com/images/dotbg2.gif) repeat-x;}
+.photodiv {width:80px;padding:0px 10px 10px 10px;}
+.photodiv1 {width:56px;padding:3px 0px 3px 3px;}
+.textdiv {width:650px;padding:10px 0px 0px 0px;line-height:17px;}
+.innerdiv {width:772px;}
+.innerdiv1 {width:700px;}
+.lpanel {width:200px;}
+.rpanelinner {width:500px;}
+.lpanelinner, .lpanelinner1 {width:190px;background-color:#ffffff;}
+.lpanelinner1a {width:35px;}
+.lpanelinner1b {width:160px;}
+.lpanelinner2 {width:108px !important;width:115px;line-height:13px;}
+.lpanelinner2a {height:32px;}
+.lpanelinner2aa {height:16px;}
+.lpanelinner2a, .lpanelinner2aa {width:35px;border-left:1px solid #dbdbdb;border-right:1px solid #dbdbdb;}
+.lpanelinner2b {width:35px;}
+.lpanelinner2c {width:100px;height:21px !important;height:28px;padding-top:5px;padding-left:5px;}
+.lpanelinner2d {width:80px;padding-top:3px;}
+.frmeldiv{width:75px;}
+.frmeldiv1{width:210px !important;width:205px;}
+.frmeldiv1a{width:175px !important;width:180px;}
+.regdiv{width:385px;}
+.regdivlt{width:150px;padding:5px 5px 5px 0px;}
+.regdivrt{width:350px;padding:5px 0px 5px 5px;}
+#radio1div, .radiodiv1 {width:467px;height:136px;}
+.radiodiv1{background: url(http://image.abilitymatrimony.com/images/editorimg.gif) no-repeat;}
+.boxdiv{width:440px !important;width:470px;padding: 5px 5px 10px 20px;}
+.menudiv{width:90px !important;width:100px;padding: 5px 5px 10px 10px;}
+.boxdiv, .menudiv{height:auto;line-height:18px;background-color:#ffffff;}
+.brdr {overflow:auto;}
+.mbrdr {border-bottom:1px solid #ffffff;}
+.brdr, .mbrdr {border:1px solid #DBDBDB;}
+.obrdr{border:1px solid #F4B887;}
+.obg{background-color:#FFF2E7;}
+.mbrdr1 {border-top:1px solid #DBDBDB;border-right:1px solid #DBDBDB;}
+.mbrdr2 {border-top:1px solid #DBDBDB;border-right:1px solid #DBDBDB;border-left:1px solid #DBDBDB;}
+.rbrdr {border-right:1px solid #DBDBDB;border-top:1px solid #FFFFFF;}
+.rbrdr1 {border-right:1px solid #DBDBDB;border-top:1px solid #FFFFFF;border-left:1px solid #FFFFFF;}
+
+.vishid {visibility: hidden;}
+.posabs {position: absolute;}
+.imagepad{padding:11px 6px 12px 8px !important;padding:11px 3px 12px 8px;}
+.fullimg{width: 165px; height: 70px;}
+.logdivlt{width:450px;}
+.logdivlta{width:200px;padding:4px 4px 4px 0px;}
+.logdivltb{width:240px;padding:4px 0px 4px 4px;}
+.logdivrt{width:320px;}
+.layer{border:1px solid #cbcbcb;border-top:1px solid #ffffff;display: none;position: absolute;background-color: #ffffff;padding: 5px 10px 10px 10px;line-height:18px;font-family: Arial,sans-serif;font-size: 11px;color: #000000;z-index:1001;}
+
+.padt100{padding-top:100px;}
+.padt75{padding-top:75px;}
+.padt20{padding-top:20px;}
+.padt10{padding-top:10px;}
+.padb5{padding-bottom:5px;}
+.padb10{padding-bottom:10px;}
+.padt5{padding-top:5px;}
+.padtb10{padding:10px 0px 10px 0px;}
+.padtb15{padding:15px 0px 15px 0px;}
+.padtb20{padding:20px 0px 10px 0px;}
+.padtb5{padding:5px 0px 5px 0px;}
+.padtb3{padding:3px 0px 3px 0px;}
+.padt3b10{padding:3px 0px 10px 8px;}
+.padl310{padding:3px 3px 3px 10px;}
+.padl25{padding-left:25px;}
+.padr20{padding-right:20px;}
+.padr10{padding-right:10px;}
+.padlr10{padding-right:10px;padding-left:10px;}
+.pad10{padding:10px;}
+.pad10a{padding:1px 10px 0px 10px;}
+.pad5{padding:5px;}
+.pad3{padding:3px;}
+.pad3a{padding:0px 3px 0px 3px;}
+.radiobtn{margin-top:2px !important;margin-top:0px;}
+
+.padl{padding-left:15px;}
+.padl3{padding-left:3px;}
+
+.clr, .address {color:#000000;} /* text color */
+.clr1{color:#0A72B8;} /* link color */
+.clr2{color:#ababab;} 
+.clr3{color:#FF6000;} 
+
+.lh11 {line-height:11px;}
+.lh13, .address {line-height:13px;}
+.lh16 {line-height:16px;}
+.lh20 {line-height:20px;}
+.lh30 {line-height:30px;}
+
+.smalltxt, .errortxt, .alerttxt, .address {font-size:11px;}
+.errortxt, .alerttxt {color:#FF6000;}
+.alerttxt, .bld {font-weight:bold;}
+.normtxt, .vnormtxt {font-size:12px;}
+.normtxt1 {font-size:13px;}
+.opttxt {font-size:10px;color:#8b8b8b;}
+.notbld{font-weight:normal;}
+
+.address{float: middle; padding-top:10px;}
+a{text-decoration:none;outline:none;}
+a{cursor:pointer;}
+a:hover {text-decoration: none;}
+img { border: 0px;}
+.pntr{cursor:pointer;}
+.tlright{text-align:right;}
+.tlleft{text-align:left;}
+.tlcenter{text-align:center;}
+.tljust{text-align:justify;}
+
+.inputtext, .select, .select1, .srchselect, .textarea, .tareareg {padding-left:2px;border:1px solid #B3B3B3;font-family:arial, tahoma, verdana;font-size:11px;color:#333;font-weight:normal;}
+.select1 {width:165px;}
+.srchselect {width:215px;}
+.textarea {width:500px;height:100px;}
+.tareareg {width:360px;height:75px;}
+
+.frmelements {margin: 0px 2px -3px 0px; _margin: 0px 0px -1px 0px;}
+.frmchkbox {margin: 0px 2px 0px 1px; _margin: 0px 0px -2px 0px;}
+.frmlftpad{padding: 0px 0px 0px 5px;}
+
+div#iframecontact{background-image: url("http://img.abilitymatrimony.com/images/loading-icon.gif");background-repeat:no-repeat;background-position: top center;}
+
+iframe#iframename{visibility:hidden;overflow: auto;}
+
+/* Admin */
+.heading{font-size:13px;color:#829721;font-weight:bold;margin: 2px;padding:2px; }
+.textsmallbolda { font-size:12px;font-weight:bold; }
+.adminformheader{ background-color:#efefef;border-bottom: #d1d1d1 1px solid;font-size:13px;font-weight:bold;padding:5px 0px 5px 10px;}
+.adminformheader a{color:#0A72B8}
+.radiobtn{ float:left;_padding:2px 6px 0px 0px;padding:0px 9px 10px 0px;}
+.mediumtxt{font-size:12px;color:#000000;}
+.clr5{color:#0A72B8;}
+.clr6{color:#21a414;}
+.rowlightbrown{background-color:#efefef;}
+.normaltxt1{font-size:12px;}

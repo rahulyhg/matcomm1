@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/communitymatrimony/!svn/ver/8475/ability/www/mymessages
+END
+msgstatus.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/communitymatrimony/!svn/ver/3415/ability/www/mymessages/msgstatus.php
+END
+check_msg_count.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/8193/ability/www/mymessages/check_msg_count.php
+END
+sendmail.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/communitymatrimony/!svn/ver/8475/ability/www/mymessages/sendmail.php
+END
+markasspam.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/8196/ability/www/mymessages/markasspam.php
+END
+interestadd.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/communitymatrimony/!svn/ver/8311/ability/www/mymessages/interestadd.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/communitymatrimony/!svn/ver/8174/ability/www/mymessages/index.php
+END
+msgdelete.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/communitymatrimony/!svn/ver/8475/ability/www/mymessages/msgdelete.php
+END
+msgdecline.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/8311/ability/www/mymessages/msgdecline.php
+END
+new_msg_ctrl_sent.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/communitymatrimony/!svn/ver/8475/ability/www/mymessages/new_msg_ctrl_sent.php
+END
+contacthistory.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/communitymatrimony/!svn/ver/8475/ability/www/mymessages/contacthistory.php
+END
+interestaccept.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/communitymatrimony/!svn/ver/8311/ability/www/mymessages/interestaccept.php
+END
+sendreminder.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/communitymatrimony/!svn/ver/8222/ability/www/mymessages/sendreminder.php
+END
+msgshowall.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/8222/ability/www/mymessages/msgshowall.php
+END
+sendmailsubmit.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/communitymatrimony/!svn/ver/8475/ability/www/mymessages/sendmailsubmit.php
+END
+interestdecline.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/8311/ability/www/mymessages/interestdecline.php
+END
+new_msg_ctrl.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/communitymatrimony/!svn/ver/8475/ability/www/mymessages/new_msg_ctrl.php
+END

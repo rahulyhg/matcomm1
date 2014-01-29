@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/remindermailer/expintpending
+END
+expint_pending_tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/remindermailer/expintpending/expint_pending_tpl.php
+END
+expint_pending.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/remindermailer/expintpending/expint_pending.php
+END
+expint_pending_smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/remindermailer/expintpending/expint_pending_smtp.php
+END

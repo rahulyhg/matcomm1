@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>CommunityMatrimony.com</title>
+<meta name="generator" content="editplus">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style type="text/css">
+<!--
+.style1 { font:Verdana, Arial, Helvetica, sans-serif;
+color:#000000;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+}
+.style2 { font:Verdana, Arial, Helvetica, sans-serif;
+color:#000000;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:18px;
+}
+-->
+</style>
+</head>
+
+<body style="margin:0px;padding:0px;">
+<table border="0" cellpadding="0" cellspacing="0" width="548">
+<tr>
+  <td width="17">&nbsp;</td>
+	<td width="531"><span class="style1"><br>
+	  Dear <b> #MEMBERNAME#</b>,<br>
+</span></td>
+</tr>
+
+<tr>
+  <td>&nbsp;</td>
+	<td><p><span class="style1"><br>
+	  Greetings from <b>#DOMAIN#Matrimony</b>, a part of CommunityMatrimony.com! <br> I wanted to follow up on the Special Offer that I proposed to you a few days ago. </span><br>
+	  <br>
+	</p>    </td>
+</tr>
+
+<tr>
+  <td>&nbsp;</td>
+	<td><span class="style1"> I would like to remind you that the offer ends today <b>#EXPDATE#</b>. I strongly recommend you avail this offer right away as it will help you speed-up your partner search. <br></span> <br></td>
+</tr>
+<!---
+<tr>
+  <td>&nbsp;</td>
+	<td><span class="style1"><br>
+	  I strongly recommend you avail this offer right away as it will help you speed-up your partner search. <br>
+	</span></td>
+</tr>
+--->
+<tr>
+  <td>&nbsp;</td>
+	<td><span class="style2"> <B>Offer Details</B>
+ <br>#SHOWOFFER#
+</td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+	<td><ul><span class="style1"><b><br>
+	  Online Payment</b>: It&rsquo;s safe and convenient to pay online. <a href="#URL#" target="_blank">Click here</a> to pay through Credit/Debit cards. <br><br>
+    <b>Doorstep Collection:</b> We can arrange to collect payment at your doorstep. Please reply to this e-mail with address and convenient time to call you or you can also call me.    <br>
+	</span></ul></td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+	<td>
+	<span class="style1">
+    I pray to god that you will find a good life partner. I recommend that you become a paid member and start contacting your matches directly.
+	</span><br></td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+	<td><span class="style1"><br>
+	  <a href="#URLDIRECT#" target="_blank">Click here</a> if you would like to know more about our membership packages and benefits.<br>
+	</span></td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+	<td><span class="style1"><br>
+	  If you require further assistance, please do not hesitate to call or e-mail me. My phone number and E-mail ID is mentioned below.<br>
+	</span></td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+	<td> <span class="style1"><br>
+	  Phone Number: <b>#PNO#</b> Extn.<b>#EXNO#</b><br>
+	  E-mail ID:<b> #EMILID#</b><br>
+      <br>
+      Wishing you all the best,<br>    
+      <b>#TELENAME#</b></span></td>
+</tr>
+</table>
+</body>
+</html>

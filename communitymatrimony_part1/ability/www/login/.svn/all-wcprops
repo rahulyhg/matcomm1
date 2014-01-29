@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/communitymatrimony/!svn/ver/8265/ability/www/login
+END
+memlogin_curl.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/communitymatrimony/!svn/ver/8175/ability/www/login/memlogin_curl.php
+END
+updateprofilecookie.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/communitymatrimony/!svn/ver/8257/ability/www/login/updateprofilecookie.php
+END
+cbsrmlogincheck.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/8257/ability/www/login/cbsrmlogincheck.php
+END
+cbslogincheck.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/communitymatrimony/!svn/ver/8257/ability/www/login/cbslogincheck.php
+END
+logout_curl.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/communitymatrimony/!svn/ver/8175/ability/www/login/logout_curl.php
+END
+suspendprofile.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/communitymatrimony/!svn/ver/8175/ability/www/login/suspendprofile.php
+END
+updatemessagescookie.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/8257/ability/www/login/updatemessagescookie.php
+END
+logincheck.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/communitymatrimony/!svn/ver/8265/ability/www/login/logincheck.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/communitymatrimony/!svn/ver/8175/ability/www/login/index.php
+END
+login.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/communitymatrimony/!svn/ver/8175/ability/www/login/login.php
+END
+cbsforgotpasswordcheck.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/communitymatrimony/!svn/ver/8257/ability/www/login/cbsforgotpasswordcheck.php
+END
+chooselogin.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/communitymatrimony/!svn/ver/8175/ability/www/login/chooselogin.php
+END
+logout.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/8175/ability/www/login/logout.php
+END
+forgetpwdhshow.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/communitymatrimony/!svn/ver/8257/ability/www/login/forgetpwdhshow.php
+END
+forgotpwd.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/communitymatrimony/!svn/ver/8175/ability/www/login/forgotpwd.php
+END
+updatelistrequestcookie.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/communitymatrimony/!svn/ver/8257/ability/www/login/updatelistrequestcookie.php
+END
+forgotpassword.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/communitymatrimony/!svn/ver/8257/ability/www/login/forgotpassword.php
+END

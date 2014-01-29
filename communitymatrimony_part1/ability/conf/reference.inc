@@ -1,0 +1,13 @@
+<?php
+#================================================================================================================
+# Author 		: Rohini
+# Date	        : 2008-07-15
+# Project		: MatrimonyProduct
+# Filename	: varsreference.inc
+#================================================================================================================
+# Description   : Array variables for reference module
+#================================================================================================================
+$relationshiparray =array(1=>"relative",2=>"friend",3=>"colleague",4=>"others");
+$reftypearray      =array(1=>"Referee",2=>"Self"); //1-invite ref; 2-add reference
+$genderarray       =array("M"=>"Male","F"=>"Female");
+?>

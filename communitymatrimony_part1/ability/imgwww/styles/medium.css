@@ -1,0 +1,8 @@
+body { background: #fff; margin:0px; font-family: Arial, Helvetica, Tahoma; font-size: 12px; color:#000000; line-height:15px; text-decoration:none;text-align:left;align:center;}
+.smalltxt { font-size:12px;}
+.errortxt { font-size:12px;color:#FF6000;}
+.alerttxt { font-size:12px;color:#FF6000;font-weight:bold;}
+.normtxt { font-size:13px;}
+.normtxt1 { font-size:14px;}
+.opttxt { font-size:11px;color:#8b8b8b;}
+.address{float: middle; font-size: 12px; color: #000000; line-height:13px;padding-top:10px;}

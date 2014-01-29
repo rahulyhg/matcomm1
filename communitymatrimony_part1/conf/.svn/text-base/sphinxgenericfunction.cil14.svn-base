@@ -1,0 +1,1300 @@
+<?
+#=====================================================================================================================================
+# Author 	  : Jeyakumar N
+# Date		  : 2008-09-08
+# Project	  : MatrimonyProduct
+# Filename	  : primaryinfodesc.php
+#=====================================================================================================================================
+# Description : sphinx implementation fucntions
+#=====================================================================================================================================
+$varRootBasePath = dirname($_SERVER['DOCUMENT_ROOT']);
+if($varRootBasePath == ''){ $varRootBasePath = '/home/product/community'; }
+include_once($varRootBasePath."/conf/ip.cil14");
+include_once($varRootBasePath."/conf/sphinxconfig.cil14");
+
+function getSphinxIndexName($argCommunityId,$argGender=''){
+	global $arrSphinx;
+	$varSphinxGender	= $argGender;
+
+	$arrIndexName['sphinxbookmarked']		= 'sphinxbookmarkinfo_'.$argCommunityId;
+	$arrIndexName['sphinxblocked']			= 'sphinxblockinfo_'.$argCommunityId;
+	$arrIndexName['sphinxmemberactioninfo']	= 'sphinxmemberactioninfo_'.$argCommunityId;
+	$arrIndexName['sphinxmemberinfo']		= 'sphinxmemberinfo_'.$argCommunityId.'_'.$varSphinxGender;
+	$arrIndexName['sphinxmemberprofileviews']= 'sphinxmemberprofileviews_'.$argCommunityId;
+	$arrIndexName['sphinxmembertools']		= 'sphinxmembertools_'.$argCommunityId;
+	return $arrIndexName;
+}//communityId
+
+function ConvertToSphinxMatriIdFormat($argMatriId){
+	$varMatriIdValue	= substr($argMatriId, 3);
+	return $varMatriIdValue;
+}
+
+function ConvertToCBSMatriIdFormat($argMatriId, $argCommunityId){
+	global $arrMatriIdPre;
+	$varMatriIdPrefix	= $arrMatriIdPre[$argCommunityId];
+	$varMatriId			= $varMatriIdPrefix.$argMatriId;
+	return $varMatriId;
+}
+
+function GetSphinxProfilenotesResultSet($varMatriId,$varFlag,$obj='',$varSphinxAttribute=5,$varMaxQueryTime=30) {
+	global $varSphinx;
+	$varSphinxMatriid	= ConvertToSphinxMatriIdFormat($varMatriId);
+	if($obj == "") {
+		$sphinxObj		= new sphinxdb();
+		$ip				= $varSphinx['IP'];
+		$port			= $varSphinx['PORT'];
+		$objSphinxObject= $sphinxObj->SphinxConnect($ip,$port, SPH_MATCH_FULLSCAN,3000);
+	}else{
+		$objSphinxObject= $obj;
+	}
+	if($objSphinxObject){$objSphinxObject->ResetFilters();}
+
+
+	if($varFlag == 1) {    // Viewlist
+	   $viewedResult	= viewedList($objSphinxObject,$varSphinxMatriid,$varMatriId);
+	} elseif($varFlag == 2) {    //Contactlist
+	   $contactedReult	= contactedList($objSphinxObject,$varSphinxMatriid,$varMatriId);
+	} elseif($varFlag == 4) {    //shortlist
+	   $shortListResult	= getShortListed($objSphinxObject,$varSphinxMatriid,$varMatriId);
+	} else {   // ignoredlist
+		$ignoredReult	= ignoredList($objSphinxObject,$varSphinxMatriid,$varMatriId);
+	}
+
+
+	switch ($varFlag) {
+		case 1:
+			$resultVal["viewedlist"]	= join(',',$viewedResult); break;
+		case 2:
+			$resultVal["contactedlist"] = join(',',$contactedReult); break;
+		case 3:
+			$resultVal["ignorededlist"] = $ignoredReult; break;
+		case 4:
+			$resultVal["shortlisted"]	= $shortListResult; break;
+	}
+	return $resultVal;
+}
+
+function viewedList($SphinxObject,$sphinx_matriid,$matriid){
+	global $varSPHINXVIEWIDXNAME;
+	$SphinxObject->SetFilter("ProfileIndex",array($sphinx_matriid));
+	$SphinxObject->AddQuery($query,$varSPHINXVIEWIDXNAME);
+	$viewandcontactresult=$SphinxObject->RunQueriesMatchSummary();
+    $sphinxViewed[] = $viewandcontactresult[0];
+
+	//Memcache
+	$memViewed = array();
+	$mkey = "ProfileViews_".$matriid;
+	$memcacheViewed= Cache::getData($mkey);
+	if( $memcacheViewed != "") {
+		$memcacheViewedArr = explode(",",trim($memcacheViewed,','));
+		foreach ($memcacheViewedArr as $memValue) {
+			$memViewed[] = ConvertToSphinxMatriIdFormat($memValue);
+		}
+	}
+
+	//array unique
+	if(count($sphinxViewed) > 0 && count($memViewed) > 0 ) {
+	$combineViewed= array_merge($sphinxViewed,$memViewed);
+	$viewedReult = array_unique($combineViewed);    }
+	elseif(count($sphinxViewed) > 0) {
+	$viewedReult = $sphinxViewed;
+	}elseif(count($memViewed) > 0) {
+	$viewedReult = $memViewed;
+	}else{  $viewedReult = "";   }
+    return $viewedReult;
+}
+
+function contactedList($SphinxObject,$sphinx_matriid,$matriid){
+	global $varSPHINXCONTACTIDXNAME;
+	$SphinxObject->SetFilter("ProfileIndex",array($sphinx_matriid));
+	$SphinxObject->AddQuery($query,$varSPHINXCONTACTIDXNAME);
+	$viewandcontactresult=$SphinxObject->RunQueriesMatchSummary();
+	$sphinxContacted[] = $viewandcontactresult[1];
+
+	//Memcache
+	$memContacted = array();
+	$mkey = "ProfileContacts_".$matriid;
+	$memcacheContacted = Cache::getData($mkey);
+	if( $memcacheContacted != "") {
+		$memcacheContactedArr = explode(",",trim($memcacheContacted,','));
+		foreach ($memcacheContactedArr as $memValue) {
+			$memContacted[] = ConvertToSphinxMatriIdFormat($memValue);
+		}
+	}
+
+	//array unique
+	if(count($sphinxContacted) > 0 && count($memContacted) > 0 ) {
+	$combineContacted= array_merge($sphinxContacted,$memContacted);
+	$contactedReult = array_unique($combineContacted);    }
+	elseif(count($sphinxContacted) > 0) {
+	$contactedReult = $sphinxContacted;
+	}elseif(count($memContacted) > 0) {
+	$contactedReult = $memContacted;
+	}else{  $contactedReult = "";   }
+
+    return $contactedReult;
+}
+
+function ignoredList($SphinxObject,$sphinx_matriid,$matriid){
+	global $varBLOCKEDINDEX;
+	//find sphinx index name
+	$block_prof_index	= $varBLOCKEDINDEX;
+	$SphinxObject->SetFilter("ProfileIndex",array($sphinx_matriid));
+	$SphinxObject->SetLimits(0,999);
+	$query='';
+	$SphinxObject->AddQuery($query,$varBLOCKEDINDEX);
+	$result=$SphinxObject->RunQueries();
+
+	$i=0;
+	if ( ! empty($result[0]['matches']) ) {
+		foreach ( $result[0]['matches'] as $doc => $docinfo ) {
+			$matriidindex=$result[0]['matches'][$i]['attrs']['blocklist'];
+			$ignoredids[] = $matriidindex;
+			$i++;
+		}
+	}
+	$sphinxIgnored=$ignoredids;
+
+	//memcache
+	$mkey = "ProfileBlocks_".$matriid;
+	$memcacheIgnored= Cache::getData($mkey);
+	if( $memcacheIgnored != "") {
+		$memcacheIgnoredArr = explode(",",trim($memcacheIgnored,','));
+		foreach ($memcacheIgnoredArr as $memValue) {
+			$memIgnored[] = ConvertToSphinxMatriIdFormat($memValue);
+		}
+	}
+
+	//array unique
+	if(count($sphinxIgnored)>0 && count($memIgnored)>0) {
+		$combineIgnored= array_merge($sphinxIgnored,$memIgnored);
+		$ignoredReult = array_unique($combineIgnored);
+	} elseif (count($sphinxIgnored) > 0) {
+		$ignoredReult = $sphinxIgnored;
+	} elseif (count($memIgnored) > 0) {
+		$ignoredReult = $memIgnored;
+	} else {
+		$ignoredReult = "";
+	}
+
+    return $ignoredReult;
+}
+
+
+function writeSphinxErrorLog($error,$ipaddr,$port,$indexname='',$mothertounge='',$ppgenderlog=''){
+global $COOKIEINFO;
+
+$Matriid = $COOKIEINFO["LOGININFO"]['MEMBERID'];
+$today = date("Y-m-d");
+$time = date("G:i:s");
+$message = "MatriId : ".$Matriid." IP: ".$ipaddr." PORT :".$port." SearchdErr :".$error." Date Time :".$today."&nbsp;".$time."&nbsp;&nbsp; File Name".$_SERVER['PHP_SELF']."&nbsp;&nbsp;&nbsp; Index Name :".$indexname."&nbsp;&nsbp; Mother Tongue :".$mothertounge."&nbsp;&nbsp; Gender:".$ppgenderlog."\n";
+$file_name = "/var/log/bmlog/sphinxlog/".$today."_".$ipaddr."sphinxmatchsummarylog.txt";
+$fp = fopen($file_name,"a");
+@fwrite($fp, $message);
+fclose($fp);
+
+}
+
+function getShortListed($SphinxObject, $sphinx_matriid,$matriid) {
+	global $varBOOKMARKEDINDEX;
+
+	$SphinxObject->SetFilter("ProfileIndex",array($sphinx_matriid));
+	$SphinxObject->SetLimits(0,999);
+	$query='';
+	$SphinxObject->Addquery($query, $varBOOKMARKEDINDEX);
+	$result=$SphinxObject->RunQueries();
+    $i=0;
+	if ( ! empty($result[0]['matches']) ) {
+		foreach ( $result[0]['matches'] as $doc => $docinfo ) {
+			$matriidindex=$result[0]['matches'][$i]['attrs']['shortlist'];
+			$shortedids[] = $matriidindex;
+			$i++;
+		}
+	}
+
+	$sphinxShorted = $shortedids;
+
+    //Memcache
+	$mkey = "ProfileBookmarks_".$matriid;
+	$memcacheShorted= Cache::getData($mkey);
+	if( $memcacheShorted != "") {
+		$memcacheShortedArr = explode(",",trim($memcacheShorted,','));
+		foreach ($memcacheShortedArr as $memValue) {
+			$memShorted[] = ConvertToSphinxMatriIdFormat($memValue);
+		}
+	}
+
+	//array unique
+	if(count($sphinxShorted) > 0 && count($memShorted) > 0 ) {
+	$combineShorted= array_merge($sphinxShorted,$memShorted);
+	$ShortedResult = array_unique($combineShorted);    }
+	elseif(count($sphinxShorted) > 0) {
+	$ShortedResult = $sphinxShorted;
+	}elseif(count($memShorted) > 0) {
+	$ShortedResult = $memShorted;
+	}else{  $ShortedResult = "";   }
+
+	return $ShortedResult;
+}
+
+function getViewedFromMemcache($matriid, $viewedarr, $cookiearr) {
+	global $DBINFO, $DBNAME, $DOMAINTABLE;
+	if(!empty($viewedarr)) {
+		$viewedsrcarr = explode('~', $viewedarr);
+		$viewedsrc = $viewedsrcarr[1];
+	}
+	else if(!empty($cookiearr) && $cookiearr[0]=='V') {
+		$viewedsrc = $cookiearr[1];
+	}
+	else
+		$viewedsrc = '';
+
+	if($viewedsrc=='MC') { # if viewed list stored in memcache, take it from memcache
+		//getting total views from memcache
+		$memkey = $matriid.'-TOTALVIEWED';
+		$totalviewed = getSearchFieldsfrmMemCache($memkey);
+		if( $totalviewed != "") {
+			$totalviewedList = explode(",",$totalviewed);
+		}
+	}
+	else if($viewedsrc=='DB') {
+		$dbslave = new db();
+		$dbslave->dbConnById(2,$matriid,'S',$DBINFO['USERNAME'],$DBINFO['PASSWORD'],$DBNAME['MATRIMONY']);
+		$sql = "select ViewedFilterList from ".$DBNAME['MATRIMONY'].".".$DOMAINTABLE[$domainshort]['SPHINXMATCHSUMMARYFILTERLIST']." where MatriId='".$matriid."'";
+		$count = $dbslave->select($sql);
+		$result = $dbslave->getResultArray();
+		$totalviewedList = explode(',',$result[0]['ViewedFilterList']);
+	}
+	else {
+		$totalviewedList = array();
+	}
+
+	////getting new updated views from memcache
+	$mkey = $matriid."-VIEWED";
+	$updatedviews= getSearchFieldsfrmMemCache($mkey);
+
+	if( $updatedviews != "") {
+		$updatedviewsArr = explode(",",$updatedviews);
+		foreach ($updatedviewsArr as $updatedviewsid) {
+			$updatedviewsidList[] = ConvertToSphinxMatriIdFormat($updatedviewsid);
+		}
+	}
+	//array unique
+	if(count($totalviewedList) > 0 && count($updatedviewsidList) > 0 ) {
+		$combineviewed= array_merge($totalviewedList,$updatedviewsidList);
+		$viewedResult = array_unique($combineviewed);
+	}
+	elseif(count($totalviewedList) > 0)
+		$viewedResult = $totalviewedList;
+	elseif(count($updatedviewsidList) > 0)
+		$viewedResult = $updatedviewsidList;
+	else
+		$viewedResult = "";
+	return $viewedResult;
+}
+
+function getContactedFromMemcache($matriid, $contactedarr, $cookiearr) {
+	global $DBINFO, $DBNAME, $DOMAINTABLE;
+	if(!empty($contactedarr)) {
+		$contactedsrcarr = explode('~', $contactedarr);
+		$contactedsrc = $contactedsrcarr[1];
+	}
+	else if(!empty($cookiearr) && $cookiearr[0]=='C') {
+		$contactedsrc = $cookiearr[1];
+	}
+	else {
+		$contactedsrc = '';
+	}
+
+	if($contactedsrc=='MC') { # if viewed list stored in memcache, take it from memcache
+		//getting total contacts from memcache
+		$memkey = $matriid.'-TOTALCONTACTED';
+		$totalcontacted = getSearchFieldsfrmMemCache($memkey);
+		if( $totalcontacted != "") {
+			$totalcontactedList = explode(",",$totalcontacted);
+		}
+	}
+	else if($contactedsrc=='DB') {
+		$dbslave = new db();
+		$dbslave->dbConnById(2,$matriid,'S',$DBINFO['USERNAME'],$DBINFO['PASSWORD'],$DBNAME['MATRIMONY']);
+		$sql = "select ContactedFilterList from ".$DBNAME['MATRIMONY'].".".$DOMAINTABLE[$domainshort]['SPHINXMATCHSUMMARYFILTERLIST']." where MatriId='".$matriid."'";
+		$count = $dbslave->select($sql);
+		$result = $dbslave->getResultArray();
+		$totalcontactedList = explode(',',$result[0]['ContactedFilterList']);
+	}
+	else {
+		$totalcontactedList = array();
+	}
+
+	////getting new updated contacts from memcache
+	$mkey = $matriid."-CONTACTED";
+	$updatedcontacts= getSearchFieldsfrmMemCache($mkey);
+
+	if( $updatedcontacts != "") {
+		$updatedcontactsArr = explode(",",$updatedcontacts);
+		foreach ($updatedcontactsArr as $updatedcontactsid) {
+			$updatedcontactsidList[] = ConvertToSphinxMatriIdFormat($updatedcontactsid);
+		}
+	}
+
+	//array unique
+	if(count($totalcontactedList) > 0 && count($updatedcontactsidList) > 0 ) {
+		$combinecontacted= array_merge($totalcontactedList,$updatedcontactsidList);
+		$contactedResult = array_unique($combinecontacted);
+	}
+	elseif(count($totalcontactedList) > 0) {
+		$contactedResult = $totalcontactedList;
+	}
+	elseif(count($updatedcontactsidList) > 0) {
+		$contactedResult = $updatedcontactsidList;
+	}
+	else {
+		$contactedResult = "";
+	}
+	return $contactedResult;
+}
+
+/*Function to get the shortlisted id */
+function getShortListFromMemcache($matriid, $contactedarr, $cookiearr){
+	$memkey = $matriid.'-TOTALSHORTLISTED';
+	$totalshortlist = getSearchFieldsfrmMemCache($memkey);
+	if( $totalshortlist != "") {
+		$totalShortList = explode(",",$totalshortlist);
+		return $totalShortList;
+	}
+	return false;
+}
+
+function getViewedContactedInMemcache($matriid,$flag) {
+	$cookieflag = getSearchFieldsfrmMemCache($matriid."-viewcontactsrc");
+	$domaininfo = getDomainInfo(1,$matriid);
+	$domainshort = strtoupper($domaininfo['domainnameshort']);
+	if(strpos($cookieflag, '|')) {
+			$cookieflag = explode('|', $cookieflag);
+			$viewedarr = $cookieflag[0];
+			$contactedarr = $cookieflag[1];
+			$shortlistarr = $cookieflag[2];
+	}
+	else {
+		$cookiearr = explode('~', $cookieflag);
+	}
+	if($flag==1) { # 1 for viewed
+		return getViewedFromMemcache($matriid, $viewedarr, $cookiearr);
+	}
+	if($flag==2) { # 2 for contacted
+		return getContactedFromMemcache($matriid, $contactedarr, $cookiearr);
+	}
+	if($flag == 4){ # 4 for ShortListed
+		return getShortListFromMemcache($matriid, $shortlistarr, $cookiearr);
+	}
+}
+
+function setViewedContactedInMemcache($matriid) {
+		global $varGetCookieInfo,$varSphinx,$varMemcacheLimit;
+
+		$status			= array();
+        $mkeyviews		= "SPHXVIEWS_".$matriid;
+		$mkeycontacted	= "SPHXCONTACTS_".$matriid;
+		$mkeyshortlisted= "SPHXBOOKMARKED_".$matriid;
+
+		Cache::deleteData($mkeyviews);
+		Cache::deleteData($mkeycontacted);
+		Cache::deleteData($mkeyshortlisted);
+
+		$List			= GetSphinxProfilenotesResultSet($matriid,1);
+		$ViewsList		= $List['viewedlist'];
+		$arrViewList	= explode(',', $ViewsList);
+		$viewsCount		= count($arrViewList);
+
+		$List			= GetSphinxProfilenotesResultSet($matriid,2);
+		$ContactedList  = $List['contactedlist'];
+		$arrContactList = explode(',', $ContactedList);
+		$contactedCount = count($arrContactList);
+
+		$List			= GetSphinxProfilenotesResultSet($matriid,4);
+		$ShortList		= $List['shortlisted'][0];
+		$shortCount		= count($ShortList);
+
+
+		Cache::setData($mkeyshortlisted, $ShortList);
+
+		if($viewsCount>$varMemcacheLimit || $contactedCount> $varMemcacheLimit) {
+			//$dbmaster = new db();			//$dbmaster->dbConnById(2,$matriid,'M',$DBINFO['USERNAME'],$DBINFO['PASSWORD'],$DBNAME['MATRIMONY']);
+		}
+
+		if($viewsCount<=$varMemcacheLimit) {
+			Cache::setData($mkeyviews, $arrViewList);
+		} else {
+			/*$sql = "insert into ".$DBNAME['MATRIMONY'].".".$DOMAINTABLE[$domainshort]['SPHINXMATCHSUMMARYFILTERLIST']."(MatriId, ViewedFilterList) values ('".$matriid."', '".$ViewsList."') on duplicate key update ViewedFilterList='".$ViewsList."'";
+			$dbmaster->insert($sql);
+			$status['views'] = 'database';
+			# set a flag in cookie for the source of the list. MC=memcache, DB=database, V=Viewed list, C=contacted list
+			$cookieflagview = "V~DB";*/
+		}
+
+		if($contactedCount<=$varMemcacheLimit) {
+			Cache::setData($mkeycontacted, $arrContactList);
+		} else {
+			/*$sql = "insert into ".$DBNAME['MATRIMONY'].".".$DOMAINTABLE[$domainshort]['SPHINXMATCHSUMMARYFILTERLIST']."(MatriId, ContactedFilterList) values ('".$matriid."', '".$ContactedList."') on duplicate key update ContactedFilterList='".$ContactedList."'";
+			$dbmaster->insert($sql);
+			$status['contacted'] = 'database';
+			# set a flag in cookie for the source of the list. MC=memcache, DB=database, V=Viewed list, C=contacted list
+			$cookieflagcontact = "C~DB";*/
+		}
+
+		if($viewsCount>$varMemcacheLimit || $contactedCount> $varMemcacheLimit) {
+			$dbmaster->dbClose();
+		}
+		return $status;
+}
+
+function toolsMatchSummaryCount($SphinxObject,$sessMatriId,$argviewedandnotcontacted,$StartLt=0,$showall=0,$toolReq='',$totRecordstoDisplay = 10){
+
+	global $varSPHINXTOOLSIDXNAME;
+
+	$varSphinxmatriId	= ConvertToSphinxMatriIdFormat($sessMatriId);
+
+	//$totRecordstoDisplay = 10;
+	$viewedandnotcontacted = array();
+	foreach($argviewedandnotcontacted as $k=>$v) {
+		$viewedandnotcontacted[] = ConvertToSphinxMatriIdFormat($v);
+	}
+
+	$SphinxObject->ResetFilters();
+	$SphinxObject->ResetGroupBy();
+	$SphinxObject->SetFilter("ProfileIndex",array($varSphinxmatriId));
+	$SphinxObject->SetFilter("ViewedList",$viewedandnotcontacted);
+
+	if(count($viewedandnotcontacted) > 0 ) {
+
+		if($showall == 1) {    //Show all page
+			if($toolReq == 1) {
+				$toolsSetSelectQuery = " *,IF ( PhotoAddedOn > DateViewed   , 4, 0)  as toolsfilter";
+				$SphinxObject->SetSortMode(SPH_SORT_ATTR_DESC, "PhotoAddedOn");
+				$toolValue = "4";
+			}elseif($toolReq == 2){
+				$toolsSetSelectQuery = " *, IF (HoroscopeAddedOn > DateViewed , 5, 0)  as toolsfilter";
+				$SphinxObject->SetSortMode(SPH_SORT_ATTR_DESC, "HoroscopeAddedOn");
+				$toolValue = "5";
+			}elseif($toolReq == 3){
+				$toolsSetSelectQuery = " *, IF (PhoneNumberVerifiedOn > DateViewed , 6, 0) as toolsfilter";
+				$SphinxObject->SetSortMode(SPH_SORT_ATTR_DESC, "PhoneNumberVerifiedOn");
+				$toolValue = "6";
+			}
+
+			if($varStartLt + $totRecordstoDisplay > 999){
+				$cutoff = $varStartLt+$totRecordstoDisplay+1;
+				$SphinxObject->SetLimits($varStartLt,$totRecordstoDisplay,$cutoff);
+			}else{
+				$SphinxObject->SetLimits($StartLt,$totRecordstoDisplay);
+			}
+
+			$SphinxObject->SetSelect($toolsSetSelectQuery);
+			$SphinxObject->SetFilter("toolsfilter",array($toolValue));
+			//print '<pre>';echo $StartLt,$totRecordstoDisplay;//print_r($SphinxObject);	exit;
+			$SphinxObject->AddQuery($query,$varSPHINXTOOLSIDXNAME);
+			$result=$SphinxObject->RunQueries();
+//print_r($SphinxObject->getLastError());
+//print_r($result);	exit;
+			$i=0;
+			if ( ! empty($result[0]['matches']) ) {
+				foreach ( $result[0]['matches'] as $doc => $docinfo ) {
+					$matriidindex=$result[0]['matches'][$i]['attrs']['viewedlist'];
+					$ids[] = $matriidindex;
+					$i++;
+				}
+			}
+			//echo "<pre>";print_r($SphinxObject);echo "</pre>";
+			$result[0] = $result[0]['total_found'];
+			$result[1] =$ids;
+			return $result;
+
+		}
+	}
+}
+
+
+
+function getToolsIndexName($indexGender,$mothertounge,$domainshort){
+    global $SPHINXINDEXNAME,$COOKIEINFO;
+    $MatriId=$COOKIEINFO['LOGININFO']['MEMBERID'];
+    $ToolsIndexName=$SPHINXINDEXNAME[$domainshort]['MEMBERTOOLSINDEX'];
+    $SphinxMatriId=ConvertToSphinxMatriIdFormat($MatriId);
+    $ToolsModValue=$SphinxMatriId%20;
+    $ToolsIndexName=$ToolsIndexName.$ToolsModValue;
+    return $ToolsIndexName;
+}
+
+function getShortListedLimit($SphinxObject, $sphinx_matriid,$matriid, $domainshort, $SPHINXINDEXNAME,$varStartLt=0,$ViewedList, $ContactedList, $Flag,$endLimit=10, $type='') {
+        global $COOKIEINFO;
+        $pending =  $combineShortlistArrs = $shortlistMemcacheArray = $shortedids=array();
+	if($type == 1){
+		$mkey = $matriid."-TOTALSHORTLISTED";
+	}
+	else{
+		$mkey = $matriid."-SHORTLISTED";
+	}
+	$memcacheShorted= getSearchFieldsfrmMemCache($mkey);
+        $shortlistMemcacheArray = explode(",",$memcacheShorted);
+	foreach($shortlistMemcacheArray as $arrayVal){
+		if($arrayVal!='') {
+			if($type != 1){
+				$arrayVal = ConvertToSphinxMatriIdFormat($arrayVal);
+			}
+
+
+			if((strstr($ViewedList,trim($arrayVal)) == "")&&(strstr($ContactedList,trim($arrayVal)) == "")) {
+				if($Flag==3 || $Flag==1) {
+
+					$pending[] = $arrayVal;
+				}
+			}
+
+			if((strstr($ViewedList,trim($arrayVal)) != "")&&(strstr($ContactedList,trim($arrayVal)) == "")) { //Viewed and not contacted
+				if($Flag==3) {
+
+					$viewed[] = $arrayVal;
+
+				}
+			}
+
+			if((strstr($ViewedList,trim($arrayVal)) != "")&&(strstr($ContactedList,trim($arrayVal)) != "")) { //Viewed and contacted
+				if($Flag==2) {
+					$contacted[] = $arrayVal;
+				}
+			}
+
+			if((strstr($ViewedList,trim($arrayVal)) == "")&&(strstr($ContactedList,trim($arrayVal)) != "")) { //Viewed and contacted
+				if($Flag==2) {
+					$contacted[] = $arrayVal;
+				}
+			}
+		}
+	}
+	$SphinxObject->ResetFilters();
+	$SphinxObject->SetFilter("Deleted",array(0));
+	$SphinxObject->SetFilter("ProfileIndex",array($sphinx_matriid));
+	if($Flag==1) { //Yet to be Viewed
+		$TotalList=$ViewedList.",".$ContactedList;
+		$SphinxObject->SetFilter("bookmarkedidindex",explode(",",$TotalList),true);
+	} else if($Flag==2) { //Viewed and Contacted
+		$TotalList=$ViewedList.",".$ContactedList;
+		$SphinxObject->SetFilter("bookmarkedidindex",explode(",",$ContactedList));
+	} else if($Flag==3) {
+		$SphinxObject->SetFilter("bookmarkedidindex",explode(",",$ContactedList),true);
+		$SphinxObject->SetFilter("bookmarkedidindex",explode(",",$ViewedList));
+	}
+        $SphinxObject->SetLimits(0,$COOKIEINFO['LOGININFO']['SHORTLIST']);
+	$SphinxObject->Addquery($query, $SPHINXINDEXNAME[$domainshort]['SHORTLISTINDEX']);
+	$result=$SphinxObject->RunQueries();
+        $i=0;
+	if ( ! empty($result[0]['matches']) ) {
+		foreach ( $result[0]['matches'] as $doc => $docinfo ) {
+		$matriidindex=$result[0]['matches'][$i]['attrs']['bookmarkedidindex'];
+		$shortedids[] = $matriidindex;
+		$i++;
+		}
+	}
+	if(count($pending)>0){
+		$combineShortlistArrs= $pending;
+	}  if(count($viewed)>0){
+		$combineShortlistArrs= $viewed;
+	}  if(count($contacted)>0){
+	$combineShortlistArrs= $contacted;
+	}
+	sort($shortedids);
+	sort($combineShortlistArr);
+	$combineShortlistArr=array_unique(array_merge($shortedids,$combineShortlistArrs));
+	sort($combineShortlistArr);
+	if(count($combineShortlistArr)<=9) {
+		if($_REQUEST['totrec']=="") {
+		   $endrec=count($combineShortlistArr);
+		} else {
+		   $endrec=$_REQUEST['totrec'];
+		}
+		for($i=0;$i<$endrec;$i++){
+			if($combineShortlistArr[$i]!=""){
+				$shortedidpages[] = $combineShortlistArr[$i];
+			}
+		}
+	} else {
+		for($i=$varStartLt;$i<$varStartLt+$endLimit;$i++){
+			if($combineShortlistArr[$i]!=""){
+				$shortedidpages[] = $combineShortlistArr[$i];
+			}
+		}
+	}
+
+	$shorted[0] =count($combineShortlistArr);
+	$shorted[1] =array_unique($shortedidpages);
+	return $shorted;
+
+}
+
+function sphinxShortListUpdate($memcachekey,$bookmarked_id) {
+	global $COOKIEINFO,$SPHINXINDEXNAME;
+	$matriid = $COOKIEINFO['LOGININFO']['MEMBERID'];
+	$sphinx_matriid = ConvertToSphinxMatriIdFormat($matriid);
+
+        $domaininfo = getDomainInfo(1,$matriid);
+	$domainid = $domaininfo['domainid'];
+	$domainshort = $domaininfo['domainnameshort'];
+	$sphinxShortListObj = new sphinxdb();
+	extract($sphinxShortListObj->sphinxMatchSummarygetDomainInfo($domainid));
+
+	$query= '';
+	$SphinxShortListObject = $sphinxShortListObj->SphinxConnect($ip,$port,SPH_MATCH_FULLSCAN,5000);
+
+	for($i=0;$i<count($bookmarked_id);$i++){
+	$SphinxShortListObject->ResetFilters();
+	$sphinx_bookmarked_id = ConvertToSphinxMatriIdFormat($bookmarked_id[$i]);
+	$SphinxShortListObject->SetFilter("ProfileIndex",array($sphinx_matriid));
+	$SphinxShortListObject->SetFilter("bookmarkedidindex",array($sphinx_bookmarked_id));
+	$SphinxShortListObject->AddQuery($query,$SPHINXINDEXNAME[strtoupper($domainshort)]['SHORTLISTINDEX']);
+	$result=$SphinxShortListObject->RunQueries();
+	$documentId = $result[0]['matches'][0]['id'];
+        $returnval=$SphinxShortListObject->UpdateAttributes( $SPHINXINDEXNAME[strtoupper($domainshort)]['SHORTLISTINDEX'],array("Deleted"),array($documentId=>array(array(1))),true);
+
+	}
+
+	return $returnval;
+
+}
+
+function profilesShortListed($bmMatriId, $gender, $motherTongue, $SphinxObject, $domainnameshort, $loginTimestamp)
+{
+	global $SPHINXINDEXNAME,$WEBNOTIFYALERTENABLED;
+ 	$query = '';
+	$SphinxObject->ResetFilters();
+	$SphinxObject->SetSelect("*"); //Reset SetSelect
+
+
+	$result = GetSphinxProfilenotesResultSet($bmMatriId,4);
+	$shortlistIds = $result["shortlisted"];
+
+
+
+	if(count($shortlistIds) > 0 && is_array($shortlistIds))
+	{
+		$mem_prof_index = getProfileIndexName($gender, '');
+		$SphinxObject->ResetFilters();
+		$SphinxObject->SetSelect("*"); //Reset SetSelect
+		$SphinxObject->SetArrayResult(true);
+		$SphinxObject->SetFilter("ProfileIndex",$shortlistIds);
+		$SphinxObject->SetFilter("PowerPackStatus", array(1));
+		$SphinxObject->SetFilterRange("last_login",$loginTimestamp, mktime(date("H"),date("i"),date("s"),date("n"),date("j"),date("Y")));
+		$SphinxObject->SetLimits(0,999);
+		$SphinxObject->Addquery($query,$mem_prof_index);
+		$SphinxObject->SetSortMode(SPH_SORT_ATTR_DESC, "last_login");
+		$result=$SphinxObject->RunQueries();
+		if($result[0]["total_found"] > 0)
+		   {
+			$resultArray = getParseValues_wn($result, array("profileindex"),0); //third parameter should be 1 for encoding; 0 for decoding
+			if($WEBNOTIFYALERTENABLED == 1){
+ 			    include_once dirname($_SERVER['DOCUMENT_ROOT'])."/bmlib/wn_memcache.class.php";
+			    $modValues = ModofMatriId($bmMatriId);
+			    wn_Cache::set("WN_".$bmMatriId."_SHORTLST",$resultArray,0,1800,$modValues);//Profiles shortlisted count and ids
+			 }
+		    }
+		    else
+		    {
+		        if($WEBNOTIFYALERTENABLED == 1){
+ 			   include_once dirname($_SERVER['DOCUMENT_ROOT'])."/bmlib/wn_memcache.class.php";
+			   $modValues = ModofMatriId($bmMatriId);
+			   wn_Cache::set("WN_".$bmMatriId."_SHORTLST",0,0,1800,$modValues);//Profiles shortlisted count and ids
+			}
+		     }
+	}
+}
+
+function UpdateToolsSection($SphinxObject,$indexGender,$mothertounge,$domainshort,$SpMatriId,$ToolsFlag,$recipient_sphinxid,$opposite_gender) {
+
+	if($indexGender != $opposite_gender) {
+	$query = "";
+	$ToolsIndexName=getToolsIndexName($indexGender,$mothertounge,strtoupper($domainshort));
+	$SphinxObject->SetFilter("ProfileIndex",array($SpMatriId));
+	$SphinxObject->SetFilter("viewedidindex",array($recipient_sphinxid));
+	$toolsSetSelectQuery = " *,IF(PhotoAddedOn > DateViewed , 1, 0) OR IF (HoroscopeAddedOn > DateViewed , 1, 0) OR IF (PhoneNumberVerifiedOn > DateViewed , 1, 0) as toolsfilter";
+	$SphinxObject->SetSelect($toolsSetSelectQuery);
+	$SphinxObject->SetFilter("toolsfilter",array(1));
+	$SphinxObject->AddQuery($query,$ToolsIndexName);
+	$result=$SphinxObject->RunQueries();
+	$documentId = $result[0]['matches'][0]['id'];
+	$CurrentTimeStamp=strtotime(date("Y-m-d H:i:s"));
+
+	//if($ToolsFlag=='P'){//Photo
+	$returnval1=$SphinxObject->UpdateAttributes($ToolsIndexName,array("photoaddedon"),array($documentId=>array(array($CurrentTimeStamp))),true);
+	//} else if($ToolsFlag=='H') { //horoscope
+	$returnval2=$SphinxObject->UpdateAttributes($ToolsIndexName,array("horoscopeaddedon"),array($documentId=>array(array($CurrentTimeStamp))),true);
+	//} else if($ToolsFlag=='M') { //Phone
+	$returnval3=$SphinxObject->UpdateAttributes($ToolsIndexName,array("phonenumberverifiedon"),array($documentId=>array(array($CurrentTimeStamp))),true);
+	//}
+	if($returnval1 == 1 || $returnval2 == 1 || $returnval3 == 1) {
+	return "1";
+	}else{
+         return "0";
+	}
+
+	}
+
+}
+
+function getCountryQuery($country,$state,$city)
+{
+	global $arrCityStateMapping;
+
+	$indiaState	= array();
+	$usState	= array();
+	$newCityArr = array();
+	foreach($state as $key => $value)
+	{
+		if($value < 50)
+		{
+			$indiaState[] = "98".$value;
+			if(in_array(98, $country))//Check this condition to unset India only once
+			{
+				$indiaKey = array_keys($country, 98);
+				unset($country[$indiaKey[0]]);
+			}
+		}
+		else
+		{
+			$usState[] = "222".$value;
+			if(in_array(222, $country))	//Check this condition to unset US only once
+			{
+				$usKey = array_keys($country, 222);
+				unset($country[$usKey[0]]);
+			}
+		}
+	}
+
+	if(count($country) > 0)
+	{
+		$implodeCountry = implode(",", $country);
+		$locationQuery .= "IN(Country,$implodeCountry)";
+	}
+
+	foreach($city as $key => $value)
+	{
+		$cityArr = explode("#", $value);
+		$statekey = array_keys($indiaState, "98".$arrCityStateMapping[$cityArr[1]]);
+		unset($indiaState[$statekey[0]]);
+
+		$cityForQuery[] = "98".$value;
+		$newCityArr = str_replace("#","",$cityForQuery);
+	}
+
+	if(count($indiaState)>0 || (count($usState) > 0))
+	{
+		$implodeIndiaState='';
+		$implodeUsState='';
+		if(!in_array("0",$indiaState)) {
+			if(count($indiaState) > 0)
+			{
+				$implodeIndiaState = implode(",", $indiaState);
+			}
+		}
+		if(!in_array("0",$usState)) {
+			if(count($usState) > 0)
+			{
+				$implodeUsState = "";
+				if(strlen($implodeIndiaState) > 0)
+					$isIndiaStateComma = ",";
+
+				$implodeUsState = $isIndiaStateComma.implode(",", $usState);
+			}
+		}
+		if(count($country)>0)
+			$countryAvail = " OR ";
+		if(strlen($implodeIndiaState.$implodeUsState)>=1) {
+			$locationQuery .= $countryAvail."IN(State_Selected,$implodeIndiaState$implodeUsState)";
+		}
+	}
+
+	if(!in_array("0",$newCityArr)) {
+		if(count($newCityArr) > 0)
+		{
+			$implodeIndiaCity = implode(",", $newCityArr);
+			if(strlen($locationQuery)>10)
+				$countryStateAvail = " OR ";
+			if(strlen($implodeIndiaCity)>1) {
+				$locationQuery .= $countryStateAvail."IN(City_Selected,$implodeIndiaCity)";
+			}
+
+		}
+	}
+	return $locationQuery;
+}
+
+
+function getCountValueFaceting($resultArr, $resultNameArr)
+{
+	$fullarray = '';
+	$i = 1;
+	foreach($resultArr as $keyFields => $valueFields)
+	{
+		$resultName = $resultNameArr[$keyFields];
+
+		if($resultArr[$keyFields]["total_found"]>0){
+			foreach($resultArr[$keyFields]["matches"] as $key => $value)
+			{
+				$temp = $resultArr[$keyFields]["matches"][$key]["attrs"]["@groupby"];
+				if($resultArr[$keyFields]["matches"][$key]["attrs"]["@count"] > 0)
+					$fullarray[$resultName][$temp] = $resultArr[$keyFields]["matches"][$key]["attrs"]["@count"];
+			}
+		}
+	}
+
+	return $fullarray;
+
+}
+
+function getCountValue($resultArr, $resultName='temp')
+{
+	$fullarray = '';
+	if($resultArr["total_found"] > 0)
+	{
+		foreach($resultArr["matches"] as $key => $value)
+		{
+			$temp = $resultArr["matches"][$key]["attrs"]["@groupby"];
+			$fullarray[$resultName][$temp] = $resultArr["matches"][$key]["attrs"]["@count"];
+		}
+
+		return $fullarray;
+	}
+	else
+	{
+		$array = array();
+		$array[$resultName][0] = 0;
+		return $array;
+	}
+}
+
+
+function getParseValues($resultArr, $parseFields = '')
+{
+	$parseResult[] = "";
+
+ 	$parseResult[0] = $resultArr[0]["total_found"];
+
+	if($parseResult[0] > 0 && $parseFields!='')
+	{
+		foreach($resultArr[0]["matches"] as $key => $value)
+		{
+			foreach($parseFields as $fieldName => $fieldValue)
+			{
+				$parseResult[1] .= $resultArr[0]["matches"][$key]["attrs"]["$fieldValue"]."~";
+			}
+			$parseResult[1] = substr($parseResult[1], 0, -1)."#-#";
+		}
+		$parseResult[1] = substr($parseResult[1], 0, -3);
+	}
+
+	return $parseResult;
+}
+
+
+function getParseValuesAsArray($argResult, $argSphinxFields='', $argCommunityId)
+{
+	$varDBFields = array('profileindex'=>"MatriId", 'communityid'=>"CommunityId", 'publish'=>"Publish", 'paid_status'=>"Paid_Status", 'special_priv'=>"Special_Priv", 'gender'=>"Gender", 'age'=>"Age", 'height'=>"Height", 'mother_tongueid'=>"Mother_TongueId", 'physical_status'=>"Physical_Status", 'religion'=>"Religion", 'denomination'=>"Denomination", 'casteid'=>"CasteId", 'subcasteid'=>"SubcasteId", 'gothramid'=>"GothramId", 'star'=>"Star", 'raasi'=>"Raasi", 'chevvai_dosham'=>"Chevvai_Dosham", 'country'=>"Country", 'citizenship'=>"Citizenship", 'eating_habits'=>"Eating_Habits", 'smoke'=>"Smoke", 'drink'=>"Drink", 'body_type'=>"Body_Type", 'appearance'=>"Appearance", 'complexion'=>"Complexion", 'residing_state'=>"Residing_State", 'residing_district'=>"Residing_District", 'resident_status'=>"Resident_Status", 'education_category'=>"Education_Category", 'education_subcategory'=>"Education_Subcategory", 'photo_set_status'=>"Photo_Set_Status", 'horoscope_available'=>"Horoscope_Available", 'protect_photo_set_status'=>"Protect_Photo_Set_Status", 'horoscope_protected'=>'Horoscope_Protected', 'marital_status'=>'Marital_Status', 'phone_verified'=>'Phone_Verified', 'last_login'=>'Last_Login', 'occupation'=>'Occupation', 'no_of_children'=>'No_Of_Children', 'caste_nobar'=>'Caste_Nobar', 'subcaste_nobar'=>'Subcaste_Nobar', 'partner_set_status'=>'Partner_Set_Status', 'onlinestatus'=>'Online_Status', 'date_created'=>'Date_Created','profile_highlighter'=>'Profile_Highlighter');
+
+	$arrConverted = array();
+	if($argResult[0]["total_found"] > 0 && $argSphinxFields!='')
+	{
+		foreach($argResult[0]["matches"] as $key=>$value)
+		{
+			$varMatriId		= ConvertToCBSMatriIdFormat($argResult[0]["matches"][$key]["id"], $argCommunityId);
+			$arrFieldsVal	= $argResult[0]["matches"][$key]["attrs"];
+			foreach($argSphinxFields as $varFieldKey => $varFieldName)
+			{
+				if($varFieldName == "height")
+				$arrConverted[$varMatriId][$varDBFields[$varFieldName]] = number_format($arrFieldsVal[$varFieldName], 2);
+				else if($varFieldName == "last_login" || $varFieldName == "date_created")
+				$arrConverted[$varMatriId][$varDBFields[$varFieldName]] = strftime("%Y-%m-%d %H:%M:%S", $arrFieldsVal[$varFieldName]);
+				else if($varFieldName == "profileindex")
+				$arrConverted[$varMatriId][$varDBFields[$varFieldName]] = $varMatriId;
+				else
+				$arrConverted[$varMatriId][$varDBFields[$varFieldName]] = $arrFieldsVal[$varFieldName];
+			}
+		}
+	}
+	return $arrConverted;
+}
+
+function moveNotSpecifiedLast($arr, $resName)
+{
+	if($arr[$resName][99] > 0)
+	{
+		$tempRes = $arr[$resName][99];
+		unset($arr[$resName][99]);
+		$arr[$resName][99] = $tempRes;
+	}
+	return $arr;
+}
+
+function getQueriesConcat($subcasteQuery,$gothraQuery,$profileDescQuery)
+{
+	if(strlen(trim($subcasteQuery)) > 7)
+		$scand = " & ";
+	if(strlen(trim($gothraQuery)) > 7)
+		$goand = " & ";
+
+	$query = $subcasteQuery.$scand.$gothraQuery.$goand.$profileDescQuery;
+	$query = trim(trim($query), "&");
+
+	return $query;
+}
+
+function includeOtherReligionMappingValues($caste,$religion,$CasteArrayHash='') {
+global $PARTNERPREFOTHERRELIGION,$COOKIEINFO,$CASTEHASHHINDU,$$CasteArrayHash;
+   $castearr=explode("~",$caste);
+   $religionArr=explode("~",rtrim($religion,"~"));
+
+   if($CasteArrayHash==''){
+     $CasteArrayHashval = $CASTEHASHHINDU;
+    }else{
+      $CasteArrayHashval = $$CasteArrayHash;
+
+    }
+
+    for($k=0;$k<count($religionArr);$k++) {
+      for($i=0;$i<count($castearr);$i++){
+	 $otherprofilebox=$castearr[$i]."~".$religionArr[$k];
+	 $findkey=array_key_exists($otherprofilebox,$PARTNERPREFOTHERRELIGION);
+	 if($findkey>=1)
+	 {
+	    $showother=$PARTNERPREFOTHERRELIGION[$otherprofilebox];
+	    foreach($showother as $castevalues){
+		$mappingCasteValue = explode("~",$castevalues);
+		$mappingCaste[] = $mappingCasteValue[0];
+	    }
+
+	    $mappingUniqueValue = array_unique($mappingCaste);
+ 	    foreach($mappingCaste as $casteName)
+	    {
+		if (array_key_exists($casteName,$CasteArrayHashval))
+		 $keyMappingValue = $casteName;
+	    }
+	    if($CasteArrayHash ==''){
+		$appendArray[$keyMappingValue] = $mappingUniqueValue;
+ 	    }else{
+	       $appendArray[$keyMappingValue] = $keyMappingValue;
+	    }
+	} else {
+	    $appendArray[$castearr[$i]] = $castearr[$i];
+	}
+     }
+   }
+   return $appendArray;
+}
+
+function getMyHomeProfileHighlight($matriId,$gender,$partnerPrefSet)
+{
+	global $languageArray;
+
+	$memPp = getPartnerPrefArr(ConvertToSphinxMatriIdFormat($matriId),$gender,'',$partnerPrefSet); //To retrieve data from matchwatchindex, connect sphinx4,5 servers. Establishing connection inside the getPartnerPrefArr function.
+
+	$domaininfo = getDomainInfo(1,$matriId);
+	$domainid = $domaininfo['domainid'];
+	$domainshort = strtoupper($domaininfo['domainnameshort']);
+
+	$s = new sphinxdb();
+	$sphinxdomaininfo  =  $s->sphinxgetDomainInfo($domainid);
+	$ip = $sphinxdomaininfo["ip"];
+	$port = $sphinxdomaininfo["port"];
+
+	$SphinxObject = $s->SphinxConnect($ip,$port, 'SPH_MATCH_FULLSCAN','30');
+	$searchderr.=$s->GetLastError();
+	if(trim($searchderr) <> "")
+	{
+		$file_content = "\n MatriId : ".$COOKIEINFO['LOGININFO']['MEMBERID']."IP : ".$ip." PORT : ".$port." SearchdErr : ".$searchderr." Time ".date("H:i:s:u")." Connection error on Sphinx in getMyHomeProfileHighlight";
+        $file_name = "/var/log/bmlog/sphinxlog/".date('d-m-Y')."_".$_SERVER['SERVER_ADDR']."sphinxspquerylog.txt";
+        $fp = fopen($file_name,"a");
+        @fwrite($fp, $file_content);
+        fclose($fp);
+
+		// Searchd returned error
+		$srchprofileres['err']=1;
+		return $srchprofileres;
+	}
+
+	if($gender == "M")
+		$matchGender = 0; //Match female(0) matriIds
+	else
+		$matchGender = 1; //Match male(1) matriIds
+
+	$mem_prof_index = getProfileIndexName($matchGender, $memPp["ppmothertongue"]);
+
+	$query = '';
+	$SphinxObject->ResetFilters();
+	$SphinxObject->SetSelect("profileindex,age,height,religion,caste,residingdistrict");
+	$SphinxObject->SetArrayResult(true);
+	$SphinxObject->SetFilter("Validated",array(1));
+	$SphinxObject->SetFilter("Authorized",array(1));
+	$SphinxObject->SetFilter("Status",array(0));
+	$SphinxObject->SetFilter("Deleted",array(0));
+
+	$SphinxObject->SetFilterRange("Age", $memPp["ppstage"],$memPp["ppendage"]);
+	$SphinxObject->SetFilterFloatRange("Height", floor($memPp["ppstheight"]),ceil($memPp["ppendheight"]));
+
+	if(in_array(0, $memPp["ppmothertongue"]) == FALSE)
+		$SphinxObject->SetFilter("MotherTongue", $memPp["ppmothertongue"]);
+
+
+	if(in_array(0, $memPp["ppmaritalstatus"]) == FALSE)
+		$SphinxObject->SetFilter("MaritalStatus", $memPp["ppmaritalstatus"]);
+
+	if($memPp["ppphysicalstatus"] == 0 || $memPp["ppphysicalstatus"] == 1)
+		$SphinxObject->SetFilter("SpecialCase", array($memPp["ppphysicalstatus"]));
+
+	if($memPp["ppincludeotherreligions"] == 1 && in_array("0",$memPp["ppmatchcaste"]) == FALSE && in_array(0, $memPp["ppmatchreligion"]) == FALSE)
+	{
+		$relignmappingvalue		= otherreligionmappingvalues($memPp["ppmatchcaste"], $memPp["ppmatchreligion"]);
+		$religion				= array_merge($memPp["ppmatchreligion"], $relignmappingvalue['RELIGION']);
+		$ppMatchReligion		= array_unique($religion);
+		$caste					= array_merge($memPp["ppmatchcaste"], $relignmappingvalue['CASTE']);
+		$ppMatchCaste			= array_unique($caste);
+	}
+	else
+	{
+		$ppMatchReligion	= $memPp["ppmatchreligion"];
+		$ppMatchCaste		= $memPp["ppmatchcaste"];
+	}
+
+
+
+	if(in_array(0, $ppMatchReligion) == FALSE)
+	{
+		if(in_array(2, $ppMatchReligion))	// Muslim
+			$religion = array_merge($ppMatchReligion,array(10,11));
+		else if(in_array(3, $ppMatchReligion))	//Christian
+			$religion = array_merge($ppMatchReligion,array(12,13,14));
+		else if(in_array(5, $ppMatchReligion))	//Jain
+			$religion = array_merge($ppMatchReligion,array(15,16));
+		else
+			$religion = $ppMatchReligion;
+
+		$SphinxObject->SetFilter("Religion",$religion);
+	}
+
+
+	if(in_array(0, $ppMatchCaste) == FALSE)
+	{
+		if(count($ppMatchCaste) == 1 && $ppMatchCaste[0] == 998)
+		{
+			$SphinxObject->SetFilter("CasteNoBar",array(1));
+		}
+		else if(count($ppMatchCaste) > 1 && in_array(998, $ppMatchCaste))
+		{
+			$castenobarKey = array_keys($ppMatchCaste, 998);
+			unset($ppMatchCaste[$castenobarKey[0]]);
+			$implodeCaste = implode(",", $ppMatchCaste);
+			$casteQuery = "IN(Caste,$implodeCaste) OR IN(CasteNoBar,1)";
+			$SphinxObject->SetSelect($setSelectFields.", IF($casteQuery,1,0) AS castefilter");
+			$SphinxObject->SetFilter("castefilter",array(1));
+			$isCasteInSetSelect = 1;
+		}
+		else if(count($ppMatchCaste) > 0 && $ppMatchCaste[0]!="")
+		{
+			$SphinxObject->SetFilter("Caste",$ppMatchCaste);
+		}
+	}
+
+	if(in_array(0, $memPp["ppgothraid"]) == FALSE)
+	{
+		if(in_array(998, $memPp["ppgothraid"]) && $memGothra > 0)
+			$SphinxObject->SetFilter("GothraId", $memGothra, true);	//All Except My gothra
+		else
+		{
+			$allExceptMyGothraKey = array_keys($memPp["ppgothraid"], 998);
+			unset($memPp["ppgothraid"][$allExceptMyGothraKey[0]]);
+			if(count($memPp["ppgothraid"]) > 0)
+				$SphinxObject->SetFilter("GothraId", $memPp["ppgothraid"]);
+		}
+	}
+
+	/*In Reg - Matrimonyprofile
+	"1" - Yes; "2" - No; "3" - Don't know; 0 - Not Selected any value
+
+	Matchwatch Pref - Dosham/Manglik
+	1 - Yes; 2 - No; 3 - Not given; 0 - Not Selected [Any]
+
+	If memberpref is  YES, then match YES 1 => 1,3
+	If memberpref is NO, then match No, Don't know, Not Selected. 2 => 2, 3, 0
+	If memberoref is NotGiven, then match Don't know and Not Selected. 3 => 3,0
+	*/
+	//If Manglik is not selected in Member Preference, then the value will be 0; If member profile has dosham 3 then do not check manglik condition.
+	if(in_array(0, $memPp["ppmanglik"]) == FALSE)
+	{
+		$manglik = array();
+		if(in_array(1, $memPp["ppmanglik"]) == TRUE)
+			$manglik = array(1,3);
+		if(in_array(2, $memPp["ppmanglik"]) == TRUE)
+			$manglik = array_merge($manglik,array(2,3,0));
+		if(in_array(3, $memPp["ppmanglik"]) == TRUE)
+			$manglik = array_merge($manglik,array(3,0));
+
+		$manglik = array_unique($manglik);
+
+		$SphinxObject->SetFilter("Dosham", $manglik);
+	}
+
+
+	## Matching eating habits condition
+	/*1-Vegetarian; 2- Non Vegetarian; 3- Eggetarian
+	Eating Habits	Mapping
+	Veg			1 - 1,3		Veg+Egg.
+	Egg			3 - 1,2,3	Veg+Egg+Non-Veg
+	Non veg		2 - 2,3		Non-Veg+Egg.*/
+	if(in_array(0, $memPp["ppeatinghabitspref"]) == FALSE)
+	{
+		$eatingHabitsPref = array();
+		if(in_array(1, $memPp["ppeatinghabitspref"]) == TRUE)
+			$eatingHabitsPref = array_merge($eatingHabitsPref,array(1,3));		//Veg
+		if(in_array(2, $memPp["ppeatinghabitspref"]) == TRUE)
+			$eatingHabitsPref = array_merge($eatingHabitsPref,array(2,3));		//Non-Veg
+		if(in_array(3, $memPp["ppeatinghabitspref"]) == TRUE)
+			$eatingHabitsPref = array_merge($eatingHabitsPref,array(1,2,3));	//Eggetarian
+
+		$eatingHabitsPref = array_unique($eatingHabitsPref);
+
+		$SphinxObject->SetFilter("EatingHabits", $eatingHabitsPref);
+	}
+	if(in_array(0, $memPp["ppmatcheducation"]) == FALSE)
+		$SphinxObject->SetFilter("EducationSelected", $memPp["ppmatcheducation"]);
+
+
+	if((in_array(0, $memPp["ppcountry"]) == FALSE) && ((in_array(98, $memPp["ppcountry"]) && in_array(0, $memPp["ppindianstates"]) == FALSE && (count($memPp["ppindianstates"]) > 1 || (count($memPp["ppindianstates"]) == 1 && $memPp["ppindianstates"][0] > 0))) || (in_array(222, $memPp["ppcountry"]) && in_array(0, $memPp["ppusstates"]) == FALSE && (count($memPp["ppusstates"]) > 1 || (count($memPp["ppusstates"]) == 1 && $memPp["ppusstates"][0] > 0)))))
+	{
+		$memPPStates = array_merge($memPp["ppusstates"],$memPp["ppindianstates"]);
+		$countryStateQuery = getCountryQuery($memPp["ppcountry"], $memPPStates, array(0)); //Not using cities for profile highlight
+		if($isCasteInSetSelect == 1)
+		{
+			$SphinxObject->ResetFilterByAttr("castefilter");
+			$SphinxObject->SetSelect($setSelectFields.", IF((".$casteQuery.") AND (".$countryStateQuery."),1,0) AS castelocationfilter");
+			$SphinxObject->SetFilter("castelocationfilter",array(1));
+		}
+		else
+		{
+			$SphinxObject->SetSelect($setSelectFields.", IF(".$countryStateQuery.",1,0) AS locationfilter");
+			$SphinxObject->SetFilter("locationfilter",array(1));
+		}
+
+	}
+	else if(in_array(0, $memPp["ppcountry"]) == FALSE)
+	{
+		$SphinxObject->SetFilter("CountrySelected",$memPp["ppcountry"]);
+	}
+	if(in_array(0, $memPp["ppcitizenship"]) == FALSE)
+	{
+		$SphinxObject->SetFilter("citizenship",$memPp["ppcitizenship"]);
+	}
+
+	if(in_array(0, $memPp["ppresidentstatus"]) == FALSE)
+	{
+		//IF member select multiple countries say US, India and select ResidentStatus as "Permenant Resident", then we should retrieve members who are ((US and "Permenant Resident") OR India). Coz, India we consider Citizen as default value. Resident status handled in conf.
+		if(in_array(0, $memPp["ppcountry"]) == TRUE || in_array(98, $memPp["ppcountry"]) == TRUE)
+			$residentstatus = array_merge($memPp["ppresidentstatus"],array(100));
+		else
+			$residentstatus = $memPp["ppresidentstatus"];
+
+		$SphinxObject->SetFilter("resident_status",$residentstatus);
+	}
+
+	$SphinxObject->SetFilter("ProfileHighlightStatus",array(1));
+
+
+	$SphinxObject->SetLimits(0,1);
+
+
+	$SphinxObject->SetSortMode(SPH_SORT_EXTENDED, "@random");
+
+	$result = $SphinxObject->Query($query,$mem_prof_index);
+
+	$res["totalcount"] = 0;
+	if($result['total_found'] > 0)
+	{
+		$res["totalcount"] = $result['total_found'];
+		foreach($result['matches'] as $key => $val)
+		{
+			$id = ConvertToBmMatriIdFormat(array($result['matches'][$key]['attrs']['profileindex']), $languageArray);
+
+			$res[$id[0]]["profileindex"] = $id[0];
+			$res[$id[0]]["age"] = $result['matches'][$key]['attrs']['age'];
+			$res[$id[0]]["height"] = $result['matches'][$key]['attrs']['height'];
+			$res[$id[0]]["religion"] = $result['matches'][$key]['attrs']['religion'];
+			$res[$id[0]]["caste"] = $result['matches'][$key]['attrs']['caste'];
+			$res[$id[0]]["residingdistrict"] = $result['matches'][$key]['attrs']['residingdistrict'];
+		}
+	}
+
+	return $res;
+}
+
+function getExcludeFields($arrFieldsTotal, $arrFieldsExclude) {
+	$arrReturn	= array();
+	foreach($arrFieldsExclude as $key=>$value) {
+		if(in_array($value,$arrFieldsTotal)) {
+			$arrReturn[] = $value;
+		}
+	}
+
+	return $arrReturn;
+}
+
+function fnUpdateSphinx($matriID,$sIndex,$arrFieldName,$arrFieldValue) {
+	include_once("/home/product/community/lib/sphinxapi.php");
+	//global $varSphinx;
+	global $varSphinxIP;
+	$matriID = strtoupper($matriID);
+	$sp_matriidindex = ConvertToSphinxMatriIdFormat($matriID); // to convert the BM matriid to sphinxid.
+	$arrMessage = array(1,2,4,10);
+	$fail = 0; $pass = 0;
+	$failureMsg = array();	$successMsg = array();	$connErrMsg = array();
+	$i=0;
+	foreach($varSphinxIP as $sphinxkey=>$sphinxvalue){
+
+	$s = new sphinxdb();
+	$SphinxObjectTempDB	= $s->SphinxConnect($sphinxkey, $sphinxvalue, 'SPH_MATCH_FULLSCAN', '30');
+	//echo '<br>'.$sphinxkey."====".$sphinxvalue.'<br>';
+	if($SphinxObjectTempDB!='-1' ) {
+		foreach($arrFieldName as $thisKey=>$thisFieldname){
+			$updStatus = $s->UpdateAttributes($sIndex,array($thisFieldname),array($sp_matriidindex=>array($arrFieldValue[$thisKey])));
+			//$isStoreOnlineStatus = Cache::get("mc_storeonlinestatus");
+			/*if(strtoupper($thisFieldname) == "POWERPACKSTATUS"  && $isStoreOnlineStatus == 1)
+			{
+				$mc_domainKey = substr($matriID, 0, 1);
+
+				if($sIndex == 'malematrimonyprofileindex')
+				{
+					$mc_updatepps_sphinx_key = "mc_updatepps_sphinx_male_".$mc_domainKey;
+				}
+				else
+				{
+					$mc_updatepps_sphinx_key = "mc_updatepps_sphinx_female_".$mc_domainKey;
+				}
+
+				$idsppstatus = Cache::get($mc_updatepps_sphinx_key);
+				$idsppstatus[$sp_matriidindex] = $sp_matriidindex."-".$arrFieldValue[$thisKey];
+				Cache::set($mc_updatepps_sphinx_key,$idsppstatus);
+			}*/
+
+			if($updStatus == '-1'){
+				$failureMsg[] = $sphinxkey."-UpdateAtributes Failure";
+			}else{
+				$successMsg[] = $sphinxkey."-UpdateAtributes Success";
+			}
+		}
+	}else{
+		$connErrMsg[] =  $sphinxkey."- Server Failure";
+	}
+		$i++;
+}
+	$actionArr[] = implode("-",$successMsg); $actionArr[]= implode("-",$failureMsg);
+	$actionArr[]= implode("-",$connErrMsg);  $ReturnValue = implode("|#@|",$actionArr);
+
+	return $ReturnValue;
+}
+
+?>

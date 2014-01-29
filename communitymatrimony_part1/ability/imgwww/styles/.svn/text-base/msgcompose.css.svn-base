@@ -1,0 +1,27 @@
+.RTEToolbar  { background:#d7d7d7 url(tb_open_l_bg_1.gif) repeat-x fixed top;border-left:solid 1px #fff;border-top:solid 1px #fff;}
+.RTEButtonNormal { padding:1px;cursor:hand; }
+.RTEButtonPressed{border-left: #bbbbbb solid 1px;border-top: #bbbbbb solid 1px;border-right: #ffffff solid 1px;border-bottom: #ffffff solid 1px;cursor:hand;}
+.RTEButtonMouseOver{padding:0;border-left: #ffffff solid 1px;border-top: #ffffff solid 1px;border-right: #bbbbbb solid 1px;border-bottom: #bbbbbb solid 1px;cursor:hand;}
+.RTEButtonDisabled{border: #e6e6e6 solid 1px;}
+.RTEButtonNormalPromo{background-color: #f5f5b5;border: #e6e6e6 solid 1px;cursor:hand;}
+.RTEButtonPressedPromo{background-color: #f5f5b5;border-left: #bbbbbb solid 1px;border-top: #bbbbbb solid 1px;border-right: #ffffff solid 1px;border-bottom: #ffffff solid 1px;cursor:hand;}
+.RTEButtonMouseOverPromo{background-color: #f5f5b5;border-left: #ffffff solid 1px;border-top: #ffffff solid 1px;border-right: #bbbbbb solid 1px;border-bottom: #bbbbbb solid 1px;cursor:hand;}
+.RTEButtonDisabledPromo{background-color: #eeeeee;border: #e6e6e6 solid 1px;}
+.RTEButtonText{font-family: Verdana;font-size: 10px;}
+.RTEDropDown{background-color:#FFFFFF;border-left:#eeeeee solid 1px;border-top:#eeeeee solid 1px;border-right:buttonshadow solid 1px;border-bottom:buttonshadow solid 1px;}
+.RTESpace{background-color: #e6e6e6;width: 4px;height: 24px;}
+.RTEList { background-color: #eeeeee; }
+.RTEImage { width: 22px; height: 22px; }
+.RTEDivider { background-color: #e6e6e6;border-left: #bbbbbb solid 1px;border-top: #bbbbbb solid 1px;border-right: #ffffff solid 1px;border-bottom: #ffffff solid 1px;width: 2px;height: 23px; }
+.RTEText { font: 8pt verdana,arial,sans-serif }
+.RTEHeading { color:navy;background-color: #eeeeee; }
+.RTESelector { z-index:100;display:none;position:absolute; }
+A.RTESelectItem:link {color: black;text-decoration:none;}
+A.RTESelectItem:active{color: black;text-decoration:none;}
+A.RTESelectItem:visited{color: black;text-decoration:none;}
+.btnImage { background-color:#C5C5C5; border: 2px solid silver; cursor: pointer; cursor: hand;}
+.btnImageRaised { background-color:#C5C5C5; border: 2px outset; cursor: pointer; cursor: hand;}
+.btnImageLowered { background-color:#C5C5C5; border: 2px inset; cursor: pointer; cursor: hand;}
+.vertSep { background-color:#C5C5C5; border:1px inset;font-size:0px; width:1px; height:20px; }
+.btnBack { background-color:#C5C5C5; border:1px outset; letter-spacing:0; padding-top:2px; padding-bottom:2px }
+img { border-style:none; }	

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/communitymatrimony/!svn/ver/8543/IVR_CBS_Payments/conf
+END
+config.cil14
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/8494/IVR_CBS_Payments/conf/config.cil14
+END
+ip.cil14
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/communitymatrimony/!svn/ver/8494/IVR_CBS_Payments/conf/ip.cil14
+END
+vars.cil14
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/communitymatrimony/!svn/ver/8494/IVR_CBS_Payments/conf/vars.cil14
+END
+payment.cil14
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/communitymatrimony/!svn/ver/8543/IVR_CBS_Payments/conf/payment.cil14
+END
+emailsconfig.cil14
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/communitymatrimony/!svn/ver/8494/IVR_CBS_Payments/conf/emailsconfig.cil14
+END
+dbinfo.cil14
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/8543/IVR_CBS_Payments/conf/dbinfo.cil14
+END
+memcache.cil14
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/communitymatrimony/!svn/ver/8494/IVR_CBS_Payments/conf/memcache.cil14
+END
+domainlist.cil14
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/communitymatrimony/!svn/ver/8494/IVR_CBS_Payments/conf/domainlist.cil14
+END

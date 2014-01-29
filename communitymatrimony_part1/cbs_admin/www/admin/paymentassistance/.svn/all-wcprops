@@ -1,0 +1,281 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/communitymatrimony/!svn/ver/8811/cbs_admin/www/admin/paymentassistance
+END
+eprstatus.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/eprstatus.php
+END
+tmpasthistory.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/communitymatrimony/!svn/ver/8811/cbs_admin/www/admin/paymentassistance/tmpasthistory.php
+END
+clsDB_PaymentAss.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/clsDB_PaymentAss.php
+END
+paymentoptionsupdate.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/paymentoptionsupdate.php
+END
+easypay_arrays.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/easypay_arrays.php
+END
+load.gif
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/load.gif
+END
+chkOfferDetails.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/chkOfferDetails.php
+END
+paidpageinsert.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/paidpageinsert.php
+END
+support_insert.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/support_insert.php
+END
+paupdatecrmchat.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/paupdatecrmchat.php
+END
+ordergen.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/communitymatrimony/!svn/ver/8810/cbs_admin/www/admin/paymentassistance/ordergen.php
+END
+successleadmsg.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/successleadmsg.php
+END
+indextest.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/indextest.php
+END
+cbssupportdailyreceivedcount.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/cbssupportdailyreceivedcount.php
+END
+onlinepaymentfailerupdate.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/onlinepaymentfailerupdate.php
+END
+resultlog.txt
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/resultlog.txt
+END
+supportgetreport.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/supportgetreport.php
+END
+supportcbstmgetofferbycurrence.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/supportcbstmgetofferbycurrence.php
+END
+pavar.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/pavar.php
+END
+autosuggest.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/autosuggest.php
+END
+supportcheckstatus_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/supportcheckstatus_test.php
+END
+cal.gif
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/cal.gif
+END
+supportcheckstatustest.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/supportcheckstatustest.php
+END
+supportofflineupdate.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/supportofflineupdate.php
+END
+cbssupportcommonfunction.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/cbssupportcommonfunction.php
+END
+supportgetsta.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/supportgetsta.php
+END
+cbseasypayarrays.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/cbseasypayarrays.php
+END
+tmcomments.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/communitymatrimony/!svn/ver/8807/cbs_admin/www/admin/paymentassistance/tmcomments.php
+END
+lvars.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/lvars.php
+END
+offerdisplay.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/offerdisplay.php
+END
+header.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/communitymatrimony/!svn/ver/8810/cbs_admin/www/admin/paymentassistance/header.php
+END
+pendingepr.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/pendingepr.php
+END
+support_easypayapplication.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/support_easypayapplication.php
+END
+index_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/index_test.php
+END
+clsPaging.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/clsPaging.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/8808/cbs_admin/www/admin/paymentassistance/index.php
+END
+sendemailandsmstest.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/sendemailandsmstest.php
+END
+supportofferPacakage.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/supportofferPacakage.php
+END
+pavars.inc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/pavars.inc
+END
+supportcheckstatus.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/communitymatrimony/!svn/ver/8810/cbs_admin/www/admin/paymentassistance/supportcheckstatus.php
+END
+PageNav.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/PageNav.php
+END
+pacron.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/pacron.php
+END
+close.gif
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/close.gif
+END
+supportonlineupdate.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/supportonlineupdate.php
+END
+cbsprivilegepermission.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/cbsprivilegepermission.php
+END
+checkMatriId.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/communitymatrimony/!svn/ver/8804/cbs_admin/www/admin/paymentassistance/checkMatriId.php
+END

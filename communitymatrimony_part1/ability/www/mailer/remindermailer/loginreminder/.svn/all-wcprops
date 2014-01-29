@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/remindermailer/loginreminder
+END
+login_reminder_tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/remindermailer/loginreminder/login_reminder_tpl.php
+END
+login_reminder.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/remindermailer/loginreminder/login_reminder.php
+END
+login_reminder_smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/remindermailer/loginreminder/login_reminder_smtp.php
+END

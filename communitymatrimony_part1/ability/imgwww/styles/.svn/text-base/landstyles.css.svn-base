@@ -1,0 +1,59 @@
+body { background: #fff; margin:0px; font-family: Arial, Helvetica, Tahoma; font-size: 12px; color:#000000; line-height:15px; text-decoration:none;text-align:left;align:center;}
+#maincontainer {padding-left:2px;padding-right:2px;}
+#container {width:776px;margin:0px 0px 0px 0px;}
+form{margin:0px;padding:0px;}
+a{text-decoration:none;}
+.button{ background: #FFFFFF;padding:0px !important;padding:1px 2px 0px 2px;border:1px solid #E22A10;color: #E01D01; font: bold 12px arial, helvetica, sans-serif; overflow: visible; vertical-align: middle;cursor:pointer;}
+
+.fleft{float:left;}
+.fright{float:right;}
+
+.padt5{padding-top:5px;}
+.padt7{padding-top:7px;}
+.padt12{padding-top:12px;}
+.padtb20{padding-top:20px;padding-bottom:20px;}
+.padt40{padding-top:40px;}
+.padr5{padding-right:5px;}
+.padl10{padding-left:10px;}
+
+.clr{color:#000000;} 
+.clr1{color:#D11014;}
+.clr2{color:#ababab;} 
+.clr3{color:#FF6000;} 
+.clr4{color:#FFFFFF;}
+
+.lh16{line-height:16px;}
+
+.smalltxt { font-size:11px;}
+.formtxt { font-size:11px;font-family:verdana;}
+.normtxt {font-size:12px;}
+.headtxt { font-size:13px;}
+.alerttxt {color:#FF6000;font-size:11px; font-weight:bold;font-family:Arial;}
+.bld{font-weight:bold;}
+.ht40{height:40px;}
+
+.lpanel1{width:418px !important;width:428px;background-color:#F26A24;height:23px !important;height:30px;}
+
+.rpanel1{width:348px;background-color:#F26A24;height:30px;}
+.lpanel2{width:428px;background-color:#FFFFFF;}
+.rpanel2{width:345px !important;width:348px;background:url(http://img.communitymatrimony.com/images/regbg.gif) repeat-x;border-right:1px solid #FFDDCB;border-bottom:1px solid #FFDDCB;border-left:2px solid #ffffff;height:336px !important;height:337px;}
+.ltform{width:115px;text-align:left;padding-top:11px !important;padding-top:9px;}
+.rtform{width:195px;text-align:left;padding-top:11px !important;padding-top:9px;}
+.tabdiv {width:776px;margin:0px 0px 0px 0px;background:url(http://img.communitymatrimony.com/images/tabbg.gif) no-repeat;height:177px;}
+.bulletdiv{width:250px;background:url(http://img.communitymatrimony.com/images/bullet.gif) no-repeat left;padding-left:18px;}
+.footdiv{width:500px;text-align:center;}
+
+.redbg, .oranbg, .redmorebg{width:389px;height:40px;}
+.redbg{background: url(http://img.communitymatrimony.com/images/red.gif) no-repeat;}
+.oranbg{background: url(http://img.communitymatrimony.com/images/orange.gif) no-repeat;}
+.redmorebg{background: url(http://img.communitymatrimony.com/images/redmore.gif) no-repeat;}
+
+.sitelink{font-family:'times new roman';font-size:21px;color:#ffffff;padding-top:9px;padding-left:15px;height:30px;}
+.arrowlink, .morelink{padding-top:5px;padding-right:6px;}
+
+.inputtext {font-weight:normal;}
+.inputtext, .homeselect{padding-left:2px;border:1px solid #B3B3B3;font-family:arial, tahoma, verdana;color:#333;width:190px;font-size:11px;}
+
+.tlright{text-align:right;}
+.tlleft{text-align:left;}
+.tljust{text-align:justify;}

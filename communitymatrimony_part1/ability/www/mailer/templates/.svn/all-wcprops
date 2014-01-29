@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/5802/ability/www/mailer/templates
+END
+basic.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/basic.tpl
+END
+inboxbasic.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/inboxbasic.tpl
+END
+forgotPassword.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/forgotPassword.tpl
+END
+forward-basic.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/forward-basic.tpl
+END
+matchwatchbasic.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/matchwatchbasic.tpl
+END
+phone-added-free.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/phone-added-free.tpl
+END
+photo-added.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/photo-added.tpl
+END
+partnerpref.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/partnerpref.tpl
+END
+registrationConfirm.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/communitymatrimony/!svn/ver/3518/ability/www/mailer/templates/registrationConfirm.tpl
+END
+referFriend.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/referFriend.tpl
+END
+photo-added-free.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/photo-added-free.tpl
+END
+paidmemberdtl.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/paidmemberdtl.tpl
+END
+notLoggedIn.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/notLoggedIn.tpl
+END
+addUrPhoto.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/addUrPhoto.tpl
+END
+messagemails.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/messagemails.tpl
+END
+requestadded.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/requestadded.tpl
+END
+profileValidation.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/profileValidation.tpl
+END
+rsscommunity.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/rsscommunity.tpl
+END
+freememberdtl.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/freememberdtl.tpl
+END
+profileAdminModify.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/profileAdminModify.tpl
+END
+inactive1.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/5802/ability/www/mailer/templates/inactive1.tpl
+END
+inactive2.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/5802/ability/www/mailer/templates/inactive2.tpl
+END
+matchwatchbasic_Test.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/matchwatchbasic_Test.tpl
+END
+inactive3.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/5802/ability/www/mailer/templates/inactive3.tpl
+END
+paymentConfirmation.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/paymentConfirmation.tpl
+END
+profileModification.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/communitymatrimony/!svn/ver/3537/ability/www/mailer/templates/profileModification.tpl
+END
+tme_assuredcontact.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/tme_assuredcontact.tpl
+END
+profileDeleted.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/profileDeleted.tpl
+END
+success-stories-newsletter.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/success-stories-newsletter.tpl
+END
+request.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/request.tpl
+END
+inbox-paid.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/inbox-paid.tpl
+END
+photomatchwatch.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/photomatchwatch.tpl
+END
+inbox-free.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/inbox-free.tpl
+END
+troublewithUrProfile.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/troublewithUrProfile.tpl
+END
+dailymatchwatch_Test.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/dailymatchwatch_Test.tpl
+END
+birthday.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/birthday.tpl
+END
+dailymatchwatch.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/dailymatchwatch.tpl
+END
+unreadMessages.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/unreadMessages.tpl
+END
+phone-added.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/phone-added.tpl
+END
+paid_benefit.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/paid_benefit.tpl
+END
+horoscopeRequest.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/horoscopeRequest.tpl
+END
+interestmore.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/communitymatrimony/!svn/ver/3415/ability/www/mailer/templates/interestmore.tpl
+END

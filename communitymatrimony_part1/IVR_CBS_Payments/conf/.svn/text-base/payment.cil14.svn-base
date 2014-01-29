@@ -1,0 +1,381 @@
+<?php
+#================================================================================================================
+# Author 		: Ashok kumar, Dhanapal
+# Date	        : 15-Dec-2008
+# Project		: MatrimonyProduct
+# Filename		: payment.cil14
+#================================================================================================================
+# Description   : Payment module array and variable declaration
+#================================================================================================================
+
+// INCLUDES //
+$varRootBasePath	= dirname($_SERVER['DOCUMENT_ROOT']);
+if($varRootBasePath == ''){ $varRootBasePath = '/home/product/community'; }
+#include_once $varRootBasePath.'/conf/domainrates.cil14';
+#include_once $varRootBasePath.'/conf/currconvrate.cil14';
+
+//HDFC Auto Renew 
+$varHdfcUsdMerchantIdRecurring	= '99020017';
+$varHdfcUsdAccessCodeRecurring	= 'A7D37B07';
+$varHdfcRecurringUsername		= 'autorenewal';
+$varHdfcRecurringPassword		= 'aaf67TYGH';
+
+// Auto Renew Currency List
+$arrAutoRenewCurrencyList = array ('USD'=>222,'GBP'=>221,'AED'=>220,'EURO'=>21,'EUR'=>21);
+
+// CC-AVENUE PAYMENT GATEWAY DETAILS //
+$varMerchantId			= "M_musmatri_2323";
+$varCCAvenueGatewayUrl	= 'http://'.$_SERVER['HTTP_HOST'].'/payment/ccpaymentprocess.php';
+$varCCAvenueRedirectUrl	= 'http://'.$_SERVER['HTTP_HOST'].'/payment/ccgatwayredirect.php';
+$varWorkingKey			= "p8045i4ia3end3tkuusrvaby9fh88qpu";
+
+// ICICI PAYMENT GATEWAY DETAILS //
+$varUSDMerchantId		= '00003406';
+$varGBPMerchantId		= '00003407';
+$varAEDMerchantId		= '00003408';
+$varIciciGatewayUrl		= 'https://communitymatrimony.com/payment/icgatewayredirect.php';
+$varIciciGatewayUrl_VBV = 'https://communitymatrimony.com/payment/icgatewayredirect_VBV.php';
+
+//FINAL
+$varMigsURL				= 'https://communitymatrimony.com/payment/migsgatewayredirect.php';
+$varMigsURL_INR			= 'https://communitymatrimony.com/payment/migsgatewayredirect_INR.php';
+$varCCAvenueURL			= 'http://'.$_SERVER['HTTP_HOST'].'/payment/ccgatwayredirect.php';
+$varIVRS				= 'http://'.$_SERVER['HTTP_HOST'].'/payment/index.php?act=ivr_payment';
+$varOptimalURL   		= 'https://communitymatrimony.com/payment/optimal_gateway.php';
+$varOptimalProcess	    = 'https://communitymatrimony.com/payment/optimal_paymentprocess.php';
+$varMigsDoURL			= 'https://communitymatrimony.com/payment/vpc_php_authenticate_and_pay_merchanthost_do.php';
+$varMigsDrURL			= 'https://communitymatrimony.com/payment/vpc_php_authenticate_and_pay_merchanthost_dr.php';
+
+//Community Office URL and Pay at bank url
+$varCommuityOfficeURL = $confValues["SERVERURL"]."/site/index.php?act=contactus";
+$varBankURL           = $confValues["SERVERURL"]."/site/index.php?act=bankspage";
+
+// $varOfferAvailable		= 0; //0=> OFF, 1=> ON
+$varOfferStatus	= 1;
+$varOfferAvailable[1] = 1;
+$varOfferAvailable[2] = 1;
+$varOfferAvailable[3] = 1;
+$varOfferAvailable[4] = 1;
+$varOfferAvailable[5] = 1;
+$varOfferAvailable[6] = 1;
+$varOfferAvailable[7] = 1;
+$varOfferAvailable[8] = 1;
+$varOfferAvailable[9] = 1;
+$varOfferAvailable[48] = 1; // Privilege
+$varOfferAvailable[56] = 1; // Privilege
+$varOfferAvailable[80] = 1; // Privilege 6 months
+
+$varBDayOfferAvailable	= 0; //0=> OFF, 1=> ON
+$varUsdGateWayAvailable	= 0; //0=> OFF, 1=> ON
+$varInrGateWayAvailable	= 1; //0=> OFF, 1=> ON
+//$arrSourceFrom			= array(0=>'Home Page',1=>'CCAvenue',2=>'Citi',3=>'ICICI');
+$arrSourceFrom			= array(1,2,3,4);
+
+// Product Packages Names //
+// Classic Packages
+$arrPackageName[1] = 'Gold';
+$arrPackageName[2] = 'Super Gold';
+$arrPackageName[3] = 'Platinum';
+
+$arrPrdPackages[1] = 'Gold 3 Months';
+$arrPrdPackages[2] = 'Gold 6 Months';
+$arrPrdPackages[3] = 'Gold 9 Months';
+// Classic Plus Packages
+
+$arrPrdPackages[4] = 'Super Gold 3 Months';
+$arrPrdPackages[5] = 'Super Gold 6 Months';
+$arrPrdPackages[6] = 'Super Gold 9 Months';
+// Classic Super Packages
+$arrPrdPackages[7] = 'Platinum 3 Months';
+$arrPrdPackages[8] = 'Platinum 6 Months';
+$arrPrdPackages[9] = 'Platinum 9 Months';
+$arrPrdPackages[48] = 'Privilege 3 Months';
+$arrPrdPackages[56] = 'Privilege 1 Month';
+$arrPrdPackages[80] = 'Privilege 6 Month';
+
+$arrPrdPackages[100] = 'Phone Package';
+$arrPrdPackages[110] = 'Astro Package';
+$arrPrdPackages[111] = 'Astro Package';
+$arrPrdPackages[112] = 'Astro Package';
+$arrPrdPackages[120] = 'Profile Highlighter Package';
+
+
+// Product Time Periods - used in conjunction with arrPrdPackages
+$arrPrdTime[1] = '3 Months';
+$arrPrdTime[2] = '6 Months';
+$arrPrdTime[3] = '9 Months';
+
+// Product Packages Valid Days Count //
+// Classic Packages
+$arrPkgValidDays[1] = 90;  // 3 month
+$arrPkgValidDays[2] = 180; // 6 month
+$arrPkgValidDays[3] = 270; // 9 month
+// Classic Plus Packages
+$arrPkgValidDays[4] = 90;  // 3 month
+$arrPkgValidDays[5] = 180; // 6 month
+$arrPkgValidDays[6] = 270; // 9 month
+// Classic Super Packages
+$arrPkgValidDays[7] = 90;  // 3 month
+$arrPkgValidDays[8] = 180; // 6 month
+$arrPkgValidDays[9] = 270; // 9 month
+
+$arrPkgValidDays[48] = 90; // CBS Privilege 3 month
+$arrPkgValidDays[56] = 30; // CBS Privilege 1 month
+$arrPkgValidDays[80] = 180; // CBS Privilege 6 month
+$arrPkgValidDays[120] = 60; // CBS Profile Highlighter 2 month
+
+// Offer Valid Days Count
+$arrOfferValidDays = 0;
+
+// Product Packages - Phone Count //
+// Classic Packages
+$arrPhonePackage[1] = 40;  // 3 month
+$arrPhonePackage[2] = 55; // 6 month
+$arrPhonePackage[3] = 70; // 9 month
+// Classic Plus Packages
+$arrPhonePackage[4] = 50; //80;  // 3 month   Next Level Offer 18th March
+$arrPhonePackage[5] = 70; //110; // 6 month
+$arrPhonePackage[6] = 90; //140; // 9 month
+// Classic Super Packages
+$arrPhonePackage[7] = 80;  // 3 month
+$arrPhonePackage[8] = 110;  // 6 month
+$arrPhonePackage[9] = 140;  // 9 month
+$arrPhonePackage[48] = 200;  // 3 month privilege
+$arrPhonePackage[56] = 50;  // 1 month privilege
+$arrPhonePackage[100] = 25;  // Phone package
+
+$arrAstroPackage[110]	= 50;
+$arrAstroPackage[111]	= 100;
+$arrAstroPackage[112]	= 150;
+
+// Offer Phone Package Count
+$arrOfferPhoneCount = 0;
+
+// SWITCH - FOR GEO LOCATE BASED RATE/CURRENCY SHOW - RESPECTIVE OF DOMAINS //
+$arrCountryCurrency = array ('IN'=>98,'PK'=>162, 'US'=>222, 'UK'=>221, 'BH'=>220,'CY'=>220,'EG'=>220,'IR'=>220,'IQ'=>220,'IL'=>220,'JO'=>220,'KW'=>220,'LB'=>220,'OM'=>220,'QA'=>220,'SY'=>220,'TR'=>220,'AE'=>220,'YE'=>220,'AL'=>21,'AD'=>21,'AT'=>21,'BY'=>21,'BE'=>21,'BA'=>21,'BG'=>21,'HR'=>21,'CZ'=>21,'DK'=>21,'EE'=>21,'FI'=>21,'FR'=>21,'DE'=>21,'GR'=>21,'HU'=>21,'IS'=>21,'IE'=>21,'IT'=>21,'LV'=>21,'LI'=>21,'LU'=>21,'MO'=>21,'MT'=>21,'MD'=>21,'MC'=>21,'NL'=>21,'PL'=>21,'PT'=>21,'RO'=>21,'RU'=>21,'SM'=>21,'SK'=>21,'SI'=>21,'ES'=>21,'SE'=>21,'CH'=>21,'TR'=>21,'UA'=>21);
+$arrDefaultCurrency = 222; // USD Currency Rate
+
+$arrCurrencyList	= array ('IN'=>98,'PKR'=>162,'US'=>222,'UK'=>221,'AED'=>220,'EURO'=>21);
+// COUNTRY WISE PACKAGE RATES ARRAY DETAILS //
+
+//OFFER RELATED ARRAYS
+//$arrFlatDiscountFields = array(98=>'MemberDiscountINRFlatRate',222=>'MemberDiscountUSDFlatRate',21=>'MemberDiscountEUROFlatRate',220=>'MemberDiscountAEDFlatRate',221=>'MemberDiscountGBPFlatRate');
+
+$arrDiscountLevel	= array(1=>'arrFlatDiscountValues',2=>'arrPercentageValues',3=>'arrNextLevelValues',4=>'arrExtraDays');
+$varDiscountPercentageValue	= 10;
+$varRenewalOfferCategoryId	= 1053;
+$varPlatinum3MonthExtraPhoneCnt	= 15;
+$varPlatinum6MonthExtraPhoneCnt	= 20;
+$varPlatinum9MonthExtraPhoneCnt	= 25;
+
+
+/*$arrPercentageFields = array(
+						98=>'MemberDiscountPercentage',
+						222=>'MemberDiscountPercentage',
+						21=>'MemberDiscountPercentage',
+						220=>'MemberDiscountPercentage',
+						221=>'MemberDiscountPercentage',
+						1=>'MemberExtraPhoneNumbers',
+						2=>'MemberExtraHoroscope',
+						3=>'MemberNextLevelOffer',
+						4=>'MemberExtraDays',
+						5=>'MemberDiscountPercentage');
+
+$arrExtraPhoneFields = array(
+						98=>'MemberDiscountPercentage',
+						222=>'MemberDiscountPercentage',
+						21=>'MemberDiscountPercentage',
+						220=>'MemberDiscountPercentage',
+						221=>'MemberDiscountPercentage',
+						1=>'MemberExtraPhoneNumbers',
+						2=>'MemberExtraHoroscope',
+						3=>'MemberNextLevelOffer',
+						4=>'MemberExtraDays',
+						5=>'MemberDiscountPercentage');*/
+
+
+$arrDiscountFields = array(
+						98=>'MemberDiscountINRFlatRate',
+						222=>'MemberDiscountUSDFlatRate',
+						21=>'MemberDiscountEUROFlatRate',
+						220=>'MemberDiscountAEDFlatRate',
+						221=>'MemberDiscountGBPFlatRate',
+						1=>'MemberExtraPhoneNumbers',
+						2=>'MemberExtraHoroscope',
+						3=>'MemberNextLevelOffer',
+						4=>'MemberExtraDays',
+						5=>'MemberDiscountPercentage');
+
+$arrFlatDiscountValues = array(
+						98=>"'9~300|2~100|3~100|4~100|5~100|6~100|7~100|8~100|1~100'",
+						222=>"'1~5|2~10|3~15|4~20|5~25|6~30|7~35|8~40|9~45'",
+						21=>"'1~2|2~4|3~6|4~8|5~10|6~12|7~14|8~16|9~18'",
+						220=>"'1~3|2~6|3~9|4~12|5~15|6~18|7~21|8~24|9~27'",
+						221=>"'1~3|2~6|3~9|4~12|5~15|6~18|7~21|8~24|9~27'",
+						1=>"''",
+						2=>"''",
+						3=>"''",
+						4=>"''",
+						5=>"''");
+
+$arrPercentageValues = array(
+						98=>"''",
+						222=>"''",
+						21=>"''",
+						220=>"''",
+						221=>"''",
+						1=>"''",
+						2=>"''",
+						3=>"''",
+						4=>"''",
+						5=>"'1~$varDiscountPercentageValue|2~$varDiscountPercentageValue|3~$varDiscountPercentageValue|4~$varDiscountPercentageValue|5~$varDiscountPercentageValue|6~$varDiscountPercentageValue|7~$varDiscountPercentageValue|8~$varDiscountPercentageValue|9~$varDiscountPercentageValue'");
+
+$arrNextLevelValues = array(
+						98=>"''",
+						222=>"''",
+						21=>"''",
+						220=>"''",
+						221=>"''",
+						1=>"'9~25|8~20|7~15'",
+						2=>"''",
+						3=>"'1~4|2~5|3~6|4~7|5~8|6~9'",
+						4=>"''",
+						5=>"''");
+
+$arrExtraDays = array(
+						98=>"''",
+						222=>"''",
+						21=>"''",
+						220=>"''",
+						221=>"''",
+						1=>"''",
+						2=>"''",
+						3=>"''",
+						4=>"'1~30|2~30|3~30|4~30|5~30|6~30|7~30|8~30|9~30'",
+						5=>"''");
+
+/*
+$arrFlatDiscountField = array(
+						98=>'MemberDiscountINRFlatRate',
+						222=>'MemberDiscountUSDFlatRate',
+						21=>'MemberDiscountEUROFlatRate',
+						220=>'MemberDiscountAEDFlatRate',
+						221=>'MemberDiscountGBPFlatRate');
+
+$arrFlatDiscountValues = array(
+						98=>'1~300|2~100|3~100|4~100|5~100|6~100|7~100|8~100|9~100',
+						222=>'1~5|2~10|3~15|4~20|5~25|6~30|7~35|8~40|9~45',
+						21=>'1~2|2~4|3~6|4~8|5~10|6~12|7~14|8~16|9~18',
+						220=>'1~3|2~6|3~9|4~12|5~15|6~18|7~21|8~24|9~27',
+						221=>'1~3|2~6|3~9|4~12|5~15|6~18|7~21|8~24|9~27');
+
+
+$arrMemberNextLevelOffer =	array(
+						98=>'MemberDiscountINRFlatRate',
+						222=>'MemberDiscountUSDFlatRate',
+						21=>'MemberDiscountEUROFlatRate',
+						220=>'MemberDiscountAEDFlatRate',
+						221=>'MemberDiscountGBPFlatRate')
+
+						98=>array('MemberNextLevelOffer'=>'1~4|2~5|3~6|4~7|5~8|6~9','MemberExtraPhoneNumbers'=>'7~15|8~20|9~25'),
+						222=>array('MemberNextLevelOffer'=>'1~4|2~5|3~6|4~7|5~8|6~9','MemberExtraPhoneNumbers'=>'7~15|8~20|9~25'),
+						21=>array('MemberNextLevelOffer'=>'1~4|2~5|3~6|4~7|5~8|6~9','MemberExtraPhoneNumbers'=>'7~15|8~20|9~25'),
+						220=>array('MemberNextLevelOffer'=>'1~4|2~5|3~6|4~7|5~8|6~9','MemberExtraPhoneNumbers'=>'7~15|8~20|9~25'),
+						221=>array('MemberNextLevelOffer'=>'1~4|2~5|3~6|4~7|5~8|6~9','MemberExtraPhoneNumbers'=>'7~15|8~20|9~25'));
+
+$arrMemberExtraDays =	array(
+						98=>array('MemberExtraDays'=>'1~30|2~30|3~30|4~30|5~30|6~30|7~30|8~30|9~30'),
+						222=>array('MemberExtraDays'=>'1~30|2~30|3~30|4~30|5~30|6~30|7~30|8~30|9~30'),
+						21=>array('MemberExtraDays'=>'1~30|2~30|3~30|4~30|5~30|6~30|7~30|8~30|9~30'),
+						220=>array('MemberExtraDays'=>'1~30|2~30|3~30|4~30|5~30|6~30|7~30|8~30|9~30'),
+						221=>array('MemberExtraDays'=>'1~30|2~30|3~30|4~30|5~30|6~30|7~30|8~30|9~30'));*/
+
+// IN - INR [ INDIA 98 ]
+$arrRate[98]	  = $arrDomainSegmentRates[98];
+$arrOffRate[98]   = $arrDomainSegmentDisRates[98];
+$arrCurrCode[98]  = 'Rs.';
+$arrCurrToInr[98] = $varCurrInrToInr;
+$arrCurrToUsd[98] = $varCurrInrToUsd;
+
+
+// PK - PKR [ PAKISTAN 162 ]
+$arrRate[162]		= $arrDomainSegmentRates[162];
+$arrOffRate[162]	= $arrDomainSegmentDisRates[162];
+$arrCurrCode[162]  = 'PKR';
+$arrCurrToInr[162] = $varCurrPkrToInr;
+$arrCurrToUsd[162] = $varCurrPkrToUsd;
+
+
+// US - USD [ UNITED STATES OF AMERICA 222 ]
+$arrRate[222]	   = $arrDomainSegmentRates[222];
+$arrOffRate[222]   = $arrDomainSegmentDisRates[222];
+$arrCurrCode[222]  = 'USD';
+$arrCurrToInr[222] = $varCurrUsdToInr;
+$arrCurrToUsd[222] = $varCurrUsdToUsd;
+
+// UK - GBP [ UNITED KINGDOM 221 ]
+$arrRate[221]	   = $arrDomainSegmentRates[221];
+$arrOffRate[221]   = $arrDomainSegmentDisRates[221];
+$arrCurrCode[221]  = 'GBP';
+$arrCurrToInr[221] = $varCurrGbpToInr;
+$arrCurrToUsd[221] = $varCurrGbpToUsd;
+
+// UAE - AED [ UNITED ARAB EMIRATES 220 ]
+$arrRate[220]	   = $arrDomainSegmentRates[220];
+$arrOffRate[220]   = $arrDomainSegmentDisRates[220];
+$arrCurrCode[220]  = 'AED';
+$arrCurrToInr[220] = $varCurrAedToInr;
+$arrCurrToUsd[220] = $varCurrAedToUsd;
+
+// EURO - EUR [ EUROPE COUNTRIES 21 ]
+$arrRate[21]	   = $arrDomainSegmentRates[21];
+$arrOffRate[21]	   = $arrDomainSegmentDisRates[21];
+$arrCurrCode[21]   = 'EUR';
+$arrCurrToInr[21]  = $varCurrEurToInr;
+$arrCurrToUsd[21]  = $varCurrEurToUsd;
+
+
+$varAssociateRedirectURL	    = 'http://'.$_SERVER['HTTP_HOST'].'/associates/associatesredirecturl.php';
+$varAssociateFranchiseeRedirectURL  = 'http://'.$_SERVER['HTTP_HOST'].'/associates/associatesfranchiseeredirecturl.php';
+$varAssociatesUSAmount		    = array(1=>"500",2=>"200",3=>"100");
+$varAssociatesIndianAmount	    = array(1=>"20000",2=>"8000",3=>"4000");
+
+$bmnp_currencywise_deposit_amount_arr=array(1=>array(0=>"Rs.",1=>"5000",2=>"10000",3=>"15000"),2=>array(0=>"US$",1=>"108",2=>"216",3=>"324"),3=>array(0=>"AED",1=>"396",2=>"791",3=>"1187"),4=>array(0=>"GBP",1=>"69",2=>"138",3=>"207"),5=>array(0=>"EUR",1=>"79",2=>"157",3=>"236"));
+
+## FRANCHISEE PAYMENT DETAILS
+$FRANCHISEE_EMAIL="franchisee\@bharatmatrimony.com";
+$FRANCHISEE_AED_TOTALPAYMENT=500;
+$FRANCHISEE_AED_REGFEE=50;
+$FRANCHISEE_AED_DEPOSIT=200;
+$FRANCHISEE_AED_CREDITBAL=250;
+$FRANCHISEE_INR_TOTALPAYMENT=10000;
+$FRANCHISEE_INR_REGFEE=500;
+$FRANCHISEE_INR_DEPOSIT=2000;
+$FRANCHISEE_INR_CREDITBAL=7500;
+$FRANCHISEE_USD_TOTALPAYMENT=125;
+$FRANCHISEE_USD_REGFEE=0;
+$FRANCHISEE_USD_DEPOSIT=2500;
+$FRANCHISEE_USD_CREDITBAL=3125;
+$FRANCHISEE_NRI_COMMISSION=0.30;
+$FRANCHISEE_IND_COMMISSION=0.20;
+$FRANCHISEE_USDCREDITBAL_OPT1=100;
+$FRANCHISEE_USDCREDITBAL_OPT2=200;
+$FRANCHISEE_USDCREDITBAL_OPT3=500;
+$FRANCHISEE_INRCREDITBAL_OPT1=5000;
+$FRANCHISEE_INRCREDITBAL_OPT2=10000;
+$FRANCHISEE_INRCREDITBAL_OPT3=15000;
+
+//Find offer end date
+$varNumericDayOfWeek = 6; //Numeric representation of the day of the week (0=>sunday,6=>saturday)
+$varDaysOfWeek = date("w");
+if($varDaysOfWeek==0) { //sunday
+	$varOfferEndDate = 0;
+} else { //other than sunday
+	$varRemainingDays	= $varNumericDayOfWeek-$varDaysOfWeek;
+	$varOfferEndDate	= date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")+$varRemainingDays, date("Y")));
+}
+
+// PAYMENT ATTEMPT FAILURE MESSAGE //
+$varFailureMsg = "<font class=smalltxt>Thank you for your interest in making payment. Sorry, your payment has failed due to one of the following reasons: <ul><li>Incorrect credit card details</li><li>Credit card expired</li><li>Insufficient funds</li></ul><br><a href=\"".$confValues["SERVERURL"]."/payment/\" class=\"clr1\">Click here</a> if you wish to try again.<br><br>For any queries you can contact our <a href=\"".$confValues["SERVERURL"]."/site/index.php?act=livehelp/\" class=\"clr1\" target=\"_blank\">24x7 customer support</a> team.";
+
+?>

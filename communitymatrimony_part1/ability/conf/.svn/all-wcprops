@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/communitymatrimony/!svn/ver/8260/ability/conf
+END
+cityarray.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/communitymatrimony/!svn/ver/3407/ability/conf/cityarray.inc
+END
+tblfields.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/communitymatrimony/!svn/ver/5587/ability/conf/tblfields.inc
+END
+ip.inc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/communitymatrimony/!svn/ver/3407/ability/conf/ip.inc
+END
+vars.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/communitymatrimony/!svn/ver/5152/ability/conf/vars.inc
+END
+payment.inc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/communitymatrimony/!svn/ver/3407/ability/conf/payment.inc
+END
+com_phonefunction.inc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/8037/ability/conf/com_phonefunction.inc
+END
+currconvrate.inc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/communitymatrimony/!svn/ver/5152/ability/conf/currconvrate.inc
+END
+messagevars.inc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/3407/ability/conf/messagevars.inc
+END
+privilege.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/communitymatrimony/!svn/ver/3407/ability/conf/privilege.inc
+END
+srchcontent.inc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/3407/ability/conf/srchcontent.inc
+END
+safetytips.inc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/communitymatrimony/!svn/ver/3407/ability/conf/safetytips.inc
+END
+ppinfo.inc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/communitymatrimony/!svn/ver/5152/ability/conf/ppinfo.inc
+END
+reference.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/communitymatrimony/!svn/ver/3407/ability/conf/reference.inc
+END
+wsconf.inc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/communitymatrimony/!svn/ver/3407/ability/conf/wsconf.inc
+END
+cookieconfig.inc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/communitymatrimony/!svn/ver/5133/ability/conf/cookieconfig.inc
+END
+emailsconfig.inc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/communitymatrimony/!svn/ver/3407/ability/conf/emailsconfig.inc
+END
+horoscope.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/communitymatrimony/!svn/ver/3407/ability/conf/horoscope.inc
+END
+dbinfo.inc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/communitymatrimony/!svn/ver/5165/ability/conf/dbinfo.inc
+END
+memcache.inc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/communitymatrimony/!svn/ver/3425/ability/conf/memcache.inc
+END
+dbainfo.inc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/communitymatrimony/!svn/ver/3407/ability/conf/dbainfo.inc
+END
+domainlist.inc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/communitymatrimony/!svn/ver/3407/ability/conf/domainlist.inc
+END
+basefunctions.inc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/communitymatrimony/!svn/ver/8042/ability/conf/basefunctions.inc
+END
+defaultcurrencyconversion.inc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/3407/ability/conf/defaultcurrencyconversion.inc
+END
+config.inc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/communitymatrimony/!svn/ver/5152/ability/conf/config.inc
+END
+domainrates.inc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/communitymatrimony/!svn/ver/3407/ability/conf/domainrates.inc
+END
+mw_domainlist.inc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/communitymatrimony/!svn/ver/3407/ability/conf/mw_domainlist.inc
+END

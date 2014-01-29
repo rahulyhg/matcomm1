@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/communitymatrimony/!svn/ver/5917/cbsmailmanager/bmconf
+END
+bmip.inc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/communitymatrimony/!svn/ver/5699/cbsmailmanager/bmconf/bmip.inc
+END
+error.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/communitymatrimony/!svn/ver/5468/cbsmailmanager/bmconf/error.php
+END
+bmvars.inc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/communitymatrimony/!svn/ver/5898/cbsmailmanager/bmconf/bmvars.inc
+END
+bmvarsassuredcontact.inc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/communitymatrimony/!svn/ver/5468/cbsmailmanager/bmconf/bmvarsassuredcontact.inc
+END
+bmdbinfo.inc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/communitymatrimony/!svn/ver/5561/cbsmailmanager/bmconf/bmdbinfo.inc
+END
+bminit.inc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/communitymatrimony/!svn/ver/5468/cbsmailmanager/bmconf/bminit.inc
+END
+bmsqlclass.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/communitymatrimony/!svn/ver/5468/cbsmailmanager/bmconf/bmsqlclass.inc
+END
+bmvarsregistration.inc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/communitymatrimony/!svn/ver/5468/cbsmailmanager/bmconf/bmvarsregistration.inc
+END
+bmvarsviewprofilelabel.inc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/communitymatrimony/!svn/ver/5468/cbsmailmanager/bmconf/bmvarsviewprofilelabel.inc
+END

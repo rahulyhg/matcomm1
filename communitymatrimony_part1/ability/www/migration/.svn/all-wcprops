@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/communitymatrimony/!svn/ver/8174/ability/www/migration
+END
+createRandPassword.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/communitymatrimony/!svn/ver/3415/ability/www/migration/createRandPassword.php
+END
+interestreceivedinfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/communitymatrimony/!svn/ver/8174/ability/www/migration/interestreceivedinfo.php
+END
+interestsentinfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/8174/ability/www/migration/interestsentinfo.php
+END
+mailreceivedinfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/communitymatrimony/!svn/ver/3415/ability/www/migration/mailreceivedinfo.php
+END

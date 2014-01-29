@@ -1,0 +1,230 @@
+From MAILER-DAEMON  Wed Jan 17 15:02:48 2007
+Return-Path: <>
+X-Original-To: mailmanager@mail1.bharatmatrimony.com
+Delivered-To: mailmanager@mail1.bharatmatrimony.com
+Received: from mail1.bharatmatrimony.com (localhost [127.0.0.1])
+	by mail1.bharatmatrimony.com (Postfix) with ESMTP id 0B63C1FF63
+	for <mailmanager@mail1.bharatmatrimony.com>; Wed, 17 Jan 2007 15:02:48 +0530 (IST)
+Authentication-Results: 87446-mail1.bharatmatrimony.com from=MAILER-DAEMON@yahoo.com; domainkey=neutral (no signature; no policy for yahoo.com)
+Received: from mta211.mail.re2.yahoo.com (mta211.mail.re2.yahoo.com [206.190.53.211])
+	by mail1.bharatmatrimony.com (Postfix) with SMTP
+	for <mailmanager@mail1.bharatmatrimony.com>; Wed, 17 Jan 2007 15:02:19 +0530 (IST)
+Date: 17 Jan 2007 09:32:19 -0000
+From: MAILER-DAEMON@yahoo.com
+To: mailmanager@mail1.bharatmatrimony.com
+Subject: failure delivery
+Message-Id: <20070117093248.0B63C1FF63@mail1.bharatmatrimony.com>
+Status: RO
+
+Message from  yahoo.com.
+Unable to deliver message to the following address(es).
+
+<pdthawani@yahoo.com>:
+connectWithTimeout failed [127.0.0.1:628]: Connection refused
+I'm not going to try again; this message has been in the queue too long.
+
+--- Original message follows.
+
+Return-Path: <mailmanager@mail1.bharatmatrimony.com>
+
+The original message is over 5k.  Message truncated to 1K.
+
+X-Rocket-Track: cat=GD; info=ip:GD<ip=72.32.59.249,policy=w-w100,n0,g0>;sv:UK<ip=216.252.108.172>
+X-Originating-IP: [72.32.59.249]
+Return-Path: <mailmanager@mail1.bharatmatrimony.com>
+Received: from 72.32.59.249  (EHLO mail1.bharatmatrimony.com) (72.32.59.249)
+  by mta211.mail.re2.yahoo.com with SMTP; Mon, 15 Jan 2007 23:20:26 -0800
+Received: by mail1.bharatmatrimony.com (Postfix, from userid 504)
+	id 7E6A72269B; Tue, 16 Jan 2007 12:50:26 +0530 (IST)
+To: pdthawani@yahoo.com
+Subject: Your Pending Express Interest Messages
+MIME-Version: 1.0
+Content-type: text/html; charset=iso-8859-1
+From: BharatMatrimony.com <info@bharatmatrimony.com>
+Reply-To: expinterest@bharatmatrimony.com <expinterest@bharatmatrimony.com>
+Message-Id: <20070116072026.7E6A72269B@mail1.bharatmatrimony.com>
+Date: Tue, 16 Jan 2007 12:50:26 +0530 (IST)
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><TITLE>Express Interest - Accepted - Mailer</TITLE></HEAD>
+<BODY>
+
+<table width=530 cellspacing=0 cellpadding=0 border=0>
+<tr><td valign="top"><p STYLE="padding
+*** MESSAGE TRUNCATED ***
+
+
+From MAILER-DAEMON  Wed Jan 17 15:03:55 2007
+Return-Path: <>
+X-Original-To: mailmanager@mail1.bharatmatrimony.com
+Delivered-To: mailmanager@mail1.bharatmatrimony.com
+Received: by mail1.bharatmatrimony.com (Postfix)
+	id 9B7B31FF7A; Wed, 17 Jan 2007 15:03:55 +0530 (IST)
+Date: Wed, 17 Jan 2007 15:03:55 +0530 (IST)
+From: MAILER-DAEMON@mail1.bharatmatrimony.com (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: mailmanager@mail1.bharatmatrimony.com
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="959C41FF72.1169026435/mail1.bharatmatrimony.com"
+Message-Id: <20070117093355.9B7B31FF7A@mail1.bharatmatrimony.com>
+Status: RO
+
+This is a MIME-encapsulated message.
+
+--959C41FF72.1169026435/mail1.bharatmatrimony.com
+Content-Description: Notification
+Content-Type: text/plain
+
+This is the Postfix program at host mail1.bharatmatrimony.com.
+
+I'm sorry to have to inform you that your message could not be
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to <postmaster>
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+			The Postfix program
+
+<E224175@mail1.bharatmatrimony.com> (expanded from <E224175>): unknown user:
+    "e224175"
+
+--959C41FF72.1169026435/mail1.bharatmatrimony.com
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mail1.bharatmatrimony.com
+X-Postfix-Queue-ID: 959C41FF72
+X-Postfix-Sender: rfc822; mailmanager@mail1.bharatmatrimony.com
+Arrival-Date: Wed, 17 Jan 2007 15:03:55 +0530 (IST)
+
+Final-Recipient: rfc822; E224175@mail1.bharatmatrimony.com
+Original-Recipient: rfc822; E224175
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; unknown user: "e224175"
+
+--959C41FF72.1169026435/mail1.bharatmatrimony.com
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by mail1.bharatmatrimony.com (Postfix, from userid 504)
+	id 959C41FF72; Wed, 17 Jan 2007 15:03:55 +0530 (IST)
+To: E224175@mail1.bharatmatrimony.com
+Subject: Login before January 20th 2007 or your profile will be deleted.
+MIME-Version: 1.0
+Content-type: text/html; charset=iso-8859-1
+From: info@bharatmatrimony.com <info@bharatmatrimony.com>
+Reply-To: newsletter@bharatmatrimony.com
+Message-Id: <20070117093355.959C41FF72@mail1.bharatmatrimony.com>
+Date: Wed, 17 Jan 2007 15:03:55 +0530 (IST)
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><TITLE>Login Reminder Mailer</TITLE></HEAD>
+<BODY>
+
+<table width=475 cellspacing=0 cellpadding=0 border=0>
+<tr><td valign="top"><p STYLE="padding-left:2px;padding-right:2px;padding-top:5px;padding-bottom:5px;font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 9px; font-style: normal; text-align: justify; text-transform: none; color: #999999;">Note: Please add info@bharatmatrimony.com to your contact list so that mail notifications will not be filtered out as junk e-mail or go to your bulk mail folder.</td></tr>
+</table>
+
+
+<table width=550 cellspacing=0 cellpadding=0 border=0 style="border-top:1px solid #96E489;border-left:1px solid #96E489;border-right:1px solid #96E489;border-bottom:1px solid #96E489;">
+<tr>
+<td valign="top">
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" width="550">
+	<tr>
+		<td valign="top"><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/bharatlogo.gif" width="171" height="78" border="0" hspace="10" vspace="10"></td>
+		<td valign="top" align="right"><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/activate-topimg.jpg" width="373" height="101" border="0"></td>
+	</tr>
+	<tr bgcolor="#96E489"><td valign="top" colspan="2"><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="550" height="1"></td></tr>
+	<tr bgcolor="#FFFFFF"><td valign="top" colspan="2"><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="550" height="1"></td></tr>
+	<tr bgcolor="#96E489"><td valign="top" colspan="2"><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="550" height="6"></td></tr>
+</table>
+
+<table width="100%" cellspacing=0 cellpadding=0 border=0>
+	<tr>
+		<td valign="top" bgcolor="#FFFFFF">
+		<p STYLE="padding-left:7px;padding-right:7px;padding-top:5px;line-height:17px; font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;">
+		<b>Dear Member (E224175),</b>
+		<p STYLE="padding-left:10px;padding-right:15px;font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;">
+		This is yet another reminder requesting you to login today and save your profile from being deleted. Everyday we have over 8000 new members joining us and chances are that one of them could be your life partner. So gear up for a new search.<br><br>
+
+		<B><font color="#EF6F1F">Important: Please activate your profile today else you will lose all contact information of members who have contacted you in the past. BharatMatrimony retains only active profiles, and if you do not login before January 20th 2007 your profile will also be deleted.</font></B>  <br><br>
+		</p>
+
+		<p STYLE="padding-left:10px;padding-right:15px;font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;"><B>Given below are your login details:</B></p>
+		
+		</td>
+	</tr>
+	
+</table>
+<br>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td width="10"></td>
+	<td valign="top" bgcolor="#EAE9D3" align="Center">
+		<table border="0" cellpadding="1" cellspacing="0" width="350">
+				<tr>
+					<td valign="top" width="230" style="border-top:1px solid #C8BC85;border-left:1px solid #C8BC85;padding-top:5px;padding-left:3px;padding-right:1px;padding-bottom:5px;"><div style="padding-left:5px;padding-right:1px;"><font style="font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;"><b>&nbsp;Matrimony ID </b></font></div></td>
+					<td valign="top" width="200" style="border-top:1px solid #C8BC85;border-right:1px solid #C8BC85;padding-top:5px;padding-left:3px;padding-right:1px;padding-bottom:5px;"><div style="padding-left:5px;padding-right:1px;"><font style="font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;"><div style="padding-left:5px;padding-right:1px;"><font style="font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;">E224175</font></div></td>
+				</tr>
+
+				<tr>
+					<td valign="top" width="230" style="border-top:1px solid #C8BC85;border-left:1px solid #C8BC85;padding-top:5px;padding-left:3px;padding-right:1px;padding-bottom:5px;"><div style="padding-left:5px;padding-right:1px;"><font style="font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;"><b>&nbsp;E-Mail :</b></font></div></td>
+					<td valign="top" width="200" style="border-top:1px solid #C8BC85;border-right:1px solid #C8BC85;padding-top:5px;padding-left:3px;padding-right:1px;padding-bottom:5px;"><div style="padding-left:5px;padding-right:1px;"><font style="font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;"><div style="padding-left:5px;padding-right:1px;"><font style="font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;">E224175</font></div></td>
+				</tr>
+
+				<tr>
+					<td valign="top" width="200" style="border-top:1px solid #C8BC85;border-bottom:1px solid #C8BC85;border-left:1px solid #C8BC85;padding-top:5px;padding-left:3px;padding-right:1px;padding-bottom:5px;"><div style="padding-left:5px;padding-right:1px;"><div style="padding-left:5px;padding-right:1px;"><font style="font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;"><b>Password:</b></font></div></td>
+					<td valign="top" width="200" style="border-top:1px solid #C8BC85;border-bottom:1px solid #C8BC85;border-right:1px solid #C8BC85;padding-top:5px;padding-left:3px;padding-right:1px;padding-bottom:5px;"><div style="padding-left:5px;padding-right:1px;"><div style="padding-left:5px;padding-right:1px;"><font style="font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;">oracleadmin</font></div></td>
+				</tr>
+		</table>
+	</td>
+</tr>				 <font color="#EF6F1F">
+</table>
+
+
+<p STYLE="padding-left:10px;padding-right:15px;font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;">
+<a href="http://www.keralamatrimony.com/cgi-bin/loginform.php"><font color="#94663E"><u><b>Click here</b></u></font></a> to login <br><br>
+
+<I>BharatMatrimony is today the World Record holder in online marriages with over 9 million registered users. BharatMatrimony has entered the <a href="http://www.bharatmatrimony.com/awards/limca-award.shtml" style="color:#94663E;">Limca Book of Records</a> for having facilitated the highest number of marriages. </I><br><br>
+</p>
+
+<p STYLE="padding-left:10px;padding-right:15px;font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;">
+<table border="0" width="530" cellpadding="3" cellspacing="0">
+<tr><td colspan="2" valign="top" STYLE="font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; text-align: justify; color: #020202;">
+<p STYLE="margin:0px;padding-bottom:10px;padding-right:15px;font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;"><B>Found a match already?</B></p>
+If you've found a match through BharatMatrimony <A HREF="http://www.bharatmatrimony.com/sstory.shtml"><font color="#94663E"><B>send us your story</B></font></A> along with your wedding photo. We'd be delighted to add you to our list of <a href="http://www.bharatmatrimony.com/success/success.shtml"><font color="#94663E"><b><u>success stories</u></b></font></a>, which will be a true inspiration to our existing members. </td></tr>
+</table>
+
+
+<br><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="5" height="5"><br><b>Please visit our other sites:</b><br>
+<CENTER><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="5" height="8"><br>
+&nbsp;<a href="http://www.clickjobs.com"><IMG SRC="http://www.bharatmatrimony.com/mailers/sep2006/ceomailer/clickjobs_logo.gif" WIDTH="118" HEIGHT="32" BORDER="0" ALT=""></a><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="5" >
+&nbsp;<a href="http://www.indiaproperty.com"><IMG SRC="http://www.bharatmatrimony.com/mailers/sep2006/ceomailer/ip_logo.gif" WIDTH="114" HEIGHT="42" BORDER="0" ALT=""></a><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="5" >
+&nbsp;<a href="http://www.IndiaAutomobile.com"><IMG SRC="http://www.bharatmatrimony.com/mailers/sep2006/ceomailer/ia_logo.gif" WIDTH="110" HEIGHT="42" BORDER="0" ALT=""></a><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="5" >
+&nbsp;<a href="http://www.IndiaList.com"><IMG SRC="http://www.bharatmatrimony.com/mailers/sep2006/ceomailer/il_logo.gif" WIDTH="115" HEIGHT="28" BORDER="0" ALT=""></a><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="5"></CENTER>
+
+<p STYLE="padding-left:10px;padding-right:15px;line-height:16px;padding-top:5px;font-family: Verdana, MS Sans serif, Arial, Verdana, Helvetica; font-size: 11px; font-style: normal; text-align: justify; text-transform: none; color: #020202;">
+Wishing you all the best,<br>
+<b>The BharatMatrimony Team</b><br><br>
+
+</td></tr>
+<tr bgcolor="#FFFFFF"><td valign="top" colspan="3"><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="550" height="10"></td></tr>
+</table>
+<table width=535 cellspacing=0 cellpadding=0 border=0>
+<tr bgcolor="#FFFFFF"><td valign="top" colspan="3"><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="550" height="2"></td></tr>
+<tr><td valign="top"><p align="justify"><font STYLE="font-family: Verdana, Arial, MS Sans serif, Arial, Verdana, Helvetica; font-size: 9px; font-style: normal; text-align: justify; text-transform: none; padding-left: 10px; padding-top: 10px; color: #999999;">If you do not wish to receive any further notifications, please <a href="http://mail1.bharatmatrimony.com/mailmanager/unsubscribe.php?eid=E224175&catg=MU"><font color="#999999">click here</font></a> to unsubscribe. </td></tr>
+<tr bgcolor="#FFFFFF"><td valign="top"><img src="http://www.bharatmatrimony.com/mailers/march2006/loginreminder/trans.gif" width="550" height="15"></td></tr>
+</table>
+</BODY>
+</HTML>
+
+--959C41FF72.1169026435/mail1.bharatmatrimony.com--
+

@@ -1,0 +1,51 @@
+.smalltxt {
+	 font-family:verdana,ms sans serif,arial;
+	 font-size:10px;
+	 color:#000000; 
+}
+
+.white {
+	font-family: Verdana, MS Sans serif, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	font-style: normal; 
+	text-transform: none; 
+	color: white; 
+	font-weight: bold; 
+	text-decoration: none
+}
+
+.smalltxt2 {
+	 font-family:verdana,ms sans serif,arial;
+	 font-size:10px;
+	 font-style: normal;
+	 font-weight: bold;
+	 color:#6A6A6A; 
+}
+
+.title {  
+	font-family: Verdana, MS Sans serif, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	font-style: normal; 
+	text-transform: none; 
+	color: #474747; 
+	font-weight: bold; 
+	text-decoration: none
+}
+
+.top {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 10px;
+	color: #000000;
+	font-weight: bold;
+}
+
+.label { 
+	font-family: Verdana, MS Sans serif, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	font-style: normal; 
+	font-weight: bold; 
+	color: #474747; 
+	text-transform: none; 
+	text-decoration: none
+}
